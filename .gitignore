@@ -1,8 +1,3 @@
-# Folder
-Labs/
-Lectures/
-Syllabus/
-
 # History files
 .Rhistory
 .Rapp.history
@@ -42,3 +37,8 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Folder
+Labs/
+Lectures/
+Syllabus/
