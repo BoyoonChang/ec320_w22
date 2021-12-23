@@ -68,7 +68,6 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 8. **Maps with `ggplot2`!** <br> [.html]() | [Data]()
 
-9. **Happy Thanksgiving!** ***No lab*** 
 
 ## Other course content
 
@@ -76,4 +75,4 @@ For supplemental lecture documents, problem sets, and other materials, please se
 
 ## Contributors
 
-I am indebted to [Ed Rubin](http://edrub.in/) ([@edrubin](https://github.com/edrubin)) and [Kyle Raze](https://kyleraze.com/) for their generous contribution of course materials. I also source some material from [Nick Huntington-Klein](https://nickchk.com/) ([@NickCH-K](https://github.com/NickCH-K)), who maintains a [trove of resources](https://nickchk.com/causalgraphs.html) for learning causal inference. 
+I am indebted to [Ed Rubin](http://edrub.in/) ([@edrubin](https://github.com/edrubin)) and [Kyle Raze](https://kyleraze.com/)([@kyleraze](https://github.com/kyleraze)) for their generous contribution of course materials. I also source some material from [Nick Huntington-Klein](https://nickchk.com/) ([@NickCH-K](https://github.com/NickCH-K)), who maintains a [trove of resources](https://nickchk.com/causalgraphs.html) for learning causal inference. 
