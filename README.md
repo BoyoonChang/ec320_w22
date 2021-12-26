@@ -75,4 +75,4 @@ For supplemental lecture documents, problem sets, and other materials, please se
 
 ## Contributors
 
-I am indebted to [Ed Rubin](http://edrub.in/) ([@edrubin](https://github.com/edrubin)) and [Kyle Raze](https://kyleraze.com/)([@kyleraze](https://github.com/kyleraze)) for their generous contribution of course materials. I also source some material from [Nick Huntington-Klein](https://nickchk.com/) ([@NickCH-K](https://github.com/NickCH-K)), who maintains a [trove of resources](https://nickchk.com/causalgraphs.html) for learning causal inference. 
+I am indebted to [Ed Rubin](http://edrub.in/) ([@edrubin](https://github.com/edrubin)) and [Kyle Raze](https://kyleraze.com/)([@kyleraze](https://github.com/kyleraze)) for their generous contribution and offerings of course materials. I also source some material from [Nick Huntington-Klein](https://nickchk.com/) ([@NickCH-K](https://github.com/NickCH-K)), who maintains a [trove of resources](https://nickchk.com/causalgraphs.html) for learning causal inference. 
