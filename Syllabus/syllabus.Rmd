@@ -1,0 +1,88 @@
+---
+title: "Introduction to Econometrics EC320" 
+author: "Boyoon Chang"
+output: 
+  pdf_document: default
+geometry: margin=40mm
+header-includes:
+   - \usepackage{multicol}
+   - \usepackage{hyperref}
+   - \usepackage{fontspec}
+mainfont: 
+---
+
+
+
+
+|  What       | When          | Where         |  Who | 
+|---------|---------------|---------------|-----|
+| Lecture     | MW 1200-1320  | TKSON 140 | Boyoon Chang
+| Lab 1         | W     | TBA  | GE1
+| Lab 2         | W     | TBA  | GE2 
+| Office Hours  | MW 1400-1500 | PLC 420  | Boyoon Chang | 
+| Office Hours  | TBA | TBA  | GE1 | 
+| Office Hours  | TBA | TBA  | GE2 | 
+
+## Course Material
+
+\begin{multicols}{2}
+\subsubsection{Lecture}
+
+
+\columnbreak
+
+\subsubsection{Lab}
+
+\end{multicols}
+
+\begin{table}[!h]
+\begin{tabular}{l @{\hspace{1.25\tabcolsep}} l @{}}
+	& \textbf{{Instructor}}\\
+	\faUser & Kyle Raze \\
+	\faGlobe & \href{https://kyleraze.com}{kyleraze.com} \\
+	\faPaperPlaneO & \href{mailto:raze@uoregon.edu}{raze@uoregon.edu} \\
+	\faMapMarker & \href{https://map.uoregon.edu/1dc7083e6}{PLC 522} \\
+	\faClockO & T 1500--1600, Th 1000--1100, or by appointment	
+\end{tabular}
+\end{table}
+
+
+
+---
+
+## Who
+
+
+\begin{multicols}{2}
+\subsubsection{Lecture}
+
+Boyoon Chang
+
+\begin{itemize}
+\item{OH: MW 1400-1500}
+\item{PLC 420}
+\item{\href{mailto:bchang@uoregon.edu}{bchang@uoregon.edu}}
+\end{itemize}
+
+\columnbreak
+
+\subsubsection{Lab}
+GE
+\begin{itemize}
+\item{OH: TBA}
+\item{TBA}
+\item{\href{mailto:}{TBA}}
+\end{itemize}
+\end{multicols}
+
+\newpage
+
+---
+
+# Course Summary
+
+# Course Structure
+
+# Course Policies
+
+# Tentative Schedule
