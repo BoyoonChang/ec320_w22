@@ -52,63 +52,50 @@ The HTML versions of the lecture slides allow you to view animations and interac
 ## Labs
 
 1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html) |
-[Exercise]()
+[Exercise 1]()
 
-1. **Introduction to the `tidyverse`** <br> [.html]() | [Data]() | [Exercise]()
+1. **Introduction to `function`** <br> [.html]() | [Exercise 2]()
 
-2. **Introduction to `function`** <br> [.html]() | [Data]() | [Exercise]()
+2. **Data structure, preparation, and variable types** <br> [.html]() | [Exercise 3]()
 
-3. **Data structure, preparation, and variable types** <br> [.html]() | [Exercise]()
-
-4. **Data manipulation, visualization, and regression**
-<br> [.html]() | [Exercise]()
+3. **Data manipulation, visualization, and regression**
+<br> [.html]() | [Exercise 4]()
 
 5. **Recap Lab 1 - Lab 4**
-<br> [.html]() | [Exercise]()
+<br> [.html]() | [Exercise 5]()
 
 6. **Multiple regression and categorical variable**
-<br> [.html]() | [Exercise]()
+<br> [.html]() | [Exercise 6]()
 
-7. **Final Review** <br> [.html]() | [Data]()
+7. **Omitted variable bias, interaction term**
+<br> [.html]() | [Exercise 7]()
+
+8. **Final Review** <br> [.html]() 
 
 ## Due Dates
 
-1.  **Exercise 1**
-   - [.R]() | [submit it here]()
-   - Due: 01/07/2021(Fri)
-2.  **Exercise 2**
-   - [.R]() | [submit it here]()
-   - Due: 01/12/2021(Wed)
-3.  **Problem Set 1**
-   - [.R]() | [submit it here]()
-   - Due: 01/14/2021(Fri)
-4.  **Exercise 3**
-   - [.R]() | [submit it here]()
-   - Due: 01/19/2021(Wed)
-5.  **Exercise 4**
-   - [.R]() | [submit it here]()
-   - Due: 02/02/2021(Wed)
-6.  **Problem Set 2**
-   - [.R]() | [submit it here]()
-   - Due: 02/04/2021(Fri)
-7.  **Exercise 5**
-   - [.R]() | [submit it here]()
-   - Due: 02/09/2021(Wed)
-8.  **Exercise 6**
-   - [.R]() | [submit it here]()
-   - Due: 02/16/2021(Wed)
-9.  **Problem Set 3**
-   - [.R]() | [submit it here]()
-   - Due: 02/18/2021(Fri)
-10. **Exercise 7**
-   - [.R]() | [submit it here]()
-   - Due: 03/02/2021(Wed)
-11. **Problem Set 4**
-   - [.R]() | [submit it here]()
-   - Due: 03/04/2021(Fri)
-
-
-
+1.  **Exercise 1** : Due 01/07(Fri)
+   <br>[.R]() | [submit it here]() 
+2.  **Exercise 2**: Due 01/12(Wed)
+   <br>[.R]() | [submit it here]()
+3.  **Problem Set 1**: Due 01/14(Fri)
+   <br>[.R]() | [submit it here]()
+4.  **Exercise 3**: Due 01/19(Wed)
+   <br> [.R]() | [submit it here]()
+5.  **Exercise 4**: Due 02/02(Wed)
+   <br> [.R]() | [submit it here]()
+6.  **Problem Set 2**: Due 02/04(Fri)
+   <br> [.R]() | [submit it here]()
+7.  **Exercise 5**: Due 02/09(Wed)
+   <br> [.R]() | [submit it here]()
+8.  **Exercise 6**: Due 02/16(Wed)
+   <br> [.R]() | [submit it here]()
+9.  **Problem Set 3**: Due 02/18(Fri)
+   <br> [.R]() | [submit it here]()
+10. **Exercise 7**: Due 03/02(Wed)
+   <br> [.R]() | [submit it here]()
+11. **Problem Set 4**: Due 03/04(Fri)
+   <br> [.R]() | [submit it here]()
 
 
 
