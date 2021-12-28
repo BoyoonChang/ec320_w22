@@ -49,6 +49,28 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 17. **Final Review** <br> [.html]() | [.pdf]()
 
+## Labs
+
+1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html) |
+[Exercise]()
+
+1. **Introduction to the `tidyverse`** <br> [.html]() | [Data]() | [Exercise]()
+
+2. **Introduction to `function`** <br> [.html]() | [Data]() | [Exercise]()
+
+3. **Data structure, preparation, and variable types** <br> [.html]() | [Exercise]()
+
+4. **Data manipulation, visualization, and regression**
+<br> [.html]() | [Exercise]()
+
+5. **Recap Lab 1 - Lab 4**
+<br> [.html]() | [Exercise]()
+
+6. **Multiple regression and categorical variable**
+<br> [.html]() | [Exercise]()
+
+7. **Final Review** <br> [.html]() | [Data]()
+
 ## Due Dates
 
 1.  Exercise 1 
@@ -88,28 +110,6 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 
 
-
-## Labs
-
-1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html) |
-[Exercise]()
-
-1. **Introduction to the `tidyverse`** <br> [.html]() | [Data]() | [Exercise]()
-
-2. **Introduction to `function`** <br> [.html]() | [Data]() | [Exercise]()
-
-3. **Data structure, preparation, and variable types** <br> [.html]() |[Exercise]()
-
-4. **Data manipulation, visualization, and regression**
-<br> [.html]() |[Exercise]()
-
-5. **Recap Lab 1 - Lab 4**
-<br> [.html]() |[Exercise]()
-
-6. **Multiple regression and categorical variable**
-<br> [.html]() |[Exercise]()
-
-7. **Final Review** <br> [.html]() | [Data]()
 
 
 ## Other course content
