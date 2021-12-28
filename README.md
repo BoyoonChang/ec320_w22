@@ -3,8 +3,7 @@
 Welcome to EC 320: Introduction to Econometrics (Winter 2021) at the University of Oregon.
 
 - Instructor: [Boyoon Chang](https://bchang.me)
-- GE (grader): 
-- GE (lab):  
+- GE [Kyutaro Matsuzawa] 
 - [Syllabus](https://raw.githack.com/bchang2/ec320_w22/main/Syllabus/syllabus.pdf)
 
 
@@ -50,23 +49,62 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 17. **Final Review** <br> [.html]() | [.pdf]()
 
+## Due Dates
+
+1. Exercise 1 <br> [.R]()|[submit it here]()
+- Due: 01/07/2021(Fri)
+
+1. Exercise 2 <br> [.R]()|[submit it here]()
+- Due: 01/12/2021(Wed)
+
+1. Problem Set 1
+- Due: 01/14/2021(Fri)
+
+1. Exercise 3
+- Due: 01/19/2021(Wed)
+
+1. Exercise 4
+- Due: 02/02/2021(Wed)
+
+1. Problem Set 2
+- Due: 02/04/2021(Fri)
+
+
+1. Exercise 5
+- Due: 02/09/2021(Wed)
+
+1. Exercise 6
+- Due: 02/16/2021(Wed)
+
+1. Problem Set 3
+- Due: 02/18/2021(Fri)
+
+1. Exercise 7
+- Due: 03/02/2021(Wed)
+
+1. Problem Set 4
+- Due: 03/04/2021(Fri)
+
+
+
 ## Labs
 
 1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html)
+[Exercise](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html)
 
 2. **Introduction to the `tidyverse`** <br> [.html]() | [Data]()
 
-3. **Non-Experimental Data** <br> [.html]() | [Data]()
+3. **Introduction to `function`** <br> [.html]() | [Data]()
 
-4. **Introduction to `R Markdown`** <br> [.html]()
+4. **Data structure, preparation, and variable types** <br> [.html]()
 
-5. **Regression Analysis**
+5. **Data manipulation, visualization, and regression**
 
-6. **Hypothesis Testing**
+6. **Recap Lab 1 - Lab 4**
 
-7. **Hypothesis Testing and Omitted-Variable Bias**
+7. **Multiple regression and categorical variable**
 
-8. **Maps with `ggplot2`!** <br> [.html]() | [Data]()
+8. **Final Review** <br> [.html]() | [Data]()
 
 
 ## Other course content
