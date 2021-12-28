@@ -73,37 +73,37 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 ## Due Dates
 
-1.  Exercise 1 
+1.  **Exercise 1**
    - [.R]() | [submit it here]()
    - Due: 01/07/2021(Fri)
-2.  Exercise 2
+2.  **Exercise 2**
    - [.R]() | [submit it here]()
    - Due: 01/12/2021(Wed)
-3.  Problem Set 1
+3.  **Problem Set 1**
    - [.R]() | [submit it here]()
    - Due: 01/14/2021(Fri)
-4.  Exercise 3
+4.  **Exercise 3**
    - [.R]() | [submit it here]()
    - Due: 01/19/2021(Wed)
-5.  Exercise 4 
+5.  **Exercise 4**
    - [.R]() | [submit it here]()
    - Due: 02/02/2021(Wed)
-6.  Problem Set 2
+6.  **Problem Set 2**
    - [.R]() | [submit it here]()
    - Due: 02/04/2021(Fri)
-7.  Exercise 5
+7.  **Exercise 5**
    - [.R]() | [submit it here]()
    - Due: 02/09/2021(Wed)
-8.  Exercise 6 
+8.  **Exercise 6**
    - [.R]() | [submit it here]()
    - Due: 02/16/2021(Wed)
-9.  Problem Set 3
+9.  **Problem Set 3**
    - [.R]() | [submit it here]()
-   - Due: 08/18/2021(Fri)
-10. Exercise 7
+   - Due: 02/18/2021(Fri)
+10. **Exercise 7**
    - [.R]() | [submit it here]()
    - Due: 03/02/2021(Wed)
-11. Problem Set 4 
+11. **Problem Set 4**
    - [.R]() | [submit it here]()
    - Due: 03/04/2021(Fri)
 
