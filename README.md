@@ -52,7 +52,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 ## Labs
 
 1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html) |
-[Exercise 1]()
+[Exercise 1](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Exercise.R)
 
 1. **Introduction to `function`** <br> [.html]() | [Exercise 2]()
 
