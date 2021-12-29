@@ -7,8 +7,6 @@ date: "Winter 2022"
 output: 
   html_document:
     theme: flatly  
-    includes:
-      after_body: footer.html
     toc: true
     toc_float:
       collapsed: true
