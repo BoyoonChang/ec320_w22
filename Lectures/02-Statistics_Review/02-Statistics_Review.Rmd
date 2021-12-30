@@ -1,7 +1,6 @@
 ---
 title: "Statistics Review I"
 subtitle: "EC 320: Introduction to Econometrics"
-author: "Boyoon Chang"
 date: "Winter 2022"
 output:
   xaringan::moon_reader:
