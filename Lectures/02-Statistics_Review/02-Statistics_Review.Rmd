@@ -73,7 +73,7 @@ theme_empty <- theme_bw() + theme(
 Issues with .mono[R]?
 
 - Lab today
-- I have office hours today after class (15:00-16:00).
+- I have office hours today after class (14:00-15:00).
 
 ---
 # Motivation
