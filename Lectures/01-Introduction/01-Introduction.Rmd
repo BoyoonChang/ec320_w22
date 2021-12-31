@@ -52,9 +52,12 @@ opts_chunk$set(
 Where can you find me?
 
 - Office: 420 PLC
-- Office hours: MW 15:00-16:00, or by appointment
+- Office hours: WF 14:00-15:00, or by appointment
 - Email: [.mono[bchang@uoregon.edu]](mailto:bchang@uoregon.edu) **(use EC 320 in the subject line)**
 
+Your GE: **Kyutaro Matsuzawa**
+- Office hours: T/TR 14:00-15:00 via Zoom (info on Canvas)
+- Email: [.mono[kyutarom@uoregon.edu]](mailto:kyutarom@uoregon.edu) **(use EC 320 in the subject line)**
 
 ---
 
