@@ -254,7 +254,7 @@ Measure the causal effect of the fishing ban by comparing fishing effort in trea
 
 **Results**
 
-````{r, out.width = "85%", eval=TRUE, echo=FALSE}
+```{r, out.width = "85%", eval=TRUE, echo=FALSE}
 include_graphics("figure3.jpg")
 ```
 
@@ -452,7 +452,7 @@ scale_x_log10("GDP per capita", label = scales::comma) +
 ylab("Life Expectancy") +
 scale_shape_manual("Year", values = c(1, 17)) +
 scale_color_viridis("Continent", discrete = T, end = 0.95) +
-guides(size = F) +
+#guides(size = F) +
 theme_pander(base_size = 17, base_family = "Arial", fc = met_slate)
 ```
 
@@ -474,7 +474,7 @@ scale_x_log10("GDP per capita", label = scales::comma) +
 ylab("Life Expectancy") +
 scale_shape_manual("Year", values = c(1, 17)) +
 scale_color_viridis("Continent", discrete = T, end = 0.95) +
-guides(size = F) +
+#guides(size = F) +
 theme_pander(base_size = 17, base_family = "Arial", fc = met_slate)
 ```
 
