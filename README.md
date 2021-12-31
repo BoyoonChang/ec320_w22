@@ -15,17 +15,17 @@ This course introduces the statistical techniques that help economists learn abo
 
 The HTML versions of the lecture slides allow you to view animations and interactive features, provided that you have an internet connection. The PDF slides don't require an internet connection, but they cannot display the animations or interactive features.
 
-1. **What is Econometrics?** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/01-Introduction/01-Introduction.html) | [.pdf]()
+1. **What is Econometrics?** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/01-Introduction/01-Introduction.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/01-Introduction/01-Introduction.pdf)
 
-2. **Statistics Review I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+2. **Statistics Review I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.pdf)
 
-3. **Statistics Review II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/03-Statistics_Review/03-Statistics_Review.html) | [.pdf]()
+3. **Statistics Review II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/03-Statistics_Review/03-Statistics_Review.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/03-Statistics_Review/03-Statistics_Review.pdf)
 
-4. **The Fundamental Problem of Econometrics** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/04-Fundamental_Econometric_Problem/04-Fundamental_Econometric_Problem.html) | [.pdf]()
+4. **The Fundamental Problem of Econometrics** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/04-Fundamental_Econometric_Problem/04-Fundamental_Econometric_Problem.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/04-Fundamental_Econometric_Problem/04-Fundamental_Econometric_Problem.pdf)
 
-5. **Regression Logic** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.html) | [.pdf]()
+5. **Regression Logic** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.html) | [.pdf]((https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.pdf)
 
-6. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review.html) | [.pdf]()
+6. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review.pdf)
 
 7. **Simple Linear Regression: Estimation I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
