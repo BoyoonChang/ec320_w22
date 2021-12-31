@@ -136,6 +136,8 @@ We will often need to load several packages in a single session. One way to do t
 
 To produce reproducible[^reproducible] R code, it is best to use scripts. Open a new R script file with the `.R` extension by clicking `File` then `New File` then `R Script`. We will write our first script to generate a histogram and scatter plot using `ggplot2`.
 
+**For your exercises, you are going to create and submit the knitted version of R scripts.**
+
 [^reproducible]: Reproducible = fewer headaches later.
 
 ### `ggplot2`
@@ -151,11 +153,12 @@ p_load(ggplot2)
 - To execute *one line of your script*, click the line you want to run and then click `Run` at the upper-right corner of your R script. A quicker alternative is to click the line you want to run and then use the keyboard shortcut `Ctrl` `Enter`. 
 - To execute *the entire script*, click `Source` at the upper-right corner of your R script or use the keyboard shortcut `Ctrl` `Alt` `R`. You could adjust these hot keys per your taste by selecting `Tools`>`Modify Keyboard Shortcuts...`. 
 
-**Aside:** It is useful to leave comments in your code to explain to your future self what your code is doing and why. You can leave a comment by typing a hash `#`:
+**Aside:** It is useful to leave comments in your code to explain to your future self what your code is doing and why. You can leave a comment by typing a hash `#`. Notice also that when you put `#` in front of a code, R would skip this line and not run that code. This is why when you want to leave a comment, you would want to put a hash `#` in front of it so that R would keep it from running. :
 
 ```{r}
 # This is a comment. R will ignore it.
 ```
+
 
 Check out the example dataset `midwest` from `ggplot2`. You can view the first few rows of the dataset with variable names by using the `head` function.
 
@@ -181,4 +184,11 @@ ggplot(data = midwest, aes(x = percblack, y = percbelowpoverty)) +
   geom_point()
 ```
 
+## Knitting
 
+Knitting a document means that you could turn all the texts and codes written in R script into a nicely formatted document. For now, we are going to turn R script into `.html` document. You could knit your R script into `.html` document by clicking `File`>`Knit Document` or simply use shortcut, `Ctrl` `Shift` `K`. For those of you who cannot see `Knit Document` under `File` tab, you may find something similar to `Compile Document`. Click it and it'll do the same trick.
+
+
+## Now your turn
+
+Please open up the `01-Exercise.R` and fill out your answer for each question. 
