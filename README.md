@@ -52,7 +52,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 ## Labs
 
 1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html) |
-[Exercise 1](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Exercise.R)
+[Exercise 1](https://canvas.uoregon.edu/courses/192225/assignments/1212959)
 
 1. **Introduction to `function`** <br> [.html]() | [Exercise 2]()
 
@@ -75,7 +75,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 ## Due Dates
 
 1.  **Exercise 1** : Due 01/07(Fri)
-   <br>[.R]() | [submit it here]() 
+   <br>[.R](https://canvas.uoregon.edu/courses/192225/assignments/1212959) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1212959) 
 2.  **Exercise 2**: Due 01/12(Wed)
    <br>[.R]() | [submit it here]()
 3.  **Problem Set 1**: Due 01/14(Fri)
