@@ -86,7 +86,7 @@ To define an object, you use the **assignment operator** `<-` or simply `=`.[^as
 ```{r}
 a <- 5
 ```
-which reads "`a` gets 5." When you execute this code (by hitting `Enter`), `a` will show up in the global environment. Hovering your cursor over `a` in the global environment tells you that `a` is a numeric object.
+which reads "`a` gets 5." When you execute this code (by hitting `Ctrl``Enter`), `a` will show up in the global environment. Hovering your cursor over `a` in the global environment tells you that `a` is a numeric object.
 
 [^assignment]: **Pro tip:** You can type the assignment operator with the keyboard shortcut `Alt` `-`.
 
