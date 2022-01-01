@@ -194,6 +194,7 @@ tibble(
 ## Now your turn
 
 Please open up the `02-Exercise.R` and fill out your answer for each question. 
+
 ## Reference 
 
 For more information about the lab material covered this week, see below links.
