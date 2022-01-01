@@ -54,7 +54,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 1. **Introduction to `R`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/01-Introduction_R/01-Introduction_R.html) |
 [Exercise 1](https://canvas.uoregon.edu/courses/192225/assignments/1212959)
 
-1. **Introduction to `function`** <br> [.html]() | [Exercise 2]()
+1. **Introduction to `function`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/02-Introduction_function/02-Introduction_function.html) | [Exercise 2]()
 
 2. **Data structure, preparation, and variable types** <br> [.html]() | [Exercise 3]()
 
