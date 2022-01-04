@@ -247,7 +247,7 @@ include_graphics("figure2.jpg")
 
 **Natural Experiment**
 
-Measure the causal effect of the fishing ban by comparing fishing effort in treatment and control regions, before-and-after PIPA.
+Measure the causal effect of the fishing ban by comparing fishing effort in treatment and control regions, before-and-after the implementation of the policy.
 
 - A *difference-in-differences* comparison.
 - .hi[Assumption:] .pink[Parallel trends.] If we believe this assumption, then the observed change supports a causal interpretation. If not, then the change could reflect other factors and thus fail to isolate the causal effect of the ban.

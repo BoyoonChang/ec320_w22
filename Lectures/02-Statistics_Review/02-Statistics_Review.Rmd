@@ -336,6 +336,10 @@ __Random Variable:__ A variable with _numerical values determined by an experime
 - .hi-purple[Sample space:] The set of potential outcomes an experiment could generate, _e.g._, the sum of two dice is an integer from 2 to 12.
 - .hi-green[Event:] A subset of the .purple[sample space] or a combination of outcomes, _e.g._, rolling a two or a four.
 
+
+
+
+
 ---
 # Random Variables
 
