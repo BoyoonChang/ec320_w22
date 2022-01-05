@@ -1,5 +1,8 @@
 
 /* Create a highlighted class called 'hi'  */
+.small {
+  font-size: 80%;
+}
 .hi {
   font-weight: 600;
   color: #e64173 !important;

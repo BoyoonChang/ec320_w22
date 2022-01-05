@@ -63,17 +63,24 @@ theme_empty <- theme_bw() + theme(
 ---
 # Housekeeping
 
-- Lab today 
-- Exercise 1 this Friday by 11:59 p.m. 
+.small[
+.hi-pink[Office hours]
+  - Kyu's: T 1500-1600 & R 1400-1500
+  - Mine : MW 1400-1500
+
+.hi-pink[Lab today] at 4 p.m. MCK 442
+
+.hi-pink[Exercise 1] this Friday by 11:59 p.m. 
   - Just this once. You'll need to submit other exercises normally by Wednesday and not Friday
   - No need to worry. The assigned exercises shouldn't take longer than the lab time. If you attend the lab, you'll be able to complete the exercise on the spot.
-  - Please have your work knitted in html format.
-- Problem Set 1 will be posted by the end of this week, which will be due next Friday 11:59 p.m.
+  - **[SUBMIT FORMAT]** Please have your work knitted in **html** format.
 
-Issues with .mono[R]?
-
-- Lab today
+.hi-pink[Problem Set 1] will be posted by the end of this week, which will be due next Friday 11:59 p.m.
+ 
+.hi-pink[Issues with .mono[R]?]
+- After class
 - I have office hours today after class (14:00-15:00).
+]
 
 ---
 # Motivation
@@ -323,21 +330,42 @@ class: inverse, middle
 ---
 # Random Variables
 
+
 __Experiment:__ Any procedure that is _infinitely repeatable_ and has a _well-defined set of outcomes_.
 
-- Flip a coin 10 times and record the number of heads.
-- Roll two six-sided dice and record the sum.
+__Sample space:__ The set of all possible outcomes an experiment could generate
 
---
+__Event:__ A subset of the .purple[sample space] or a combination of outcomes
 
-__Random Variable:__ A variable with _numerical values determined by an experiment or a random phenomenon_.
+__Random Variable:__ A variable with _numerical values determined by an experiment or a random phenomenon_. This could also be considered as a function that maps elements of the sample space to another set (often set of the real numbers).
 
-- Describes the .purple[sample space] of an experiment.
-- .hi-purple[Sample space:] The set of potential outcomes an experiment could generate, _e.g._, the sum of two dice is an integer from 2 to 12.
-- .hi-green[Event:] A subset of the .purple[sample space] or a combination of outcomes, _e.g._, rolling a two or a four.
+---
 
+# Random Variables 
 
+.pull-left[
+Example 1:
 
+__Experiment:__ Roll two six-sided dice
+
+__Sample space:__ {11, 12,  ... ,  21, 22, ... , 66}
+
+__Event:__ The sum of two top number is equal to 10, this could be combination of outcomes {19, 28, 37, 46, 55, 64, 73, 82, 91}
+
+__Random variable:__ The sum of two top number {2, 3, ..., 12}
+]
+
+.pull-right[
+Example 2: 
+
+__Experiment:__ Tossing a coin two times
+
+__Sample space:__ {HH, HT, TH, TT}
+
+__Event:__ The fist toss results in a Heads, {HH, HT}
+
+__Random variable:__ The number of heads, {0, 1, 2}
+]
 
 
 ---
@@ -415,7 +443,7 @@ Basketball player goes to the foul line to shoot two free throws.
 
 - $X$ is the number of shots made (either 0, 1, or 2).
 
-- The pdf of $X$ is $f(0)= 0.3$, $f(1) = 0.4$, $f(2) = 0.3$.
+- Suppose the pdf of $X$ is $f(0)= 0.3$, $f(1) = 0.4$, $f(2) = 0.3$.
 
 - __Note:__ the probabilities sum to 1.
 
@@ -428,7 +456,7 @@ Use the pdf to calculate the probability of the .hi-green[event] that the player
 ---
 # Continuous Random Variables
 
-__Continuous Random Variable:__ A random variable that takes any real value with _zero_ probability.
+__Continuous Random Variable:__ A random variable that takes any real value with _zero_ probability (that takes an infinite number of possible values). A continuous random variable is not defined at specific values but over an interval of values. 
 
 - .hi-purple[Wait, what?!] The variable takes so many values that we can't count all possibilities, so the probability of any one particular value is zero.
 
@@ -436,7 +464,7 @@ __Continuous Random Variable:__ A random variable that takes any real value with
 
 Measurement is discrete (_e.g._, dollars and cents), but variables with many possible values are best treated as continuous.
 
-- _e.g._, electoral votes, height, wages, temperature, _etc._
+- _e.g._, height, wages, temperature, _etc._
 
 ---
 # Continuous Random Variables
