@@ -56,7 +56,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 1. **Introduction to `function`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/02-Introduction_function/02-Introduction_function.html) | [Exercise 2](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330)
 
-2. **Data structure, preparation, and variable types** <br> [.html]() | [Exercise 3]()
+2. **Data structure, preparation, and variable types** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/02-Introduction_function/03-Introduction_data.html) | [Exercise 3]()
 
 3. **Data manipulation, visualization, and regression**
 <br> [.html]() | [Exercise 4]()
