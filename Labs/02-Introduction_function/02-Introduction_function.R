@@ -1,8 +1,17 @@
-#' ---
-#' title: "Introduction to a function"
-#' author: "Your Name Here"
-#' date: "`r Sys.Date()`"
-#' output: html_document
+#'---
+#'title: "Introduction to a function"
+#'author: | 
+#'        | EC 320: Introduction to Econometrics
+#'        | University of Oregon
+#' date: "Winter 2022"
+#' output: 
+#'   html_document:
+#'     theme: flatly  
+#'     highlight: tango
+#'     toc: true
+#'     toc_float:
+#'       collapsed: true
+#'       smooth_scroll: true    
 #' ---
 #'
 #' ## Functions and arguments
@@ -194,6 +203,6 @@ tibble(
 ## Reference
 
 #' For more information about the lab material covered this week, see below links.
-
-#' https://swcarpentry.github.io/r-novice-inflammation/02-func-R/index.html
-#' https://datascienceplus.com/vectors-and-functions-in-r/
+#'
+#' - https://swcarpentry.github.io/r-novice-inflammation/02-func-R/index.html
+#' - https://datascienceplus.com/vectors-and-functions-in-r/
