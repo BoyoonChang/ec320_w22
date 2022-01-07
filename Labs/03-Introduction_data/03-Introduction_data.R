@@ -98,7 +98,8 @@ minion_d %>% select(weight, num_eyes)
 #' 
 #' ### mutate(): Create new columns
 #' 
-minion_d %>% mutate(age=c(40,100,98))
+minion_d %>% mutate(fav_food=rep("banana", 5))
+#' 
 #' 
 #' ## group_by(), summarize(), count(), nrow()
 #'  
