@@ -26,7 +26,7 @@ somefunction <- function(arg1,arg2, ...) {
 }
 
 
-#' Notice that a function has **input parameters**, **statements** that are executed when it runs, and **output** of the function in the return statement. **Parameters** simply mean placeholders that are used in the function body. Let's look at the example.
+#' Notice that a function has **input parameters**, **statements** that are executed when it runs, and **output** of the function in the return statement. **Parameters** simply mean placeholders that are used inside the function body. Let's look at the example.
 
 
 fahrenheit_to_celsius <- function(temp_F) {
@@ -42,10 +42,23 @@ fahrenheit_to_celsius <- function(temp_F) {
 
 fahrenheit_to_celsius
 
-#' You could see now the structure of this function by running `fahrenheit_to_celsius` like above. You could actually put a specific value as an input to this function. Suppose we want to know what temperature in Celsius corresponds to 100 degrees in Fahrenheit. You could put 100 as an **argument** to `fahrenheit_to_celsius function`. Arguments here could be considered specific values which is passed by the function calling. In this case, `100` corresponds to an argument to the function `fahrenheit_to_celsius`.
+#' You could see now the structure of this function by running `fahrenheit_to_celsius` like above. You could actually put a specific value as an input to this function. Suppose we want to know what temperature in Celsius corresponds to 100 degrees in Fahrenheit. You could put 100 as an **argument** to `fahrenheit_to_celsius function`. Arguments here could be considered specific values which are passed to the function. In this case, `100` corresponds to an argument to the function `fahrenheit_to_celsius`.
 
 
-fahrenheit_to_celsius(100)
+fahrenheit_to_celsius(temp_F=100)
+
+#' What if the function you are using has multiple parameters? **Argument order matters**. The order of arguments supplied to a function matters. Look at the example below. Depending on how you supply the arguments, the output differs. By default, unless explicitly specifying the names of the parameters, R considers the first argument be the the argument for the first parameter, the second argument be the argument for the second parameter, and so on. You could however specify the name of the parameter and match it with the corresponding argument and change the order of the arguments. 
+#' 
+print_fun=function(banana,apple){
+  print(paste0("hello ", banana, " ", apple))
+}
+# Below three lines return same outputs
+print_fun("not","me") 
+print_fun(banana="not", apple="me")
+print_fun(apple="me", banana="not")
+# Below line does not return the same output as above
+print_fun("me","not") 
+
 
 
 #' ### Takeaways
