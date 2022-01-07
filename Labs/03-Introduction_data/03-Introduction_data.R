@@ -34,7 +34,7 @@ tibble(
   # you could also add comment here! 
   # Since there's # at the beginning of the line, this line won't run on R.
   # this is good because plain texts wouldn't run on R and it'll throw an error.
-  name=c("Bob","Kevin","Stewart","Jerry", "Jorge"),
+  name=c("Bob","Kevin","Stuart","Jerry", "Jorge"),
   # Below is weight information
   weight=c(12,25,18,21,35),
   # Below is height information
@@ -88,6 +88,10 @@ print_fun=function(banana,apple){
 ?filter()
 # Select observations whose name column is equal to "Bob"
 minion_d %>% filter(name == "Bob")
+minion_d %>% filter(weight > 30)
+minion_d %>% filter(height>50 && weight > 30)
+minion_d %>% filter(height>50 | weight > 30)
+
 #' 
 #' 
 #' ### select(): Select columns of a dataset by name.
@@ -98,12 +102,22 @@ minion_d %>% select(weight, num_eyes)
 #' 
 #' ### mutate(): Create new columns
 #' 
+?mutate()
 minion_d %>% mutate(fav_food=rep("banana", 5))
 #' 
 #' 
+?arrange()
+minion_d %>% arrange(num_eyes)
+minion_d %>% arrange(desc(num_eyes))
+
 #' ## group_by(), summarize(), count(), nrow()
 #'  
-#' 
+#'
+?group_by()
+?summarize()
+?count(),
+?nrow()
+ 
 minion_d %>% filter(num_eyes==1) %>% nrow() 
 minion_d %>% filter(num_eyes==2) %>% nrow() 
 minion_d %>% group_by(num_eyes) %>% count() 

@@ -11,7 +11,7 @@
 
 <meta name="author" content="boyoonc" />
 
-<meta name="date" content="2022-01-06" />
+<meta name="date" content="2022-01-07" />
 
 <title>03-Exercise.R</title>
 
@@ -348,13 +348,54 @@ pre code {
 
 <h1 class="title toc-ignore">03-Exercise.R</h1>
 <h4 class="author">boyoonc</h4>
-<h4 class="date">2022-01-06</h4>
+<h4 class="date">2022-01-07</h4>
 
 </div>
 
 
-<pre class="r"><code>2+3</code></pre>
-<pre><code>## [1] 5</code></pre>
+<p>Below minion_d is given. Use <code>%&gt;%</code> to answer the following questions.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.6     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
+## ✓ readr   2.1.0     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>tibble(
+  name=c(&quot;Bob&quot;,&quot;Kevin&quot;,&quot;Stuart&quot;,&quot;Jerry&quot;, &quot;Jorge&quot;),
+  weight=c(12,25,18,21,35),
+  height=c(80,120,94,105,95),
+  num_eyes=c(2,2,1,2,2)
+) -&gt; minion_d
+
+
+# 1. Filter minion whose height is below 90.
+
+
+
+
+
+# 2. Select height and num_eyes from minion_d
+
+
+
+
+# 3. Create another column(variable) called `fav_color` which includes following information.
+# Bob likes &quot;red&quot;, 
+# Kevin likes &quot;orange&quot;
+# Stuart likes &quot;green&quot;
+# Jerry likes &quot;yellow&quot;
+# Jorge likes &quot;grey&quot;
+
+
+
+
+# 4. Arrange `minion_d` by height in descending order
+
+
+# 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as number of observations.</code></pre>
 
 
 

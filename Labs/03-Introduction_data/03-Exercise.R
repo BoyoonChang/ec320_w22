@@ -1,7 +1,38 @@
-# 1. Create your own dataset ussing `tibble()`. 
+#' Below minion_d is given. Use `%>%` to answer the following questions.
+#' 
+library(tidyverse)
+tibble(
+  name=c("Bob","Kevin","Stuart","Jerry", "Jorge"),
+  weight=c(12,25,18,21,35),
+  height=c(80,120,94,105,95),
+  num_eyes=c(2,2,1,2,2)
+) -> minion_d
 
-# tibble(
-#   id = 1:100,
-#   x = sample(c(0,1), size = 100, replace=TRUE),
-#   y = ifelse(x==0,100,200)
-# )
+
+# 1. Filter minion whose height is below 90.
+
+
+
+
+
+# 2. Select height and num_eyes from minion_d
+
+
+
+
+# 3. Create another column(variable) called `fav_color` which includes following information.
+# Bob likes "red", 
+# Kevin likes "orange"
+# Stuart likes "green"
+# Jerry likes "yellow"
+# Jorge likes "grey"
+
+
+
+
+# 4. Arrange `minion_d` by height in descending order
+
+
+# 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as number of observations.
+
+
