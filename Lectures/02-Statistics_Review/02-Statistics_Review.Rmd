@@ -350,7 +350,7 @@ __Experiment:__ Roll two six-sided dice
 
 __Sample space:__ {11, 12,  ... ,  21, 22, ... , 66}
 
-__Event:__ The sum of two top number is equal to 10, this could be combination of outcomes {19, 28, 37, 46, 55, 64, 73, 82, 91}
+__Event:__ The sum of two top number is equal to 10, this could be combination of outcomes {46, 55, 64}
 
 __Random variable:__ The sum of two top number {2, 3, ..., 12}
 ]
