@@ -1,8 +1,5 @@
 #'---
 #'title: "Introduction to a function"
-#'author: | 
-#'        | EC 320: Introduction to Econometrics
-#'        | University of Oregon
 #' date: "Winter 2022"
 #' output: 
 #'   html_document:
