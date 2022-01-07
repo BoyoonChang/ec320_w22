@@ -33,7 +33,16 @@ tibble(
 # 4. Arrange `minion_d` by height in descending order
 
 
+
+
+
+
 # 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as the number of observations for each group.
+
+
+
+
+
 
 
 #' Submit the knitted html document on Canvas. You could click `File`>`Knit Document` or simply use shortcut, `Ctrl` `Shift` `K` to knit the Rmarkdown or R scripts. You may able to see the knitted document in the same folder that this .Rmd file is located (If you've downloaded the file directly from Canvas, the .Rmd may be located in `Downloads` folder by default and thus you may want to look for the knitted document there).
