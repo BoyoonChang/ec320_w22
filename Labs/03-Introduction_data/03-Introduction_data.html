@@ -1619,7 +1619,7 @@ div.tocify {
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="co"># you could also add comment here! </span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="co"># Since there&#39;s # at the beginning of the line, this line won&#39;t run on R.</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a>  <span class="co"># this is good because plain texts wouldn&#39;t run on R and it&#39;ll throw an error.</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="dt">name=</span><span class="kw">c</span>(<span class="st">&quot;Bob&quot;</span>,<span class="st">&quot;Kevin&quot;</span>,<span class="st">&quot;Stewart&quot;</span>,<span class="st">&quot;Jerry&quot;</span>, <span class="st">&quot;Jorge&quot;</span>),</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="dt">name=</span><span class="kw">c</span>(<span class="st">&quot;Bob&quot;</span>,<span class="st">&quot;Kevin&quot;</span>,<span class="st">&quot;Stuart&quot;</span>,<span class="st">&quot;Jerry&quot;</span>, <span class="st">&quot;Jorge&quot;</span>),</span>
 <span id="cb3-7"><a href="#cb3-7"></a>  <span class="co"># Below is weight information</span></span>
 <span id="cb3-8"><a href="#cb3-8"></a>  <span class="dt">weight=</span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">25</span>,<span class="dv">18</span>,<span class="dv">21</span>,<span class="dv">35</span>),</span>
 <span id="cb3-9"><a href="#cb3-9"></a>  <span class="co"># Below is height information</span></span>
@@ -1629,13 +1629,13 @@ div.tocify {
 <span id="cb3-13"><a href="#cb3-13"></a>) -&gt;<span class="st"> </span>minion_d</span>
 <span id="cb3-14"><a href="#cb3-14"></a>minion_d</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 4
-##   name    weight height num_eyes
-##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
-## 1 Bob         12     80        2
-## 2 Kevin       25    120        2
-## 3 Stewart     18     94        1
-## 4 Jerry       21    105        2
-## 5 Jorge       35     95        2</code></pre>
+##   name   weight height num_eyes
+##   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Bob        12     80        2
+## 2 Kevin      25    120        2
+## 3 Stuart     18     94        1
+## 4 Jerry      21    105        2
+## 5 Jorge      35     95        2</code></pre>
 </div>
 <div id="pipe-operator" class="section level2">
 <h2>Pipe operator <code>%&gt;%</code></h2>
@@ -1686,7 +1686,7 @@ Let’s look at the examples below. Example 1</li>
 <div id="filter-select-rows-of-a-dataset-by-some-logical-condition." class="section level3">
 <h3>filter(): Select rows of a dataset by some logical condition.</h3>
 <p>Logical condition means that it returns either <code>TRUE</code> or <code>FALSE</code> depending on whether it satisfies the stated condition. For example, suppose you want to filter the tibble such that you only have information about Bob. By running <code>filter(name==&quot;Bob&quot;)</code>, under the hood, it’s scanning each observation in the tibble and only collects those that satisfy the condition, or return <code>TRUE</code>. For more details,</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>?<span class="kw">filter</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>?filter</span></code></pre></div>
 <pre><code>## Help on topic &#39;filter&#39; was found in the following packages:
 ## 
 ##   Package               Library
@@ -1701,13 +1701,30 @@ Let’s look at the examples below. Example 1</li>
 ##   name  weight height num_eyes
 ##   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 Bob       12     80        2</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(weight <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 4
+##   name  weight height num_eyes
+##   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Jorge     35     95        2</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(height<span class="op">&gt;</span><span class="dv">50</span> <span class="op">&amp;&amp;</span><span class="st"> </span>weight <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 0 × 4
+## # … with 4 variables: name &lt;chr&gt;, weight &lt;dbl&gt;, height &lt;dbl&gt;, num_eyes &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(height<span class="op">&gt;</span><span class="dv">50</span> <span class="op">|</span><span class="st"> </span>weight <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name   weight height num_eyes
+##   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Bob        12     80        2
+## 2 Kevin      25    120        2
+## 3 Stuart     18     94        1
+## 4 Jerry      21    105        2
+## 5 Jorge      35     95        2</code></pre>
 </div>
 <div id="select-select-columns-of-a-dataset-by-name." class="section level3">
 <h3>select(): Select columns of a dataset by name.</h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># For more details,</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>?<span class="kw">select</span>()</span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># Select weight and num_eyes columns</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(weight, num_eyes)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># For more details,</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>?select</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="co"># Select weight and num_eyes columns</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(weight, num_eyes)</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 2
 ##   weight num_eyes
 ##    &lt;dbl&gt;    &lt;dbl&gt;
@@ -1719,42 +1736,67 @@ Let’s look at the examples below. Example 1</li>
 </div>
 <div id="mutate-create-new-columns" class="section level3">
 <h3>mutate(): Create new columns</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">fav_food=</span><span class="kw">rep</span>(<span class="st">&quot;banana&quot;</span>, <span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>?mutate</span>
+<span id="cb37-2"><a href="#cb37-2"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">fav_food=</span><span class="kw">rep</span>(<span class="st">&quot;banana&quot;</span>, <span class="dv">5</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 5
-##   name    weight height num_eyes fav_food
-##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;   
-## 1 Bob         12     80        2 banana  
-## 2 Kevin       25    120        2 banana  
-## 3 Stewart     18     94        1 banana  
-## 4 Jerry       21    105        2 banana  
-## 5 Jorge       35     95        2 banana</code></pre>
+##   name   weight height num_eyes fav_food
+##   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;   
+## 1 Bob        12     80        2 banana  
+## 2 Kevin      25    120        2 banana  
+## 3 Stuart     18     94        1 banana  
+## 4 Jerry      21    105        2 banana  
+## 5 Jorge      35     95        2 banana</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>?arrange</span>
+<span id="cb39-2"><a href="#cb39-2"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(num_eyes)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name   weight height num_eyes
+##   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Stuart     18     94        1
+## 2 Bob        12     80        2
+## 3 Kevin      25    120        2
+## 4 Jerry      21    105        2
+## 5 Jorge      35     95        2</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(num_eyes))</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name   weight height num_eyes
+##   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Bob        12     80        2
+## 2 Kevin      25    120        2
+## 3 Jerry      21    105        2
+## 4 Jorge      35     95        2
+## 5 Stuart     18     94        1</code></pre>
 </div>
 </div>
 <div id="group_by-summarize-count-nrow" class="section level2">
 <h2>group_by(), summarize(), count(), nrow()</h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(num_eyes<span class="op">==</span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">nrow</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>?group_by</span>
+<span id="cb43-2"><a href="#cb43-2"></a>?summarize</span>
+<span id="cb43-3"><a href="#cb43-3"></a>?count</span>
+<span id="cb43-4"><a href="#cb43-4"></a>?nrow</span>
+<span id="cb43-5"><a href="#cb43-5"></a> </span>
+<span id="cb43-6"><a href="#cb43-6"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(num_eyes<span class="op">==</span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">nrow</span>() </span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(num_eyes<span class="op">==</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">nrow</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(num_eyes<span class="op">==</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">nrow</span>() </span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(num_eyes) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(num_eyes) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>() </span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ## # Groups:   num_eyes [2]
 ##   num_eyes     n
 ##      &lt;dbl&gt; &lt;int&gt;
 ## 1        1     1
 ## 2        2     4</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(num_eyes) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="kw">n</span>()) </span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(num_eyes) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="kw">n</span>()) </span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   num_eyes `n()`
 ##      &lt;dbl&gt; &lt;int&gt;
 ## 1        1     1
 ## 2        2     4</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="st">  </span><span class="kw">group_by</span>(num_eyes) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_h=</span><span class="kw">mean</span>(height),</span>
-<span id="cb41-4"><a href="#cb41-4"></a>            <span class="dt">median_h=</span><span class="kw">median</span>(height),</span>
-<span id="cb41-5"><a href="#cb41-5"></a>            <span class="dt">max_h=</span><span class="kw">max</span>(height),</span>
-<span id="cb41-6"><a href="#cb41-6"></a>            <span class="dt">min_h=</span><span class="kw">min</span>(height))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>minion_d <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="st">  </span><span class="kw">group_by</span>(num_eyes) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb51-3"><a href="#cb51-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_h=</span><span class="kw">mean</span>(height),</span>
+<span id="cb51-4"><a href="#cb51-4"></a>            <span class="dt">median_h=</span><span class="kw">median</span>(height),</span>
+<span id="cb51-5"><a href="#cb51-5"></a>            <span class="dt">max_h=</span><span class="kw">max</span>(height),</span>
+<span id="cb51-6"><a href="#cb51-6"></a>            <span class="dt">min_h=</span><span class="kw">min</span>(height))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 5
 ##   num_eyes mean_h median_h max_h min_h
 ##      &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;

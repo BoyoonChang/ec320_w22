@@ -85,7 +85,7 @@ print_fun=function(banana,apple){
 #' 
 #' ### filter(): Select rows of a dataset by some logical condition.
 #' Logical condition means that it returns either `TRUE` or `FALSE` depending on whether it satisfies the stated condition. For example, suppose you want to filter the tibble such that you only have information about Bob. By running `filter(name=="Bob")`, under the hood, it's scanning each observation in the tibble and only collects those that satisfy the condition, or return `TRUE`. For more details,
-?filter()
+?filter
 # Select observations whose name column is equal to "Bob"
 minion_d %>% filter(name == "Bob")
 minion_d %>% filter(weight > 30)
@@ -96,27 +96,27 @@ minion_d %>% filter(height>50 | weight > 30)
 #' 
 #' ### select(): Select columns of a dataset by name.
 # For more details,
-?select()
+?select
 # Select weight and num_eyes columns
 minion_d %>% select(weight, num_eyes)
 #' 
 #' ### mutate(): Create new columns
 #' 
-?mutate()
+?mutate
 minion_d %>% mutate(fav_food=rep("banana", 5))
 #' 
 #' 
-?arrange()
+?arrange
 minion_d %>% arrange(num_eyes)
 minion_d %>% arrange(desc(num_eyes))
 
 #' ## group_by(), summarize(), count(), nrow()
 #'  
 #'
-?group_by()
-?summarize()
-?count(),
-?nrow()
+?group_by
+?summarize
+?count
+?nrow
  
 minion_d %>% filter(num_eyes==1) %>% nrow() 
 minion_d %>% filter(num_eyes==2) %>% nrow() 
