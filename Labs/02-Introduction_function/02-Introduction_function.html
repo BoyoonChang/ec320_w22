@@ -1618,7 +1618,7 @@ University of Oregon</div></h4>
 <span id="cb3-2"><a href="#cb3-2"></a>  temp_C &lt;-<span class="st"> </span>(temp_F <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">/</span><span class="st"> </span><span class="dv">9</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">return</span>(temp_C)</span>
 <span id="cb3-4"><a href="#cb3-4"></a>}</span></code></pre></div>
-<p>Here, we are defining a function called <code>fahrenheit_to_celsius</code> that converts temperatures from Farenheit to Celsius. We are assigning the function itself as <code>farenheit-to-celsius</code> using <code>&lt;-</code>. The list of parameters are contained within parenthesis, the body of the function is contained within curly braces, <code>{}</code>, and the output of the function is contained within parenthesis of the <code>return</code>. <code>temp_F</code> is considered an input parameter, <code>temp_C</code> within <code>return()</code> is considered an output. <code>temp_C &lt;- (temp_F - 32) * 5 / 9</code> is considered the body of the function or the statements that are executed when we call this function.</p>
+<p>Here, we are defining a function called <code>fahrenheit_to_celsius</code> that converts temperatures from Fahrenheit to Celsius. We are assigning the function itself as <code>farenheit-to-celsius</code> using <code>&lt;-</code>. The list of parameters are contained within parenthesis, the body of the function is contained within curly braces, <code>{}</code>, and the output of the function is contained within parenthesis of the <code>return</code>. <code>temp_F</code> is considered an input parameter, <code>temp_C</code> within <code>return()</code> is considered an output. <code>temp_C &lt;- (temp_F - 32) * 5 / 9</code> is considered the body of the function or the statements that are executed when we call this function.</p>
 <p><strong>Side note</strong>: In R, you don’t necessarily have to include the return statement to indicate the output of the function call. R automatically returns whichever is indicated on the last line of the body of the function. This implies that R will still return <code>temp_C</code> as the output of <code>fahrenheit_to_celsius</code> function even if you omit <code>return(temp_C)</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>fahrenheit_to_celsius</span></code></pre></div>
 <pre><code>## function(temp_F) {
@@ -1658,7 +1658,7 @@ University of Oregon</div></h4>
 <pre><code>## [1] 10</code></pre>
 <p>You could also create a vector that does random sampling using <code>sample()</code> function.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">size=</span><span class="dv">10</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>##  [1] 1 0 1 0 0 1 1 0 0 0</code></pre>
+<pre><code>##  [1] 0 1 0 1 0 0 0 0 0 1</code></pre>
 <p>You could create a vector whose elements repeat several times.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">each=</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3</code></pre>
@@ -1681,7 +1681,7 @@ University of Oregon</div></h4>
 </div>
 <div id="index" class="section level3">
 <h3>Index</h3>
-<p>Index indicates the position of a specific element within a vector or a matrix or a dataset. A Vector which is typically one dimension, has one index per element. For example, the index of “apple” from the above example is 4, the index of “orange” is 5, the index of “banana” is 6. Suppose you would want to select “apple” in the previously defined vector. You could simply put a specific numeric value that indicates the index of “apple” inside the square bracket.</p>
+<p>Index indicates the position of a specific element within a vector or a matrix or a dataset. A vector which is typically one dimension, has one index per element. For example, the index of “apple” from the above example is 4, the index of “orange” is 5, the index of “banana” is 6. Suppose you would want to select “apple” in the previously defined vector. You could simply put a specific numeric value that indicates the index of “apple” inside the square bracket.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;orange&quot;</span>,<span class="st">&quot;banana&quot;</span>)[<span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;apple&quot;</code></pre>
 </div>
