@@ -62,22 +62,15 @@ theme_empty <- theme_bw() + theme(
 ---
 # Housekeeping
 
-.small[
-Lectures & my office hours held remote this week; Lab in-person unless announced otherwise
-
-**Problem Set 1** available on Canvas.
+Problem Set 1 available on Canvas.
   - Submission type: .html or .pdf
-  - Due this Friday
+  - How to use `latex`
 
-**Exercise 2** due this Wednesday
-  
 Extra office hours? 
   - Wednesday 19:00-20:00?
 
 Knit issues / R issues?
   - Meet me after class
-  - Office hours
-]
 
 ---
 class: inverse, middle
@@ -1322,5 +1315,211 @@ The focus of this class is data analysis, but .hi[data wrangling] is a non-trivi
 
 `ggplot2`: Functions to visualize data.
 
+---
+# Workflow
 
+## Step 1: Load packages with `pacman`
+
+```{r}
+library(pacman)
+p_load(tidyverse)
+```
+
+If the `tidyverse` hasn't already been installed, `p_load` will install it. 
+
+Loading the `tidyverse` automatically loads `readr`, `tidyr`, `dplyr`, `ggplot2`, and a few other packages.
+
+---
+# Workflow
+
+## Step 2: Import data with `readr`
+
+```{r}
+workers <- read_csv("03-example_data.csv")
+```
+
+CSV files are a common non-proprietary format for storing tabular data.
+
+The `read_csv` function imports CSV (comma-separated values) files.
+
+- Converts the CSV file to a [`tibble`](https://tibble.tidyverse.org), the `tidyverse` version of a `data.frame`.
+
+---
+# Workflow
+
+## Step 3: Reshape data with `tidyr`
+
+Variables are stored in rows instead of columns:
+
+```{r, echo=FALSE}
+workers
+```
+
+---
+# Workflow
+
+## Step 3: Reshape data with `tidyr`
+
+Make the data tidy by using the `spread` function:
+
+```{r}
+workers <- workers %>% 
+  spread(key = variable, value = value)
+```
+
+Note the use of the .hi[pipe operator].
+
+- .hi[`%>%`] .mono[=] *"and then."*
+
+- Chains multiple commands together without having to define intermediate objects.
+
+---
+# Workflow
+
+## Step 3: Reshape data with `tidyr`
+
+The result:
+
+```{r, echo=FALSE}
+workers
+```
+
+---
+# Workflow
+
+## Step 4: Manipulate data with `dplyr`
+
+Generate new variables with `mutate`:
+
+```{r}
+workers <- workers %>% 
+  mutate(union = ifelse(union == 1, "Yes", "No"))
+```
+
+Before, `union` was a binary variable equal to 1 if the worker is in a union or 0 if otherwise.
+
+Now `union` is a character variable.
+
+---
+# Workflow
+
+## Step 4: Manipulate data with `dplyr`
+
+The result:
+
+```{r, echo=FALSE}
+workers
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+```{r, fig.height = 3.5}
+workers %>% 
+  ggplot(aes(x = educ, y = earnings)) +
+  geom_point()
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+Can also use the `cor` function from `base` .mono[R]:
+
+```{r}
+cor(workers$educ, workers$earnings)
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+```{r, fig.height = 3.5}
+workers %>% 
+  ggplot(aes(x = educ, y = earnings, color = union)) +
+  geom_point()
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+```{r, fig.height = 3.5}
+workers %>% 
+  ggplot(aes(x = educ, y = earnings, color = union)) +
+  geom_point() +
+  facet_grid(~union)
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+Can .hi[subset] the data to get group-specific correlations: 
+
+```{r}
+workers_union <- workers %>% 
+  filter(union == "Yes") #<<
+
+cor(workers_union$educ, workers_union$earnings)
+```
+
+```{r}
+workers_nounion <- workers %>% 
+  filter(union == "No") #<<
+
+cor(workers_nounion$educ, workers_nounion$earnings)
+```
+
+---
+# Why Bother?
+
+**Q:** Why not just use .mono[.hi-green[MS Excel]] for data wrangling?
+
+--
+
+**A:** .hi[Reproducibility]
+
+- Easier to retrace your steps with .mono[R].
+
+--
+
+**A:** .hi[Portability]
+
+- Easy to re-purpose .mono[R] code for new projects.
+
+--
+
+**A:** .hi[Scalability]
+
+- .mono[Excel] chokes on big datasets.
+
+--
+
+**A:** .hi[.mono[R] Saves time] (eventually)
+
+- Lower marginal costs in exchange for higher fixed costs.
+
+---
+# Further Reading
+
+1. [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham (creator of the `tidyverse`)
+
+2. [Cheatsheets](https://rstudio.com/resources/cheatsheets/)
 

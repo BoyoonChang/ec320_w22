@@ -1,4 +1,6 @@
-
+.small {
+  font-size: 85%;
+}
 /* Create a highlighted class called 'hi'  */
 .hi {
   font-weight: 600;

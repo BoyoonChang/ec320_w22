@@ -4,9 +4,9 @@
     <title>What is Econometrics?</title>
     <meta charset="utf-8" />
     <meta name="author" content="Boyoon Chang" />
-    <link href="01-Introduction_files/remark-css/default.css" rel="stylesheet" />
-    <link href="01-Introduction_files/remark-css/metropolis.css" rel="stylesheet" />
-    <link href="01-Introduction_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="test_files/remark-css/default.css" rel="stylesheet" />
+    <link href="test_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="test_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="my-css.css" type="text/css" />
   </head>
   <body>
@@ -159,7 +159,7 @@ The main focus of EC 320 and EC 421 is causal identification.
 
 ## Not all relationships are causal
 
-&lt;img src="01-Introduction_files/figure-html/spurious-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="test_files/figure-html/spurious-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 # Econometrics
@@ -304,7 +304,7 @@ What does that mean?
 
 ---
 
-&lt;img src="01-Introduction_files/figure-html/statistical languages-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="test_files/figure-html/statistical languages-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 layout: false
@@ -325,12 +325,9 @@ coef(summary(fit))
 ```
 
 ```
-#&gt;              Estimate Std. Error   t value
-#&gt; (Intercept) 37.285126   1.877627 19.857575
-#&gt; wt          -5.344472   0.559101 -9.559044
-#&gt;                 Pr(&gt;|t|)
-#&gt; (Intercept) 8.241799e-19
-#&gt; wt          1.293959e-10
+#&gt;              Estimate Std. Error   t value     Pr(&gt;|t|)
+#&gt; (Intercept) 37.285126   1.877627 19.857575 8.241799e-19
+#&gt; wt          -5.344472   0.559101 -9.559044 1.293959e-10
 ```
 
 ```r
@@ -351,7 +348,7 @@ tidy(fit)
 
 # .mono[R] + Plotting (w/ .mono[plot])
 
-&lt;img src="01-Introduction_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="test_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -372,7 +369,7 @@ plot(
 
 # .mono[R] + Plotting (w/ .mono[ggplot2])
 
-&lt;img src="01-Introduction_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="test_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -394,7 +391,7 @@ theme_pander(base_size = 17, base_family = "Arial", fc = met_slate)
 
 # .mono[R] + More plotting (w/ .mono[ggplot2])
 
-&lt;img src="01-Introduction_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="test_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 

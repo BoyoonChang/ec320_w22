@@ -1,5 +1,11 @@
 
 /* Create a highlighted class called 'hi'  */
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
 .hi {
   font-weight: 600;
   color: #e64173 !important;
