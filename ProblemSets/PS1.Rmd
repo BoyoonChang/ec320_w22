@@ -1,0 +1,147 @@
+---
+title: "EC 320 Problem Set 1"
+date: "Winter 2022"
+name: "PUT YOUR NAME HERE"
+header-includes:
+   - \usepackage{enumitem}
+output: pdf_document
+---
+
+```{r include=FALSE}
+library(knitr)
+library(kableExtra)
+# Knitr options
+knitr::opts_chunk$set(
+  echo=F,
+  warning = F,
+  message = F
+)  
+```
+
+**INSTRUCTIONS:**
+
+**There are six big questions in total. Select four of which you can answer best and solve their mini problems.**
+
+# 1. Expectation (10 points)
+Suppose there are two random variables, $x$ and $y$. Answer in the simplest terms possible. 
+\begin{enumerate}[label=\alph*)]
+  \item Let $z = 2x + 3y$. Find $E(z)$.
+  \item Let $w = 3x^2+ 2y$. Find $E(w)$.
+  \item Let $x = 6y$. Find $E(z)$ and $E(w)$.
+  \item Let $\gamma = 5xy$. Find $E(\gamma)$ and $E(\gamma|x=2)$.
+\end{enumerate}
+
+\newpage 
+
+# 2. Population (10 points)
+The following is a population distribution on some variable y.
+```{r}
+library(tidyverse)
+tb=tibble(
+  y=c(1,3,5,7,9),
+  p_y=c(0.2,0.3,0.1,0.2,0.2),
+)
+knitr::kable(tb, 
+             col.names=c("$y$", "$p(y)$"),
+             format="latex",
+             booktabs=T,
+             escape=F) %>% 
+  kable_styling(position="center",
+  latex_options = "hold_position")
+```
+
+\begin{enumerate}[label=\alph*)]
+  \item Calculate $E(y)$.
+  \item Calculate $E(e^y)$.
+  \item Calculate $e^{E(y)}$.
+  \item Calculate $E(2y^{-2}+y)$.
+\end{enumerate}
+
+
+
+```{r include = FALSE}
+# Previous examples
+tb=tibble(
+  y = c(1,5,10,11,12,15),
+  xinverse=1/(y^2),
+  p_y=c(0.2,0.4,0.1,0.1,0.1,0.1),
+)
+knitr::kable(tb, 
+             col.names=c("id","y","x"),
+             format="latex",
+             booktabs=T,
+             escape=F) %>% 
+  kable_styling(position="center",
+  latex_options = "hold_position")
+```
+
+\newpage
+
+# 3. Sample (10 points)
+The following is a sample data on some variable $y$ and $x$. Answer the following questions.
+```{r}
+tb=tibble(
+  id=1:5,
+  y=c(1,3,5,7,9),
+  x=c(2,4,6,8,10)
+)
+knitr::kable(tb, 
+             col.names=c("id","$y$","$x$"),
+             format="latex",
+             booktabs=T,
+             escape=F) %>% 
+  kable_styling(position="center",
+  latex_options = "hold_position")
+```
+
+
+\begin{enumerate}[label=\alph*)]
+  \item Find the sample mean of $y$.
+  \item Find the sample variance of $y$.
+  \item Find the sample mean of $x$.
+  \item Find the sample variance of $x$.
+  \item Find the sample correlation coefficient between $x$ and $y$.
+\end{enumerate}
+
+\newpage 
+
+# 4. Estimator (10 points)
+\begin{enumerate}[label=\alph*)]
+  \item Define in your own words what estimator is.
+  \item What is an unbiased estimator of a parameter $\theta$? Use mathematical expressions.
+  \item Prove that sample mean is an unbiased estimator to estimate population mean $\mu$. 
+\end{enumerate}
+
+\newpage 
+
+# 5. Hypothesis Testing (10 points)
+\begin{enumerate}[label=\alph*)]
+  \item Describe type I error.
+  \item Describe type II error.
+\end{enumerate}
+
+
+
+# 6. Fundamental Problem of Causal Inference (10 points)
+Consider hypothetical data on the countefactual outcomes for six individuals. Answer the following.
+```{r}
+tb =tibble(
+  id=1:6,
+  treatment=rep(c(0,1), each=3),
+  y0=c(7,4,6,5,3,8),
+  y1=c(2,3,9,2,7,1)
+)
+knitr::kable(tb, 
+             col.names=c("i","treatment","$y_{0i}$", "$y_{1i}$"),
+             format="latex",
+             booktabs=T, 
+             escape = F) %>% 
+  kable_styling(position="center",
+  latex_options = "hold_position")
+```
+\begin{enumerate}[label=\alph*)]
+  \item Calculate individual treatment effects.
+  \item What is the \textbf{true} average treatment effect?
+  \item Fundamental problem of econometrics indicates that we could only observe $y_1$ for those treated and $y_0$ for those untreated. We can never observe their counterfactuals. Estimate the average treatment effects now by comparing the mean of the treated group and the mean of the control group.
+  \item Do you think the difference-in-means is unbiased? Explain your reasoning.
+\end{enumerate}
