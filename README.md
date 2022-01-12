@@ -76,12 +76,10 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 1.  ~~**Exercise 1** : Due 01/07(Fri)~~
    <br>~~[.R](https://canvas.uoregon.edu/courses/192225/assignments/1212959) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1212959)~~ 
-2. <span style="background-color:yellow">**Exercise 2**: Due 01/12(Wed) 
+2. <span style="background-color:yellow;">**Exercise 2**: Due 01/12(Wed)</span> 
    <br>[.R](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330)
-   </span>
-3.  <span style="background-color:yellow">**Problem Set 1**: Due 01/14(Fri)
+3.  <span style="background-color:yellow;">**Problem Set 1**: Due 01/14(Fri)</span>
    <br>[.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS1.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205882?module_item_id=3494355)
-   </span>
 4.  **Exercise 3**: Due 01/19(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
 5.  **Exercise 4**: Due 02/02(Wed)
