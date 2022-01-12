@@ -790,4 +790,3 @@ Many important variables have the same challenge: gender, race, income.
 --
 
 - Admissions .purple[cutoffs]
-- .purple[Lottery] enrollment and/or capacity .purple[constraints]

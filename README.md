@@ -74,9 +74,9 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 ## Due Dates
 
-1.  **Exercise 1** : Due 01/07(Fri)
-   <br>[.R](https://canvas.uoregon.edu/courses/192225/assignments/1212959) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1212959) 
-2.  **Exercise 2**: Due 01/12(Wed)
+1.  ~~**Exercise 1** : Due 01/07(Fri)~~
+   <br>~~[.R](https://canvas.uoregon.edu/courses/192225/assignments/1212959) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1212959)~~ 
+2.  ==**Exercise 2**: Due 01/12(Wed)==
    <br>[.R](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330)
 3.  **Problem Set 1**: Due 01/14(Fri)
    <br>[.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS1.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205882?module_item_id=3494355)
