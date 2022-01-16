@@ -1,5 +1,5 @@
 #' Below minion_d is given. Use `%>%` to answer the following questions.
-#' 
+#'
 library(tidyverse)
 tibble(
   name=c("Bob","Kevin","Stuart","Jerry", "Jorge"),
@@ -9,19 +9,19 @@ tibble(
 ) -> minion_d
 
 
-# 1. Filter minion whose height is below 90.
+# 1. Filter minion whose height is below 90. Hint: use `filter()`.
 
 
 
 
 
-# 2. Select height and num_eyes from minion_d
+# 2. Select height and num_eyes from minion_d. Hint: use `select()`.
 
 
 
 
-# 3. Create another column(variable) called `fav_color` which includes following information.
-# Bob likes "red", 
+# 3. Create another column(variable) called `fav_color` which includes following information. Hint: use `mutate()`.
+# Bob likes "red",
 # Kevin likes "orange"
 # Stuart likes "green"
 # Jerry likes "yellow"
@@ -30,14 +30,14 @@ tibble(
 
 
 
-# 4. Arrange `minion_d` by height in descending order
+# 4. Arrange `minion_d` by height in descending order. Hint: use `arrange(desc(name.of.the.variable))` to sort certain variable in descending order.
 
 
 
 
 
 
-# 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as the number of observations for each group.
+# 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as the number of observations for each group. Hint: use group_by() then use summarize().
 
 
 
