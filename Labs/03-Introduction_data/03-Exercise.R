@@ -20,7 +20,7 @@ tibble(
 
 
 
-# 3. Create another column(variable) called `fav_color` which includes following information. Hint: use `mutate()`.
+# 3. Create another column(variable) called `fav_color` which contains following information. Hint: use the combination of `mutate()` and `c()`.
 # Bob likes "red",
 # Kevin likes "orange"
 # Stuart likes "green"
@@ -30,7 +30,7 @@ tibble(
 
 
 
-# 4. Arrange `minion_d` by height in descending order. Hint: use `arrange(desc(name.of.the.variable))` to sort certain variable in descending order.
+# 4. Arrange `minion_d` by height in descending order. Hint: use `arrange(desc(name.of.the.variable))` to sort the dataset by certain variable in descending order.
 
 
 

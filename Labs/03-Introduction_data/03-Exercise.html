@@ -11,7 +11,7 @@
 
 <meta name="author" content="boyoonc" />
 
-<meta name="date" content="2022-01-07" />
+<meta name="date" content="2022-01-16" />
 
 <title>03-Exercise.R</title>
 
@@ -348,7 +348,7 @@ pre code {
 
 <h1 class="title toc-ignore">03-Exercise.R</h1>
 <h4 class="author">boyoonc</h4>
-<h4 class="date">2022-01-07</h4>
+<h4 class="date">2022-01-16</h4>
 
 </div>
 
@@ -358,8 +358,8 @@ pre code {
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
 <pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
 ## ✓ tibble  3.1.6     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.1.0     ✓ forcats 0.5.1</code></pre>
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
@@ -371,19 +371,19 @@ pre code {
 ) -&gt; minion_d
 
 
-# 1. Filter minion whose height is below 90.
+# 1. Filter minion whose height is below 90. Hint: use `filter()`.
 
 
 
 
 
-# 2. Select height and num_eyes from minion_d
+# 2. Select height and num_eyes from minion_d. Hint: use `select()`.
 
 
 
 
-# 3. Create another column(variable) called `fav_color` which includes following information.
-# Bob likes &quot;red&quot;, 
+# 3. Create another column(variable) called `fav_color` which contains following information. Hint: use the combination of `mutate()` and `c()`.
+# Bob likes &quot;red&quot;,
 # Kevin likes &quot;orange&quot;
 # Stuart likes &quot;green&quot;
 # Jerry likes &quot;yellow&quot;
@@ -392,14 +392,14 @@ pre code {
 
 
 
-# 4. Arrange `minion_d` by height in descending order
+# 4. Arrange `minion_d` by height in descending order. Hint: use `arrange(desc(name.of.the.variable))` to sort the dataset by certain variable in descending order.
 
 
 
 
 
 
-# 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as the number of observations for each group.</code></pre>
+# 5. Group minions by number of eyes and then calculate the min, mean, max of weight as well as the number of observations for each group. Hint: use group_by() then use summarize().</code></pre>
 <p>Submit the knitted html document on Canvas. You could click <code>File</code>&gt;<code>Knit Document</code> or simply use shortcut, <code>Ctrl</code> <code>Shift</code> <code>K</code> to knit the Rmarkdown or R scripts. You may able to see the knitted document in the same folder that this .Rmd file is located (If you’ve downloaded the file directly from Canvas, the .Rmd may be located in <code>Downloads</code> folder by default and thus you may want to look for the knitted document there).</p>
 
 
