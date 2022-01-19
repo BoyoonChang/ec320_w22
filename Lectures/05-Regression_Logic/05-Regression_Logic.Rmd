@@ -25,7 +25,8 @@ p_load(
   data.table, dagitty, ggdag,
   dplyr, gganimate,
   lubridate,
-  magrittr, knitr, parallel
+  magrittr, knitr, parallel, 
+  Ecdat, wooldridge, dslabs, ggforce
 )
 # Define colors
 red_pink <- "#e64173"
@@ -223,6 +224,7 @@ df <- data.frame(W = as.integer((1:200>100))) %>%
   group_by(W) %>%
   mutate(mean_X=mean(X),mean_Y=mean(Y)) %>%
   ungroup()
+#df %>% lm(Y~X+W, data = .)
 ```
 
 ```{r, dev = "svg", echo = F, fig.height = 5.5}
@@ -463,3 +465,453 @@ __Dealing with potential sources of OVB is one of the main objectives of econome
 <!-- Find example RCT data and run through R example w/ diff-in-means and regression -->
 
 <!-- https://www.povertyactionlab.org/evaluation/summer-jobs-reduce-violence-among-disadvantaged-youth-united-states -->
+
+---
+class: inverse, middle
+
+# Data and the .mono[tidyverse]
+
+---
+# Data
+
+## Experimental data
+
+Data generated in controlled, laboratory settings.
+
+--
+
+Ideal for __causal identification__, but difficult to obtain in the social sciences.
+
+- Intractable logistical problems
+- Too expensive
+- Morally repugnant
+
+--
+
+Experiments outside the lab: __randomized control trials__ and __A/B testing__.
+
+---
+# Data
+
+## Observational data
+
+Data generated in non-experimental settings.
+
+--
+
+- Surveys
+- Censuses
+- Administrative records
+- Environmental data
+- Financial and sales transactions
+- Social media
+
+--
+
+Mainstay of economic research, but __poses challenges__ to causal identification.
+
+---
+# Tidy Data
+
+.more-left[
+
+```{r, echo=FALSE}
+data(murders)
+murders <- select(murders, state, population, total)
+DT::datatable(
+  murders,
+  colnames = c('<span style="color: #007935 !important">State</span>', '<span style="color: #007935 !important">Population</span>', '<span style="color: #007935 !important">Murders</span>'),
+  fillContainer = FALSE, options = list(pageLength = 6, lengthChange = FALSE, pagingType = "simple"), escape = FALSE) %>%
+  DT::formatStyle('state', color = '#9370DB') %>%
+  DT::formatStyle('population', color = '#9370DB') %>%
+  DT::formatStyle('total', color = '#9370DB') %>%
+  DT::formatStyle(0, color = '#FD5F00')
+```
+
+]
+
+.less-right[
+
+.hi-orange[Rows] represent .hi-orange[observations].
+
+.hi-green[Columns] represent .hi-green[variables].
+
+Each .hi-purple[value] is associated with an .hi-orange[observation] and a .hi-green[variable].
+
+]
+
+---
+# Cross Sectional Data
+
+.hi-purple[Sample of individuals from a population at a point in time.]
+
+Ideally, collected using __random sampling__.
+
+- Random sampling .mono[+] sufficient sample size .mono[=] representative sample.
+
+- Random sampling simplifies data analysis, but non-random samples are common (and difficult to work with).
+
+Used extensively in applied microeconomics.<sup>*</sup>
+
+__Main focus of this course.__
+
+.footnote[
+<sup>*</sup> Applied microeconomics .mono[=] Labor, health, education, public finance, development, industrial organization, and urban economics.
+]
+
+---
+# Cross Sectional Data
+
+```{r, echo=FALSE}
+data(wage1)
+wage1 <- select(wage1, wage, educ, tenure, female, nonwhite) %>%
+  mutate(wage = round(wage, 2))
+DT::datatable(
+  wage1,
+  caption = c("Sample of US workers (Current Population Survey, 1976)"),
+  colnames = c('<span style="color: #007935 !important">Wage</span>', '<span style="color: #007935 !important">Education</span>', '<span style="color: #007935 !important">Tenure</span>', '<span style="color: #007935 !important">Female?</span>', '<span style="color: #007935 !important">Non-white?</span>'),
+  fillContainer = FALSE, options = list(pageLength = 6, lengthChange = FALSE, searching = FALSE), escape = FALSE) %>%
+  DT::formatStyle('wage', color = '#9370DB') %>%
+  DT::formatStyle('educ', color = '#9370DB') %>%
+  DT::formatStyle('tenure', color = '#9370DB') %>%
+  DT::formatStyle('female', color = '#9370DB') %>%
+  DT::formatStyle('nonwhite', color = '#9370DB') %>%
+  DT::formatStyle(0, color = '#FD5F00')
+```
+
+---
+# Time Series Data
+
+.hi-purple[Observations of variables over time.]
+
+- Quarterly US GDP
+- Annual US infant mortality rates
+- Daily Amazon stock prices
+
+Complication: Observations are not independent draws.
+
+- GDP this quarter highly related to GDP last quarter.
+
+Used extensively in empirical macroeconomics.
+
+Requires more-advanced methods (EC 421 and EC 422).
+
+---
+# Time Series Data
+
+```{r, echo=FALSE}
+data(StrikeNb)
+StrikeNb <- select(StrikeNb, time, strikes, output)
+DT::datatable(
+  StrikeNb,
+  caption = c("Number of US manufacturing strikes per month (Jan. 1968 to Dec. 1976)"),
+  colnames = c('<span style="color: #007935 !important">Period</span>', '<span style="color: #007935 !important">Strikes</span>', '<span style="color: #007935 !important">Output</span>'),
+  fillContainer = FALSE, options = list(pageLength = 6, lengthChange = FALSE, searching = FALSE), escape = FALSE) %>%
+  DT::formatStyle('time', color = '#9370DB') %>%
+  DT::formatStyle('strikes', color = '#9370DB') %>%
+  DT::formatStyle('output', color = '#9370DB') %>%
+  DT::formatStyle(0, color = '#FD5F00')
+```
+
+---
+# Pooled Cross Sectional Data
+
+.hi-purple[Cross sections from different points in time.]
+
+Useful for studying policy changes and relationship that change over time.
+
+Requires more-advanced methods (EC 421 and many 400-level applied micro classes).
+
+---
+# Pooled Cross Sectional Data
+
+```{r, echo=FALSE}
+data('fertil1')
+fertil1 <- select(fertil1, year, educ, age, kids, black)
+DT::datatable(
+  fertil1,
+  caption = c("Sample of US women (General Social Survey, 1972 to 1984)"),
+  colnames = c('<span style="color: #007935 !important">Year</span>', '<span style="color: #007935 !important">Education</span>', '<span style="color: #007935 !important">Age</span>', '<span style="color: #007935 !important">Children</span>', '<span style="color: #007935 !important">Black?</span>'),
+  fillContainer = FALSE, options = list(pageLength = 6, lengthChange = FALSE, searching = FALSE), escape = FALSE) %>%
+  DT::formatStyle('year', color = '#9370DB') %>%
+  DT::formatStyle('educ', color = '#9370DB') %>%
+  DT::formatStyle('age', color = '#9370DB') %>%
+  DT::formatStyle('kids', color = '#9370DB') %>%
+  DT::formatStyle('black', color = '#9370DB') %>%
+  DT::formatStyle(0, color = '#FD5F00')
+```
+
+---
+# Panel or Longitudinal Data
+
+.hi-purple[Time series for each cross-sectional unit.]
+
+- Example: daily attendance data for a sample of students.
+
+Difficult to collect, but useful for causal identification.
+
+- Can control for _unobserved_ characteristics.
+
+Requires more-advanced methods (EC 421 and many 400-level applied micro classes).
+
+---
+# Panel or Longitudinal Data
+
+```{r, echo=FALSE}
+data(Males)
+Males <- select(Males, nr, year, exper, wage, union) %>%
+  mutate(wage = round(wage, 2))
+DT::datatable(
+  Males,
+  caption = c("Panel of US workers (National Longitudinal Survey of Youth, 1980 to 1987)"),
+  colnames = c('<span style="color: #007935 !important">ID</span>', '<span style="color: #007935 !important">Year</span>', '<span style="color: #007935 !important">Experience</span>', '<span style="color: #007935 !important">log(Wage)</span>', '<span style="color: #007935 !important">Union</span>'),
+  fillContainer = FALSE, options = list(pageLength = 6, lengthChange = FALSE, searching = FALSE), escape = FALSE) %>%
+  DT::formatStyle('nr', color = '#9370DB') %>%
+  DT::formatStyle('year', color = '#9370DB') %>%
+  DT::formatStyle('exper', color = '#9370DB') %>%
+  DT::formatStyle('union', color = '#9370DB') %>%
+  DT::formatStyle('wage', color = '#9370DB') %>%
+  DT::formatStyle(0, color = '#FD5F00')
+```
+
+---
+# Tidy Data?
+
+```{r, echo=FALSE}
+workers <- read_csv("03-example_data.csv")
+DT::datatable(workers, fillContainer = FALSE, options = list(pageLength = 6, lengthChange = FALSE, searching = FALSE), escape = FALSE)
+```
+
+---
+# Messy Data
+
+**Analysis-ready datasets are rare.** Most data are "messy."
+
+The focus of this class is data analysis, but .hi[data wrangling] is a non-trivial part of a data scientist/analyst's job.
+
+.mono[R] has a suite of packages that facilitate data wrangling. 
+
+- `readr`, `tidyr`, `dplyr`, `ggplot2` .mono[+] others.
+
+- Known collectively as the `tidyverse`.
+
+---
+# .mono[tidyverse]
+
+## The [`tidyverse`](https://www.tidyverse.org): A package of packages
+
+`readr`: Functions to import data.
+
+`tidyr`: Functions to reshape messy data.
+
+`dplyr`: Functions to work with data.
+
+`ggplot2`: Functions to visualize data.
+
+---
+# Workflow
+
+## Step 1: Load packages with `pacman`
+
+```{r}
+library(pacman)
+p_load(tidyverse)
+```
+
+If the `tidyverse` hasn't already been installed, `p_load` will install it. 
+
+Loading the `tidyverse` automatically loads `readr`, `tidyr`, `dplyr`, `ggplot2`, and a few other packages.
+
+---
+# Workflow
+
+## Step 2: Import data with `readr`
+
+```{r}
+workers <- read_csv("03-example_data.csv")
+```
+
+CSV files are a common non-proprietary format for storing tabular data.
+
+The `read_csv` function imports CSV (comma-separated values) files.
+
+- Converts the CSV file to a [`tibble`](https://tibble.tidyverse.org), the `tidyverse` version of a `data.frame`.
+
+---
+# Workflow
+
+## Step 3: Reshape data with `tidyr`
+
+Variables are stored in rows instead of columns:
+
+```{r, echo=FALSE}
+workers
+```
+
+---
+# Workflow
+
+## Step 3: Reshape data with `tidyr`
+
+Make the data tidy by using the `spread` function:
+
+```{r}
+workers <- workers %>% 
+  spread(key = variable, value = value)
+```
+
+Note the use of the .hi[pipe operator].
+
+- .hi[`%>%`] .mono[=] *"and then."*
+
+- Chains multiple commands together without having to define intermediate objects.
+
+---
+# Workflow
+
+## Step 3: Reshape data with `tidyr`
+
+The result:
+
+```{r, echo=FALSE}
+workers
+```
+
+---
+# Workflow
+
+## Step 4: Manipulate data with `dplyr`
+
+Generate new variables with `mutate`:
+
+```{r}
+workers <- workers %>% 
+  mutate(union = ifelse(union == 1, "Yes", "No"))
+```
+
+Before, `union` was a binary variable equal to 1 if the worker is in a union or 0 if otherwise.
+
+Now `union` is a character variable.
+
+---
+# Workflow
+
+## Step 4: Manipulate data with `dplyr`
+
+The result:
+
+```{r, echo=FALSE}
+workers
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+```{r, fig.height = 3.5}
+workers %>% 
+  ggplot(aes(x = educ, y = earnings)) +
+  geom_point()
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+Can also use the `cor` function from `base` .mono[R]:
+
+```{r}
+cor(workers$educ, workers$earnings)
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+```{r, fig.height = 3.5}
+workers %>% 
+  ggplot(aes(x = educ, y = earnings, color = union)) +
+  geom_point()
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+```{r, fig.height = 3.5}
+workers %>% 
+  ggplot(aes(x = educ, y = earnings, color = union)) +
+  geom_point() +
+  facet_grid(~union)
+```
+
+---
+# Workflow
+
+## Step 6: Visualize and analyze data with `ggplot2`
+
+**How are education and earnings correlated?**
+
+Can .hi[subset] the data to get group-specific correlations: 
+
+```{r}
+workers_union <- workers %>% 
+  filter(union == "Yes") #<<
+cor(workers_union$educ, workers_union$earnings)
+```
+
+```{r}
+workers_nounion <- workers %>% 
+  filter(union == "No") #<<
+cor(workers_nounion$educ, workers_nounion$earnings)
+```
+
+---
+# Why Bother?
+
+**Q:** Why not just use .mono[.hi-green[MS Excel]] for data wrangling?
+
+--
+
+**A:** .hi[Reproducibility]
+
+- Easier to retrace your steps with .mono[R].
+
+--
+
+**A:** .hi[Portability]
+
+- Easy to re-purpose .mono[R] code for new projects.
+
+--
+
+**A:** .hi[Scalability]
+
+- .mono[Excel] chokes on big datasets.
+
+--
+
+**A:** .hi[.mono[R] Saves time] (eventually)
+
+- Lower marginal costs in exchange for higher fixed costs.
+
+---
+# Further Reading
+
+1. [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham (creator of the `tidyverse`)
+
+2. [Cheatsheets](https://rstudio.com/resources/cheatsheets/)
+
+
