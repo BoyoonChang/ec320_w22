@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Midterm Review</title>
+    <meta charset="utf-8" />
+    <link href="06-Midterm_Review1_files/remark-css/default.css" rel="stylesheet" />
+    <link href="06-Midterm_Review1_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="06-Midterm_Review1_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Midterm Review
+## EC 320: Introduction to Econometrics
+### Winter 2022
+
+---
+
+class: inverse, middle
+
+
+
+# Prologue
+
+---
+# Housekeeping
+
+
+Midterm 1 on Wednesday
+
+- No lab this week
+
+Problem Set 1 solution posted
+
+---
+# Grades
+
+## Exercises
+
+.hi[Kyu is the person of contact]
+
+- [kyutarom@uoregon.edu](mailto:kyutarom@uoregon.edu)
+- Zoom
+
+**Q:** Why? &lt;br&gt;
+**A:** To ensure *consistency in grading.*
+
+## Problem sets and exams
+
+.hi[I am the person of contact]
+
+- [bchang@uoregon.edu](mailto:bchang@uoregon.edu)
+- PLC 420
+
+---
+class: inverse, middle
+
+# Midterm I: High Concepts
+
+---
+# Midterm Topics
+
+.green[Anything from the lectures, labs, or problem sets] .hi-green[is fair game!]
+
+1. Probability Theory
+
+2. Statistics
+
+3. The Fundamental Problem of Econometrics
+
+4. Randomized Control Trials
+
+5. The Logic of Regression
+
+6. Tidy Data and .mono[R] (bonus points)
+
+---
+# Midterm Topics
+
+## 1. Probability Theory
+
+Random variables
+
+- Sketch out the probability distribution of a random variable.
+
+Expected values
+
+Population variance
+
+---
+# Midterm Topics
+
+## 2. Statistics
+
+Estimators
+
+- Population *v.s.* sample distinction.
+- Sample mean, sample variance, sample covariance, sample correlation coefficient.
+- Unbiasedness and efficiency.
+
+Hypothesis testing
+
+- Statistical significance.
+- `\(t\)`-statistics.
+- Two-sided `\(t\)` tests using rule of thumb discussed in class (*i.e.,* compare `\(t\)` to `\(t_{\text{crit}} = 2\)`).
+
+---
+# Midterm Topics
+
+## 3. The Fundamental Problem of Econometrics
+
+Causal mechanisms *v.s.* confounding factors
+
+Ideal data on potential outcomes
+
+- Individual *v.s.* average treatment effects.
+- Difference-in-means based on observable data.
+
+Selection bias
+
+---
+# Midterm Topics
+
+## 4. Randomized Control Trials
+
+How do RCTs eliminate selection bias?
+
+- Can an RCT fail to eliminate selection bias? How?
+
+--
+
+Research questions
+
+- Identify outcome variable and treatment variable.
+
+Estimation using experimental data
+
+- Difference-in-means.
+- Linear regression.
+
+---
+# Midterm Topics
+
+## 5. The Logic of Regression
+
+Regression models
+
+- Identify outcome variable, treatment variable, and control variables.
+
+Estimation using OLS
+
+- How does OLS adjust treatment effect estimates for confounding factors?
+
+---
+# Midterm Topics
+
+## 5. The Logic of Regression (cont.)
+
+Omitted variables
+
+- When does omitting a variable cause omitted-variable bias?
+- Illustrate assumptions with causal diagrams.
+
+Regression tables
+
+- Write down model.
+- Calculate omitted-variable bias.
+
+---
+# Midterm Topics
+
+## 6. Tidy Data and .mono[R]
+
+For earning bonus points! [will be either multiple choice question or true/false question]
+
+Identify .mono[R] functions
+
+- What does the function do?
+- I will only ask you about functions you've seen in lab.
+- .hi[I will not ask you to write code.]
+
+Which one of the following code produce below output?
+
+- Example: Console output of .mono[filter()] or .mono[select()].
+
+---
+# Midterm Structure
+
+## Multiple Choice
+
+- 5 questions
+- 6 points per question (30 points total)
+
+## True or False
+
+- 5 questions
+- 6 points per question (30 points total)
+- Brief explanations required for full credit
+
+## Free Response
+
+- 5 multi-part questions with varying numbers of points (50 points total)
+- Explanations required for full credit
+
+---
+# Midterm Protocol
+
+## Materials
+
+- Writing utensil
+- 3-inch-by-5-inch note card
+- Basic or scientific calculator (no graphing or programming capabilities)
+- .hi[Nothing else]
+
+## Procedure
+
+- 80 minutes from *"you may begin"* to *"pencils down"*
+- First 30 minutes: .hi[quiet period] (no questions, no getting up)
+- Last 50 minutes: ask lots of questions
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
