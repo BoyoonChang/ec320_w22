@@ -23,9 +23,9 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 4. **The Fundamental Problem of Econometrics** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/04-Fundamental_Econometric_Problem/04-Fundamental_Econometric_Problem.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/04-Fundamental_Econometric_Problem/04-Fundamental_Econometric_Problem.pdf)
 
-5. ✅**Regression Logic** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.pdf)
+5. **Regression Logic** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/05-Regression_Logic/05-Regression_Logic.pdf)
 
-6. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review.pdf)
+6. ✅**Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review1.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review1.pdf)
 
 7. **Simple Linear Regression: Estimation I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
@@ -56,7 +56,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 2. **Introduction to `function`** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/02-Introduction_function/02-Introduction_function.html) | [Exercise 2](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330)
 
-3. ✅**Data structure, preparation, and variable types** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/03-Introduction_data/03-Introduction_data.html) | [Exercise 3](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
+3. **Data structure, preparation, and variable types** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/03-Introduction_data/03-Introduction_data.html) | [Exercise 3](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
 
 4. **Data manipulation, visualization, and regression**
 <br> [.html]() | [Exercise 4]()
