@@ -80,7 +80,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br>[.R](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330)
 3. ~~**Problem Set 1**: Due 01/14(Fri)~~
    <br>[.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS1.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205882?module_item_id=3494355)
-4. **Exercise 3**: Due 01/19(Wed)
+4. ~~**Exercise 3**: Due 01/19(Wed)~~
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
 5.  ✅**Exercise 4**: Due 02/02(Wed)
    <br> [.R]() | [submit it here]()
