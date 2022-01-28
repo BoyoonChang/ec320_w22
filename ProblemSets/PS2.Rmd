@@ -2,9 +2,9 @@
 title: "EC 320 Problem Set 2"
 date: "Winter 2022"
 name: "PUT YOUR NAME HERE"
-output: 
-  pdf_document: default
-  html_document: default
+header-includes:
+   - \usepackage{enumitem}
+output: pdf_document
 ---
 
 ```{r include=FALSE}
@@ -35,30 +35,40 @@ knitr::opts_chunk$set(
 
 # 1. Regression Logic (8 points)
 \begin{enumerate}[label=\alph*)]
-  \item 
-  \item 
-  \item 
-  \item 
+  \item TEXT.
+  \item TEXT.
+  \item TEXT.
+  \item TEXT.
 \end{enumerate}
+
+\newpage
 
 # 2. Calculating OLS estimates (12 points)
 \begin{enumerate}[label=\alph*)]
-  \item 
-  \item 
-  \item 
-  \item 
+  \item TEXT.
+  \item TEXT.
+  \item TEXT.
+  \item TEXT.
 \end{enumerate}
 
+\newpage
 
-# 3. Proof (10 points)
+# 3. Proof (8 points)
 \begin{enumerate}[label=\alph*)]
   \item Residuals sum to zero
   \item The sample covariance between the independent variable and the residuals is zero.
 \end{enumerate}
 
-# 4. Goodness of Fit (10 points)
+\newpage
+
+# 4. Goodness of Fit (12 points)
 \begin{enumerate}[label=\alph*)]
   \item Calculate the Total Sum of Squares
   \item Calculate the Residual Sum of Squares
   \item Calculate $R^2$
+  \item Show that TSS=RSS+ESS.
 \end{enumerate}
+
+
+
+
