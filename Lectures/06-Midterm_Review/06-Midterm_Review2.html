@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Midterm Review</title>
+    <meta charset="utf-8" />
+    <link href="06-Midterm_Review2_files/remark-css/default.css" rel="stylesheet" />
+    <link href="06-Midterm_Review2_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="06-Midterm_Review2_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="06-Midterm_Review2_files/kePrint/kePrint.js"></script>
+    <link href="06-Midterm_Review2_files/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Midterm Review
+## EC 320: Introduction to Econometrics
+### Winter 2022
+
+---
+
+class: inverse, middle
+
+
+
+
+class: inverse, middle
+
+# Practice
+
+---
+# Regression Table
+
+## Example: 2016 election
+
+**Q:** Write down the regression model estimated in column 1.
+
+&lt;table&gt;
+&lt;caption&gt;Outcome: Trump Margin (%)&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Explanatory variable &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 2 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 3 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; -40.7 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -65.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (1.95) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (1.49) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (2.99) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; White (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 0.91 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 1.05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.024) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.027) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Poverty (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -0.647 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 0.883 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.087) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.081) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+**A:** `\(\text{Trump}_i = \beta_0 + \beta_1 \text{White}_i + u_i\)`.
+
+---
+# Regression Table
+
+## Example: 2016 election
+
+**Q:** Write down the regression model estimated in column 2.
+
+&lt;table&gt;
+&lt;caption&gt;Outcome: Trump Margin (%)&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Explanatory variable &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 2 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 3 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -40.7 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -65.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (1.95) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (1.49) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (2.99) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; White (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 0.91 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 1.05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.024) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.027) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Poverty (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; -0.647 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 0.883 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.087) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.081) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+**A:** `\(\text{Trump}_i = \beta_0 + \beta_1 \text{Poverty}_i + u_i\)`.
+
+---
+# Regression Table
+
+## Example: 2016 election
+
+**Q:** Write down the regression model estimated in column 3.
+
+&lt;table&gt;
+&lt;caption&gt;Outcome: Trump Margin (%)&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Explanatory variable &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 2 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 3 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -40.7 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; -65.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (1.95) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (1.49) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (2.99) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; White (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 0.91 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 1.05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.024) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.027) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Poverty (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -0.647 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 0.883 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.087) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.081) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+**A:** `\(\text{Trump}_i = \beta_0 + \beta_1 \text{White}_i + \beta_2\text{Poverty}_i + u_i\)`.
+
+
+
+---
+# Regression Table
+
+## Example: 2016 election
+
+**Q:** Does omitting `\(\text{White}_i\)` bias the estimator of the `\(\text{Poverty}_i\)` coefficient? 
+
+&lt;table&gt;
+&lt;caption&gt;Outcome: Trump Margin (%)&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Explanatory variable &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 2 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 3 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; -40.7 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; -65.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (1.95) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (1.49) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (2.99) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; White (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt; 0.91 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 1.05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt; (0.024) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.027) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;line-height: 110%;font-style: italic;color: black !important;"&gt; Poverty (%) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; -0.647 &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;line-height: 110%;font-weight: bold;"&gt; 0.883 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-style: italic;color: black !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.087) &lt;/td&gt;
+   &lt;td style="text-align:center;color: #23373b !important;color: #c2bebe !important;line-height: 110%;font-weight: bold;"&gt; (0.081) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+**A:** *"Omitting* `\(\text{White}_i\)` *appears to cause negative omitted-variable bias. The size of the bias is* `\(\beta_{\text{Poverty}}^{\text{Short}} - \beta_{\text{Poverty}}^{\text{Long}} = -0.647 - 0.883 = -1.53\)`*."*
+
+---
+# Omitted Variables
+
+**Goal:** Isolate the effect of .hi[X] on .hi[Y]. &lt;br&gt; **Q:** Which variables, if omitted, would cause omitted-variable bias?
+
+&lt;img src="06-Midterm_Review2_files/figure-html/unnamed-chunk-5-1.svg" style="display: block; margin: auto;" /&gt;
+
+--
+
+**A:** .pink[a] and .pink[d].
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

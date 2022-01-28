@@ -242,7 +242,7 @@ Which one of the following code produce below output?
 
 - 5 questions
 - 6 points per question (30 points total)
-- Brief explanations required for full credit
+- ~~Brief explanations required for full credit~~
 
 ## Free Response
 
