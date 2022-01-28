@@ -58,7 +58,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 3. **Data structure, preparation, and variable types** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/03-Introduction_data/03-Introduction_data.html) | [Exercise 3](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
 
-4. **Data manipulation, visualization, and regression**
+4. ✅**Data manipulation, visualization, and regression**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/04-Introduction_lm/03-Introduction_lm.html) | [Exercise 4]()
 
 5. **Recap Lab 1 - Lab 4**
@@ -80,9 +80,9 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br>[.R](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205874?module_item_id=3459330)
 3. ~~**Problem Set 1**: Due 01/14(Fri)~~
    <br>[.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS1.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205882?module_item_id=3494355)
-4. ✅**Exercise 3**: Due 01/19(Wed)
+4. **Exercise 3**: Due 01/19(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
-5.  **Exercise 4**: Due 02/02(Wed)
+5.  ✅**Exercise 4**: Due 02/02(Wed)
    <br> [.R]() | [submit it here]()
 6.  **Problem Set 2**: Due ~~02/04(Fri)~~ 02/07(Mon)
    <br> [.R]() | [submit it here]()
