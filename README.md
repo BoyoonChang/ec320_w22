@@ -29,7 +29,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 7. ✅**Simple Linear Regression: Estimation I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.pdf)
 
-8. **Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+8. **Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.pdf)
 
 9. **Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
