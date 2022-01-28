@@ -219,14 +219,14 @@ Residuals sum to zero: $\sum_{i=1}^n \hat{u}_i = 0$.
 
 - By extension, the sample mean of the residuals are zero.
 
-- You will prove this in Problem Set 3.
+- You will prove this in Problem Set 2.
 
 ---
 # OLS Residuals
 
 The sample covariance between the independent variable and the residuals is zero: $\sum_{i=1}^n X_i \hat{u}_i = 0$.
 
-- You will prove a version of this in Problem Set 3.
+- You will prove a version of this in Problem Set 2.
 
 ---
 # OLS Regression Line

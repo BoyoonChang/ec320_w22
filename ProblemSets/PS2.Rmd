@@ -1,0 +1,64 @@
+---
+title: "EC 320 Problem Set 2"
+date: "Winter 2022"
+name: "PUT YOUR NAME HERE"
+output: 
+  pdf_document: default
+  html_document: default
+---
+
+```{r include=FALSE}
+library(pacman)
+p_load(kableExtra, knitr)
+# Knitr options
+knitr::opts_chunk$set(
+  echo=F,
+  warning = F,
+  message = F
+)  
+```
+```{r include=FALSE}
+library(knitr)
+library(kableExtra)
+# Knitr options
+knitr::opts_chunk$set(
+  echo=F,
+  warning = F,
+  message = F
+)  
+```
+
+**INSTRUCTIONS:**
+
+**There are four questions in total. Please answer them all and show the steps of how you derived your answer to receive the full credit**
+
+
+# 1. Regression Logic (8 points)
+\begin{enumerate}[label=\alph*)]
+  \item 
+  \item 
+  \item 
+  \item 
+\end{enumerate}
+
+# 2. Calculating OLS estimates (12 points)
+\begin{enumerate}[label=\alph*)]
+  \item 
+  \item 
+  \item 
+  \item 
+\end{enumerate}
+
+
+# 3. Proof (10 points)
+\begin{enumerate}[label=\alph*)]
+  \item Residuals sum to zero
+  \item The sample covariance between the independent variable and the residuals is zero.
+\end{enumerate}
+
+# 4. Goodness of Fit (10 points)
+\begin{enumerate}[label=\alph*)]
+  \item Calculate the Total Sum of Squares
+  \item Calculate the Residual Sum of Squares
+  \item Calculate $R^2$
+\end{enumerate}
