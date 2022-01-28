@@ -262,5 +262,19 @@ In case you were wondering, the deaths of despair explanation for the opioid cri
 ## Linear Regression
 
 ```{r}
-
+library(broom)
+lm(death_rate ~ poverty_rate, data=state_data_2017) %>% tidy()
+lm(death_rate ~ unemployment_rate, data=state_data_2017) %>% tidy()
+state_data_2017 %>% 
+  ggplot(aes(x = poverty_rate, y = death_rate)) +
+  geom_point() +
+  labs(title = "Deaths of despair?", x = "Poverty Rate (%)", y = "Drug Overdose Death Rate (per 100,000)", caption = "Note: 2017 data only.") +
+  theme_bw() +
+  geom_smooth(method="lm")
+state_data_2017 %>% 
+  ggplot(aes(x = unemployment_rate, y = death_rate)) +
+  geom_point() +
+  labs(title = "Deaths of despair?", x = "Unemployment Rate (%)", y = "Drug Overdose Death Rate (per 100,000)", caption = "Note: 2017 data only.") +
+  theme_bw() + 
+  geom_smooth(method="lm")
 ```
