@@ -20,9 +20,9 @@ knitr::opts_chunk$set(echo = T, warning = F, message = F, cache = F)
 ```
 
 
-## The `tidyverse`
+## Simple data analysis and visualization
 
-The `tidyverse` is a powerful collection of packages that facilitate data wrangling and visualization. Today you will use various `tidyverse` functions to describe drug overdoses in the US between 1999 and 2017.
+Now we know some useful functions in `tidyverse` package, how to generate a data (tibble), we are all set for some simple analysis using observational data. Today you will use various `tidyverse` functions to describe drug overdoses in the US between 1999 and 2017.
 
 ### Load the `tidyverse`
 
@@ -35,7 +35,7 @@ p_load(tidyverse)
 
 ## Data
 
-The data file is `02-Introduction_tidyverse_data.csv`. You can find it on Canvas under `Files` then `Labs`. Download the file and save it somewhere on your computer.[^file] 
+The data file is `04-Introduction_tidyverse_data.csv`. You can find it on Canvas under `Files` then `Labs`. Download the file and save it somewhere on your computer.[^file] 
 
 [^file]: **Unsolicited life advice:** You should make an `EC_320` folder where you can store your work in one place. Also, you should pick file and folder names without spaces. Why? R often chokes on spaces in file names when loading data. In place of spaces, you can use underscores (`_`) or dashes (`-`).
 
@@ -46,7 +46,7 @@ The data include drug overdose deaths from the [CDC](https://www.cdc.gov/drugove
 Import the data using `read_csv`:
 
 ```{r}
-state_data <- read_csv("03-Introduction_tidyverse_data.csv")
+state_data <- read_csv("04-Introduction_tidyverse_data.csv")
 ```
 
 You can preview the structure of the data with `glimpse`:
@@ -66,7 +66,7 @@ state_data <- state_data %>%
 
 ## Pipe operator 
 
-What's up with `%>%`? 
+Review of the `%>%` operator 
 
 - Called the "pipe operator."
 - Allows you to chain commands without having to make new objects.
@@ -128,25 +128,68 @@ Putting `state_data$` before the variable name lets R know where to look for the
 
 ## Plotting
 
+### How to make plots
+We are going to use `ggplot()` function, aka **grammar of graphics** included in `ggplot2` package. At this point you don't need to load `ggplot2` package explicitly as it's already loaded when you've loaded `tidyverse` package.  
+
+```{r}
+?ggplot
+# ggplot(data = NULL, mapping = aes(), ..., environment = parent.frame())
+# data argument: Default dataset to use for plot
+# mapping argument: Default list of aesthetic mappings to use for plot
+```
+
+```{r}
+ggplot(data = state_data)
+# If you want to specify the x axis and y axis, you could do so by
+ggplot(data = state_data, mapping=aes(x = year, y = death_rate))
+# Nothing appears! You want to add the geoms -- visual marks that present data points
+# Here's one with representing data with points
+# Note that you want to layer up the plot by using `+` not `%>%`. 
+ggplot(data = state_data, mapping=aes(x = year, y = death_rate)) + 
+  geom_point()
+# Here's one with representing data with line
+ggplot(data = state_data, mapping=aes(x = year, y = death_rate)) + 
+  geom_line()
+# You could layer up multiple geoms in one plot by connecting them with `+`.
+# Following code layered the `geom_point` and `geom_line` on the plot.
+ggplot(data = state_data, mapping=aes(x = year, y = death_rate)) + 
+  geom_point() + geom_line()
+# What if you want to label x-axis and y-axis and also add title to the plot?
+# You add another layer of `labs` which is short for `labels`
+ggplot(data = state_data, mapping=aes(x = year, y = death_rate)) + 
+  geom_point() + geom_line() + 
+  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)") 
+# We can use pipe operator here by pulling out the first argument of ggplot function,
+# place it in front of `ggplot()`, then connect it with `%>%`.
+state_data %>% ggplot(data = ., mapping=aes(x = year, y = death_rate)) + 
+  geom_point() + geom_line() + 
+  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)") 
+# If you want to color differently by region, specify color argument inside `aes()`.
+# Then add the grouping variable
+state_data %>% ggplot(data = ., mapping=aes(x = year, y = death_rate, color=region)) + 
+  geom_point() + geom_line() + 
+  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)") 
+# Something didn't quite work though. 
+# It looks like `ggplot` connected all the dots 
+# when you wanted it to connect the dots by state. 
+# You can fix this with the `color` argument in `aes`.
+# What if we group the data by states instead of region?
+state_data %>% ggplot(data = ., mapping=aes(x = year, y = death_rate, color=stname)) + 
+  geom_point() + geom_line() + 
+  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)") 
+# We can easily create different plots for each region using `facet_wrap()`. 
+# The tilde '~' can be read as "by". 
+# This means that we facet *by* region. 
+# Notice that we changed `color=stname` to `group=stname`.
+# This just groups the data by `stname` but does not color differently by each state.
+state_data %>% ggplot(data = ., mapping=aes(x = year, y = death_rate, group=stname)) + 
+  geom_point() + geom_line() + 
+  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)") +
+  facet_wrap(~region)
+```
+
+
 ### Overdose deaths over time
-
-How have overdose death rates changes over time in each state?
-
-You can make a time series plot using `ggplot` with `geom_line`:
-
-```{r}
-state_data %>% 
-  ggplot(aes(x = year, y = death_rate)) +
-  geom_line()
-```
-
-Okay. Something didn't quite work. It looks like `ggplot` connected all the dots when you wanted it to connect the dots by state. You can fix this with the `group` argument in `aes`:
-
-```{r}
-state_data %>% 
-  ggplot(aes(x = year, y = death_rate, group = stname)) +
-  geom_line()
-```
 
 While the plot looks like spaghetti, you can see that drug overdose death rates increase over time. There is an especially pronounced increase in a handful of states starting around 2010. What do you think is driving these increases?
 
@@ -155,21 +198,13 @@ To get a better sense of where these changes are happening, you can facet your p
 ```{r}
 state_data %>% 
   ggplot(aes(x = year, y = death_rate, group = stname)) +
+  geom_point()+
   geom_line() +
-  facet_wrap(~division)
+  facet_wrap(~division)+
+  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)")
 ```
 
 `division` refers to [census divisions](https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf).
-
-To change the axis labels and add a title, add `labs()` to your `ggplot`:
-
-```{r}
-state_data %>% 
-  ggplot(aes(x = year, y = death_rate, group = stname)) +
-  geom_line() +
-  facet_wrap(~division) + 
-  labs(title = "Can you spot the opioid crisis?", x = "Year", y = "Drug Overdose Death Rate (per 100,000)")
-```
 
 You can change the appearance of your plot by specifying a [theme](https://ggplot2.tidyverse.org/reference/ggtheme.html):
 
@@ -182,7 +217,7 @@ state_data %>%
   theme_bw()
 ```
 
-What about national trends? To examine national overdose death rates over time, you can aggregate he state data using `group_by` and `summarize`:
+What about national trends? To examine national overdose death rates over time, you can aggregate the state data using `group_by` and `summarize`. Now notice that since we are aggregating up the **death rate**, we are taking the weighted average where the weight here corresponds to population of each state to calculate the national death rate:
 
 ```{r}
 state_data %>% 
@@ -261,20 +296,53 @@ In case you were wondering, the deaths of despair explanation for the opioid cri
 
 ## Linear Regression
 
+### Introduction of `lm()`
+
+Now let's look at how to create a fitted linear line that minimizes the sum of residuals on plots.
+
 ```{r}
-library(broom)
-lm(death_rate ~ poverty_rate, data=state_data_2017) %>% tidy()
-lm(death_rate ~ unemployment_rate, data=state_data_2017) %>% tidy()
+# Add another layer `geom_smooth(method="lm", se=FALSE)`
 state_data_2017 %>% 
   ggplot(aes(x = poverty_rate, y = death_rate)) +
   geom_point() +
   labs(title = "Deaths of despair?", x = "Poverty Rate (%)", y = "Drug Overdose Death Rate (per 100,000)", caption = "Note: 2017 data only.") +
   theme_bw() +
-  geom_smooth(method="lm")
-state_data_2017 %>% 
-  ggplot(aes(x = unemployment_rate, y = death_rate)) +
-  geom_point() +
-  labs(title = "Deaths of despair?", x = "Unemployment Rate (%)", y = "Drug Overdose Death Rate (per 100,000)", caption = "Note: 2017 data only.") +
-  theme_bw() + 
-  geom_smooth(method="lm")
+  geom_smooth(method="lm", se=FALSE)
 ```
+Now using the formula covered in class, we will regenerate the intercept and slope coefficient estimates from OLS regression. 
+
+__Slope coefficient__
+
+$$\hat{\beta}_2 = \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}$$
+
+__Intercept__
+
+$$ \hat{\beta}_1 = \bar{Y} - \hat{\beta}_2 \bar{X} $$
+
+```{r}
+# You can use `lm()` to perform ordinary least squares regression analysis. 
+?lm()
+# "A typical model has the form response ~ terms 
+# where response is the (numeric) response vector 
+# and terms is a series of terms which specifies a linear predictor for response."
+# In other words, the dependent variable comes first.
+# Then we use `~` to separate it with independent variables.
+# If we were to run a regression when the outcome variable is death_rate
+# and the independent variable is poverty_rate, then it looks as follows:
+lm(death_rate ~ poverty_rate, data=state_data_2017) %>% summary()
+# Intercept estimate is reported to be 20.0379 using lm function
+# Slope estimate is reported to be 0.1979 using lm function
+# Let's assign the dependent variable, death_rate as an object called y
+y=state_data_2017$death_rate
+# Let's assign the treatment variable, poverty_rate as an object called x
+x=state_data_2017$poverty_rate
+# slope estimate
+beta1_hat= sum((y-mean(y))*(x-mean(x)))/sum((x-mean(x))^2)
+beta1_hat
+# intercept estimate
+mean(y)-beta1_hat*mean(x) 
+```
+
+## Now your turn
+
+Please open up the `04-Exercise.R` and fill out your answer for each question.
