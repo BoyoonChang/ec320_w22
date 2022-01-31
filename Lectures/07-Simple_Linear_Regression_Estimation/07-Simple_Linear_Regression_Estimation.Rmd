@@ -519,7 +519,7 @@ class: inverse, middle
 
 The __OLS estimator__ chooses the parameters $\hat{\beta_0}$ and $\hat{\beta_1}$ that minimize the .hi[residual sum of squares (RSS)]:
 
-$$\min_{\hat{\beta}_1,\, \hat{\beta}_2} \quad \color{#e64173}{\sum_{i=1}^n \hat{u}_i^2}$$
+$$\min_{\hat{\beta}_0,\, \hat{\beta}_1} \quad \color{#e64173}{\sum_{i=1}^n \hat{u}_i^2}$$
 
 This is why we call the estimator ordinary __least squares.__
 
@@ -620,7 +620,7 @@ data %>%
 Using OLS gives us the fitted line
 
 $$
- \hat{\text{Crime}_i} = \hat{\beta}_1 + \hat{\beta}_2\text{Police}_i.
+ \hat{\text{Crime}_i} = \hat{\beta}_0 + \hat{\beta}_1\text{Police}_i.
 $$
 
 What does $\hat{\beta_0}$ .mono[=] `r round(lm0$coefficients[1], 2)` tell us?
