@@ -545,7 +545,7 @@ This is why we call the estimator ordinary __least squares.__
 ---
 # OLS Formulas
 
-For details, see the [handout](https://raw.githack.com/kyleraze/EC320_Econometrics/master/Lectures/07-Simple_Linear_Regression_Estimation/07-SLR_Estimation_handout.pdf) posted on Canvas.
+For details, see the [handout](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/OLS_derivation.pdf) posted on Canvas.
 
 __Slope coefficient__
 

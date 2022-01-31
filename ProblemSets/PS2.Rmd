@@ -30,49 +30,99 @@ knitr::opts_chunk$set(
 
 **INSTRUCTIONS:**
 
-**There are four questions in total. Please answer them all and show the steps of how you derived your answer to receive the full credit**
+**There are three questions in total. Please answer them all and show the steps of how you derived your answer to receive the full credit**
 
 
-# 1. Regression Logic (8 points)
-\begin{enumerate}[label=\alph*)]
-  \item TEXT.
-  \item TEXT.
-  \item TEXT.
-  \item TEXT.
-\end{enumerate}
+# 1. Simple hypothesis testing with a real example (12 points)
 
-\newpage
+Suppose that $Y$ is normally distributed with mean $\mu$ and standard deviation of $\sigma$. We set the null hypothesis such that the population mean of $Y$, denoted by $\mu$, equals 0. 
 
-# 2. Calculating OLS estimates (12 points)
-```{r include=FALSE}
-Y=c(2,5,7,10)
-X=c(200,300,500,600)
+In this section, we will manually compute sample mean, denoted by $\hat{\mu}$, compute the standard error of $\hat{\mu}$, and calculate the $t$-statistic to conduct a hypothesis test at the 5$\%$ significance level. We then will compare our computations with the regression result, where it only take the intercept as an explanatory variable. 
+
+```{r}
+library(gapminder)
+library(tidyverse)
+library(broom)
+library(huxtable)
+Y = c(1,5,10,12)
+
+knitr::kable(Y, 
+             col.names=c("$Y$"),
+             format="latex",
+             booktabs=T,
+             escape=F) %>% 
+  kable_styling(position="center",
+  latex_options = "hold_position")
 ```
 
 
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=(\alph*)]
+  \item Calculate the sample mean and call it $\hat{\mu}$.
+  \item Calculate the standard error of $\hat{\mu}$.
+  \item If the null hypothesis is true, what is the $t$-statistic for this test?
+  \item Which of the following is the correct critical value of the $t$-distribution to use for the test, where $t_{1-\alpha}(df)$ is the t-value below which $1-\alpha$ of the data lies with the degrees of freedom $df$?
+  \begin{enumerate}[label=\arabic*)]
+    \item $t_{0.975}(4)$
+    \item $t_{0.975}(3)$
+    \item $t_{0.95}(4)$
+    \item $t_{0.95}(3)$
+  \end{enumerate}
+  \item Based on your previous answers, what's your conclusion, do you reject the null or fail to reject the null? Explain your reasoning. 
+  
+\newpage
+
+  \item Compare your answers in (a) and (b) with the following regression estimates, where it only takes intercept as an explanatory variable (i.e., the regression model looks as $Y_i =\beta_0 + u_i $). The number in parenthesis corresponds to standard error of the estimate.
+\end{enumerate}
+```{r}
+reg1<- lm(Y~1) 
+huxreg(reg1, statistics = c("Number of observation"="nobs")) 
+```
+
+
+\newpage
+
+# 2. Calculating OLS estimates (30 points)
+```{r include=FALSE}
+Y=c(5,10,35,30)
+X=c(30,40,50,80)
+tb =rbind(X,Y)
+row.names(tb) <- c("$X$", "$Y$")
+```
+```{r echo=FALSE}
+knitr::kable(tb,
+             row.names=TRUE,
+             format="latex",
+             booktabs=F,
+             escape = F,
+             vline = "",
+             align = "|clllll") %>%
+  kable_styling(position="center")
+```
+
+
+Suppose you estimate a regression of the following population model, 
+$$
+Y_i = \beta_0 + \beta_1 X_i + u_i.
+$$
+\begin{enumerate}[label=(\alph*)]
   \item Find the sample means of $X$ and $Y$. 
   \item Find $\sum_{i=1}^n(X_i-\bar{X})(Y_i-\bar{Y})$ and $\sum_{i=1}^{n}(X_i-\bar{X})^2$.
-  \item Use your answer from (b) to find $\hat{\beta}_0$ and $\hat{\beta}_1$.
-  \item 
+  \item Use your answer from (b) to calculate $\hat{\beta}_1$. Show your steps.
+  \item Use your answer from (c) to calculate $\hat{\beta}_0$. Show your steps.
+  \item Explain in your own words what $\hat{\beta_1}$ means in terms of units of $X$ and $Y$. 
+  \item Use your calculations about $\hat{\beta}_0$ and $\hat{\beta_1}$ to find the fitted $Y$, $\hat{Y_i}$.
+  \item Calculate the residuals, $\hat{u_i}$.
+  \item Calculate the Total Sum of Squares (TSS).
+  \item Calculate the Residual Sum of Squares (RSS).
+  \item Calculate $R^2$. What does it tell us about the relationship between $X$ and $Y$?
 \end{enumerate}
-
 \newpage
+
 
 # 3. Proof (8 points)
-\begin{enumerate}[label=\alph*)]
-  \item Residuals sum to zero
-  \item The sample covariance between the independent variable and the residuals is zero.
-\end{enumerate}
-
-\newpage
-
-# 4. Goodness of Fit (12 points)
-\begin{enumerate}[label=\alph*)]
-  \item Calculate the Total Sum of Squares
-  \item Calculate the Residual Sum of Squares
-  \item Calculate $R^2$
-  \item Show that TSS=RSS+ESS.
+\begin{enumerate}[label=(\alph*)]
+  \item Prove that residuals sum to zero, i.e., $\sum_{i=1}^{n}\hat{u_i} = 0$.
+  \item Prove that the sample covariance between the independent variable and the residuals is zero, \newline i.e., $\sum_{i=1}^n X_i\hat{u_i}$.
 \end{enumerate}
 
 
