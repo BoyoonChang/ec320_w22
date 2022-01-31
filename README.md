@@ -59,7 +59,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 3. **Data structure, preparation, and variable types** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/03-Introduction_data/03-Introduction_data.html) | [Exercise 3](https://canvas.uoregon.edu/courses/192225/assignments/1205876?module_item_id=3459328)
 
 4. ✅**Data manipulation, visualization, and regression**
-<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/04-Introduction_lm/04-Introduction_lm.html) | [Exercise 4]()
+<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/04-Introduction_lm/04-Introduction_lm.html) | [Exercise 4](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329)
 
 5. **Recap Lab 1 - Lab 4**
 <br> [.html]() | [Exercise 5]()
