@@ -71,7 +71,7 @@ knitr::kable(Y,
   
 \newpage
 
-  \item Compare your answers in (a) and (b) with the following regression estimates, where it only takes intercept as an explanatory variable (i.e., the regression model looks as $Y_i =\beta_0 + u_i $). The number in parenthesis corresponds to standard error of the estimate.
+  \item Compare your answers in (a) and (b) with the following regression estimates from intercept-only model, a linear regression model with only an intercept (i.e., the regression model looks as $Y_i =\beta_0 + u_i $). The number in parenthesis corresponds to standard error of the estimate.
 \end{enumerate}
 ```{r}
 reg1<- lm(Y~1) 
