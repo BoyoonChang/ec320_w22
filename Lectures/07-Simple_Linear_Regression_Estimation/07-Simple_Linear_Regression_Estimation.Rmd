@@ -65,7 +65,7 @@ class: inverse, middle
 ---
 # Housekeeping
 
-**Grading:** Expect Midterm 1 grades before Problem Set 2 grades.
+**Grading:** Midterm 1 grade out.
 
 **Problem Set 2:** Due Monday, Feb 7th by 11:59pm *on Canvas*.
 
@@ -220,12 +220,12 @@ To keep it simple, we will relate an __explained variable__ $Y$ to an __explanat
 We express the relationship between a .hi-purple[explained variable] and an .hi-green[explanatory variable] as linear:
 
 $$
- \color{#9370DB}{Y_i} = \beta_1 + \beta_2\color{#007935}{X_i} + u_i.
+ \color{#9370DB}{Y_i} = \beta_0 + \beta_1\color{#007935}{X_i} + u_i.
 $$
 
-- $\beta_1$ is the __intercept__ or constant.
+- $\beta_0$ is the __intercept__ or constant.
 
-- $\beta_2$ is the __slope coefficient__.
+- $\beta_1$ is the __slope coefficient__.
 
 - $u_i$ is an __error term__ or disturbance term.
 
@@ -239,7 +239,7 @@ _Simple_ .mono[=] Only one explanatory variable.
 The .hi[intercept] tells us the expected value of $Y_i$ when $X_i = 0$. 
 
 $$
- Y_i = \color{#e64173}{\beta_1} + \beta_2X_i + u_i
+ Y_i = \color{#e64173}{\beta_0} + \beta_1X_i + u_i
 $$
 
 Usually not the focus of an analysis.
@@ -250,14 +250,14 @@ Usually not the focus of an analysis.
 The .hi[slope coefficient] tells us the expected change in $Y_i$ when $X_i$ increases by one. 
 
 $$
- Y_i = \beta_1 + \color{#e64173}{\beta_2}X_i + u_i
+ Y_i = \beta_0 + \color{#e64173}{\beta_1}X_i + u_i
 $$
 
-"A one-unit increase in $X_i$ is associated with a $\color{#e64173}{\beta_2}$-unit increase in $Y_i$."
+"A one-unit increase in $X_i$ is associated with a $\color{#e64173}{\beta_1}$-unit increase in $Y_i$."
 
 --
 
-Under certain (strong) assumptions about the error term, $\color{#e64173}{\beta_2}$ is the _effect of_ $X_i$ _on_ $Y_i$.
+Under certain (strong) assumptions about the error term, $\color{#e64173}{\beta_1}$ is the _effect of_ $X_i$ _on_ $Y_i$.
 
 - Otherwise, it's the _association of_ $X_i$ _with_ $Y_i$.
 
@@ -267,7 +267,7 @@ Under certain (strong) assumptions about the error term, $\color{#e64173}{\beta_
 The .hi[error term] reminds us that $X_i$ does not perfectly explain $Y_i$. 
 
 $$
- Y_i = \beta_1 + \beta_2X_i + \color{#e64173}{u_i}
+ Y_i = \beta_0 + \beta_1X_i + \color{#e64173}{u_i}
 $$
 
 Represents all other factors that explain $Y_i$.
@@ -286,11 +286,11 @@ How might we apply the simple linear regression model to our question about the 
 --
 
 $$
- \text{Crime}_i = \beta_1 + \beta_2\text{Police}_i + u_i.
+ \text{Crime}_i = \beta_0 + \beta_1\text{Police}_i + u_i.
 $$
 
-- $\beta_1$ is the crime rate for colleges without police.
-- $\beta_2$ is the increase in the crime rate for an additional police officer per 1000 students.
+- $\beta_0$ is the crime rate for colleges without police.
+- $\beta_1$ is the increase in the crime rate for an additional police officer per 1000 students.
 
 ---
 # Take 3, continued
@@ -300,29 +300,29 @@ $$
 How might we apply the simple linear regression model to our question?
 
 $$
- \text{Crime}_i = \beta_1 + \beta_2\text{Police}_i + u_i
+ \text{Crime}_i = \beta_0 + \beta_1\text{Police}_i + u_i
 $$
 
-$\beta_1$ and $\beta_2$ are the population parameters we want, but we cannot observe them.
+$\beta_0$ and $\beta_1$ are the population parameters we want, but we cannot observe them.
 
 --
 
 Instead, we must estimate the population parameters.
 
-- $\hat{\beta_1}$ and $\hat{\beta_2}$ generate predictions of $\text{Crime}_i$ called $\hat{\text{Crime}_i}$. 
+- $\hat{\beta_0}$ and $\hat{\beta_1}$ generate predictions of $\text{Crime}_i$ called $\hat{\text{Crime}_i}$. 
 
 - We call the predictions of the dependent variable __fitted values.__
 
 --
 
-- Together, these trace a line: $\hat{\text{Crime}_i} = \hat{\beta_1} + \hat{\beta_2}\text{Police}_i$.
+- Together, these trace a line: $\hat{\text{Crime}_i} = \hat{\beta_0} + \hat{\beta_1}\text{Police}_i$.
 
 ---
 # Take 3, attempted
 
 ## Example: Effect of police on crime
 
-Guess: $\hat{\beta_1} = 60$ and $\hat{\beta_2} = -7$.
+Guess: $\hat{\beta_0} = 60$ and $\hat{\beta_1} = -7$.
 
 --
 
@@ -343,7 +343,7 @@ ggplot() +
 
 ## Example: Effect of police on crime
 
-Guess: $\hat{\beta_1} = 30$ and $\hat{\beta_2} = 0$.
+Guess: $\hat{\beta_0} = 30$ and $\hat{\beta_1} = 0$.
 
 --
 
@@ -365,7 +365,7 @@ ggplot() +
 
 ## Example: Effect of police on crime
 
-Guess: $\hat{\beta_1} = 15.6$ and $\hat{\beta_2} = 7.94$.
+Guess: $\hat{\beta_0} = 15.6$ and $\hat{\beta_1} = 7.94$.
 
 --
 
@@ -384,7 +384,7 @@ ggplot() +
 ---
 # Residuals
 
-Using $\hat{\beta_1}$ and $\hat{\beta_2}$ to make $\hat{Y_i}$ generates misses called .hi[residuals]:
+Using $\hat{\beta_0}$ and $\hat{\beta_1}$ to make $\hat{Y_i}$ generates misses called .hi[residuals]:
 
 $$
 \color{#e64173}{\hat{u}_i} = \color{#e64173}{Y_i - \hat{Y_i}}.
@@ -397,7 +397,7 @@ $$
 
 ## Example: Effect of police on crime
 
-Using $\hat{\beta_1} = 15.6$ and $\hat{\beta_2} = 7.94$ to make $\color{#9370DB}{\hat{\text{Crime}_i}}$ generates .hi[residuals].
+Using $\hat{\beta_0} = 15.6$ and $\hat{\beta_1} = 7.94$ to make $\color{#9370DB}{\hat{\text{Crime}_i}}$ generates .hi[residuals].
 
 ```{r, echo=FALSE, dev = "svg", fig.height = 5.25}
 # Define a function
@@ -505,7 +505,7 @@ data %>%
 
 ## Minimizing RSS
 
-We could test thousands of guesses of $\hat{\beta_1}$ and $\hat{\beta_2}$ and pick the pair that minimizes RSS.
+We could test thousands of guesses of $\hat{\beta_0}$ and $\hat{\beta_1}$ and pick the pair that minimizes RSS.
 
 - Or we just do a little math and derive some useful formulas that give us RSS-minimizing coefficients without the guesswork.
 
@@ -517,7 +517,7 @@ class: inverse, middle
 ---
 # OLS
 
-The __OLS estimator__ chooses the parameters $\hat{\beta_1}$ and $\hat{\beta_2}$ that minimize the .hi[residual sum of squares (RSS)]:
+The __OLS estimator__ chooses the parameters $\hat{\beta_0}$ and $\hat{\beta_1}$ that minimize the .hi[residual sum of squares (RSS)]:
 
 $$\min_{\hat{\beta}_1,\, \hat{\beta}_2} \quad \color{#e64173}{\sum_{i=1}^n \hat{u}_i^2}$$
 
@@ -528,19 +528,19 @@ This is why we call the estimator ordinary __least squares.__
 
 ## Outline
 
-1. Replace $\sum_{i=1}^n \hat{u}_i^2$ with an equivalent expression involving $\hat{\beta_1}$ and $\hat{\beta_2}$.
+1. Replace $\sum_{i=1}^n \hat{u}_i^2$ with an equivalent expression involving $\hat{\beta_0}$ and $\hat{\beta_1}$.
 
 --
 
-2. Take partial derivatives of our RSS expression with respect to $\hat{\beta_1}$ and $\hat{\beta_2}$ and set each one equal to zero (first-order conditions).
+2. Take partial derivatives of our RSS expression with respect to $\hat{\beta_0}$ and $\hat{\beta_1}$ and set each one equal to zero (first-order conditions).
 
 --
 
-3. Use the first-order conditions to solve for $\hat{\beta_1}$ and $\hat{\beta_2}$ in terms of data on $Y_i$ and $X_i$.
+3. Use the first-order conditions to solve for $\hat{\beta_0}$ and $\hat{\beta_1}$ in terms of data on $Y_i$ and $X_i$.
 
 --
 
-4. Check second-order conditions to make sure we found the $\hat{\beta_1}$ and $\hat{\beta_2}$ that minimize RSS.
+4. Check second-order conditions to make sure we found the $\hat{\beta_0}$ and $\hat{\beta_1}$ that minimize RSS.
 
 ---
 # OLS Formulas
@@ -549,11 +549,11 @@ For details, see the [handout](https://raw.githack.com/kyleraze/EC320_Econometri
 
 __Slope coefficient__
 
-$$\hat{\beta}_2 = \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}$$
+$$\hat{\beta}_1 = \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}$$
 
 __Intercept__
 
-$$ \hat{\beta}_1 = \bar{Y} - \hat{\beta}_2 \bar{X} $$
+$$ \hat{\beta}_0 = \bar{Y} - \hat{\beta}_2 \bar{X} $$
 
 ---
 # Slope coefficient
@@ -562,7 +562,7 @@ The slope estimator is equal to the sample covariance divided by the sample vari
 
 $$
 \begin{aligned}
-\hat{\beta}_2 &= \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2} \\ \\
+\hat{\beta}_1 &= \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2} \\ \\
               &= \dfrac{ \frac{1}{n-1} \sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{ \frac{1}{n-1} \sum_{i=1}^n  (X_i - \bar{X})^2} \\ \\
               &= \dfrac{S_{XY}}{S^2_X}.
 \end{aligned}
@@ -573,7 +573,7 @@ $$
 
 ## Example: Effect of police on crime
 
-Using the OLS formulas, we get $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[1], 2)` and $\hat{\beta_2}$ .mono[=] `r round(lm0$coefficients[2], 2)`.
+Using the OLS formulas, we get $\hat{\beta_0}$ .mono[=] `r round(lm0$coefficients[1], 2)` and $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[2], 2)`.
 
 ```{r, echo=FALSE, dev = "svg", fig.height = 5.25}
 # Define a function
@@ -597,7 +597,7 @@ count: false
 
 ## Example: Effect of police on crime
 
-Using the OLS formulas, we get $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[1], 2)` and $\hat{\beta_2}$ .mono[=] `r round(lm0$coefficients[2], 2)`.
+Using the OLS formulas, we get $\hat{\beta_0}$ .mono[=] `r round(lm0$coefficients[1], 2)` and $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[2], 2)`.
 
 ```{r, echo=FALSE, dev = "svg", fig.height = 5.25}
 # Define a function
@@ -623,11 +623,11 @@ $$
  \hat{\text{Crime}_i} = \hat{\beta}_1 + \hat{\beta}_2\text{Police}_i.
 $$
 
-What does $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[1], 2)` tell us?
+What does $\hat{\beta_0}$ .mono[=] `r round(lm0$coefficients[1], 2)` tell us?
 
 --
 
-What does $\hat{\beta_2}$ .mono[=] `r round(lm0$coefficients[2], 2)` tell us?
+What does $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[2], 2)` tell us?
 
 --
 

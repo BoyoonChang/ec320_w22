@@ -44,11 +44,17 @@ knitr::opts_chunk$set(
 \newpage
 
 # 2. Calculating OLS estimates (12 points)
+```{r include=FALSE}
+Y=c(2,5,7,10)
+X=c(200,300,500,600)
+```
+
+
 \begin{enumerate}[label=\alph*)]
-  \item TEXT.
-  \item TEXT.
-  \item TEXT.
-  \item TEXT.
+  \item Find the sample means of $X$ and $Y$. 
+  \item Find $\sum_{i=1}^n(X_i-\bar{X})(Y_i-\bar{Y})$ and $\sum_{i=1}^{n}(X_i-\bar{X})^2$.
+  \item Use your answer from (b) to find $\hat{\beta}_0$ and $\hat{\beta}_1$.
+  \item 
 \end{enumerate}
 
 \newpage
