@@ -60,12 +60,12 @@ knitr::kable(Y,
   \item Calculate the sample mean and call it $\hat{\mu}$.
   \item Calculate the standard error of $\hat{\mu}$.
   \item If the null hypothesis is true, what is the $t$-statistic for this test?
-  \item Which of the following is the correct critical value of the $t$-distribution to use for the test, where $t_{1-\alpha}(df)$ is the t-value below which $1-\alpha$ of the data lies with the degrees of freedom $df$?
+  \item Which of the following is the correct critical value of the $t$-distribution to use for the test, where $t_{1-\alpha}(df)$ is the t-value below which $1-\alpha$ of the data lies with the degrees of freedom $df$? Recall that the degrees of freedom is calculated as the number of observation - the number of parameters. Recall also that we perform the two-sided $t$-test, as the null hypothesis is $\mu=0$. 
   \begin{enumerate}[label=\arabic*)]
-    \item $t_{0.975}(4)$
-    \item $t_{0.975}(3)$
-    \item $t_{0.95}(4)$
-    \item $t_{0.95}(3)$
+    \item $t_{0.975}(4) \approx $ `r round(qt(0.975, 4), 2)`
+    \item $t_{0.975}(3) \approx $ `r round(qt(0.975, 3), 2)`
+    \item $t_{0.95}(4) \approx $ `r round(qt(0.95, 4), 2)`
+    \item $t_{0.95}(3) \approx $ `r round(qt(0.95, 3), 2)`
   \end{enumerate}
   \item Based on your previous answers, what's your conclusion, do you reject the null or fail to reject the null? Explain your reasoning. 
   
