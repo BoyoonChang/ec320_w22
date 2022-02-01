@@ -27,13 +27,13 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 6. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review1.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review1.pdf)
 
-7. ✅**Simple Linear Regression: Estimation I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.pdf)
+7. **Simple Linear Regression: Estimation I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.pdf)
 
-8. **Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.pdf)
+8. ✅**Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.pdf)
 
-9. **Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+9. **Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.html) | [.pdf]()
 
-10. **Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+10. **Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf]()
 
 11. **Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
@@ -61,7 +61,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 4. ✅**Data manipulation, visualization, and regression**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/04-Introduction_lm/04-Introduction_lm.html) | [Exercise 4](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329)
 
-5. **Recap Lab 1 - Lab 4**
+5. **Simple linear regression revisited**
 <br> [.html]() | [Exercise 5]()
 
 6. **Multiple regression and categorical variable**
