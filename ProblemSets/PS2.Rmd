@@ -37,7 +37,7 @@ knitr::opts_chunk$set(
 
 Suppose that $Y$ is normally distributed with mean $\mu$ and standard deviation of $\sigma$. We set the null hypothesis such that the population mean of $Y$, denoted by $\mu$, equals 0. 
 
-In this section, we will manually compute sample mean, denoted by $\hat{\mu}$, compute the standard error of $\hat{\mu}$, and calculate the $t$-statistic to conduct a hypothesis test at the 5$\%$ significance level. We then will compare our computations with the regression result, where it only take the intercept as an explanatory variable. 
+In this section, we will manually compute sample mean, denoted by $\hat{\mu}$, compute the standard error of $\hat{\mu}$, and calculate the $t$-statistic to conduct a hypothesis test at the 5$\%$ significance level. We then will compare our computations with the intercept-only regression result, a linear regression model with only an intercept. 
 
 ```{r}
 library(gapminder)
