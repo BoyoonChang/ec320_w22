@@ -35,9 +35,9 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 10. **Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf]()
 
-11. **Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+11. **Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/11-Multiple_Linear_Regression_Estimation/11-Multiple_Linear_Regression_Estimation.html) | [.pdf]()
 
-12. **Multiple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+12. **Multiple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/12-Multiple_Linear_Regression_Inference/12-Multiple_Linear_Regression_Inference.html) | [.pdf]()
 
 13. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
