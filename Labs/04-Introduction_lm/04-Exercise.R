@@ -23,7 +23,7 @@ some_data <- tibble(
 
 
 
-#' 3. Write out codes to produce $\beta_1$ using the formula.
+#' 3. Write out codes to produce $\beta_0$ using the formula.
 #' Make sure it produces the same estimate with that when using `lm()`.
 #'
 #' Formula for intercept coefficient:
