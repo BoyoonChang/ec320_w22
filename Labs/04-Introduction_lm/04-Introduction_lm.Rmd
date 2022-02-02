@@ -317,7 +317,7 @@ $$\hat{\beta}_1 = \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}
 
 __Intercept__
 
-$$ \hat{\beta}_0 = \bar{Y} - \hat{\beta}_2 \bar{X} $$
+$$ \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X} $$
 
 ```{r}
 # You can use `lm()` to perform ordinary least squares regression analysis. 
