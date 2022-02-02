@@ -313,11 +313,11 @@ Now using the formula covered in class, we will regenerate the intercept and slo
 
 __Slope coefficient__
 
-$$\hat{\beta}_2 = \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}$$
+$$\hat{\beta}_1 = \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}$$
 
 __Intercept__
 
-$$ \hat{\beta}_1 = \bar{Y} - \hat{\beta}_2 \bar{X} $$
+$$ \hat{\beta}_0 = \bar{Y} - \hat{\beta}_2 \bar{X} $$
 
 ```{r}
 # You can use `lm()` to perform ordinary least squares regression analysis. 

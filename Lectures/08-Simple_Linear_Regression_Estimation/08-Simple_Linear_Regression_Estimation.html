@@ -30,12 +30,12 @@ class: inverse, middle
 We considered a simple linear regression of `\(Y_i\)` on `\(X_i\)`:
 
 $$
- Y_i = \beta_1 + \beta_2X_i + u_i.
+ Y_i = \beta_0 + \beta_1X_i + u_i.
 $$
 
 --
 
-- `\(\beta_1\)` and `\(\beta_2\)` are __population parameters__ that describe the *"true"* relationship between `\(X_i\)` and `\(Y_i\)`.
+- `\(\beta_0\)` and `\(\beta_1\)` are __population parameters__ that describe the *"true"* relationship between `\(X_i\)` and `\(Y_i\)`.
 
 - __Problem:__ We don't know the population parameters. The best we can do is to estimate them.
 
@@ -46,17 +46,17 @@ We derived the OLS estimator by picking estimates that minimize `\(\sum_{i=1}^n 
 
 - __Intercept:__
 
-$$ \hat{\beta}_1 = \bar{Y} - \hat{\beta}_2 \bar{X}. $$
+$$ \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}. $$
 
 - __Slope:__
 
 $$
 `\begin{aligned}
-\hat{\beta}_2 &amp;= \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}.
+\hat{\beta}_1 &amp;= \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}.
 \end{aligned}`
 $$
 
-We used these formulas to obtain estimates of the parameters `\(\beta_1\)` and `\(\beta_2\)` in a regression of `\(Y_i\)` on `\(X_i\)`.
+We used these formulas to obtain estimates of the parameters `\(\beta_0\)` and `\(\beta_1\)` in a regression of `\(Y_i\)` on `\(X_i\)`.
 
 ---
 # Last Time
@@ -64,7 +64,7 @@ We used these formulas to obtain estimates of the parameters `\(\beta_1\)` and `
 With the OLS estimates of the population parameters, we constructed a regression line: 
 
 $$
- \hat{Y_i} = \hat{\beta}_1 + \hat{\beta}_2X_i.
+ \hat{Y_i} = \hat{\beta}_0 + \hat{\beta}_1X_i.
 $$
 
 - `\(\hat{Y_i}\)` are predicted or __fitted__ values of `\(Y_i\)`. 
@@ -87,14 +87,14 @@ What is the equation for the regression model estimated below?
 ---
 # Review
 
-The estimated __intercept__ is -9.86. What does this tell us? 
+The estimated __intercept__ is -10.71. What does this tell us? 
 
 &lt;img src="08-Simple_Linear_Regression_Estimation_files/figure-html/unnamed-chunk-2-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 # Review
 
-The estimated __slope__ is 2.23. How do we interpret it?
+The estimated __slope__ is 2.34. How do we interpret it?
 
 &lt;img src="08-Simple_Linear_Regression_Estimation_files/figure-html/unnamed-chunk-3-1.svg" style="display: block; margin: auto;" /&gt;
 
@@ -117,7 +117,7 @@ class: inverse, middle
 ---
 # OLS Properties
 
-The way we selected OLS estimates `\(\hat{\beta}_1\)` and `\(\hat{\beta}_2\)` gives us three important properties:
+The way we selected OLS estimates `\(\hat{\beta}_0\)` and `\(\hat{\beta}_1\)` gives us three important properties:
 
 1. Residuals sum to zero: `\(\sum_{i=1}^n \hat{u}_i = 0\)`.
 
@@ -146,11 +146,11 @@ The sample covariance between the independent variable and the residuals is zero
 
 The point `\((\bar{X}, \bar{Y})\)` is always on the regression line.
 
-- Start with the regression line: `\(\hat{Y_i} = \hat{\beta}_1 + \hat{\beta}_2X_i\)`.
+- Start with the regression line: `\(\hat{Y_i} = \hat{\beta}_0 + \hat{\beta}_1X_i\)`.
 
 --
 
-- `\(\hat{Y_i} = \bar{Y} - \hat{\beta}_2 \bar{X} + \hat{\beta}_2X_i\)`.
+- `\(\hat{Y_i} = \bar{Y} - \hat{\beta}_1 \bar{X} + \hat{\beta}_1X_i\)`.
 
 --
 
@@ -158,7 +158,7 @@ The point `\((\bar{X}, \bar{Y})\)` is always on the regression line.
 
 $$
 `\begin{aligned}
-\hat{Y_i} &amp;= \bar{Y} - \hat{\beta}_2 \bar{X} + \hat{\beta}_2\bar{X} \\
+\hat{Y_i} &amp;= \bar{Y} - \hat{\beta}_1 \bar{X} + \hat{\beta}_1\bar{X} \\
 &amp;= \bar{Y}.
 \end{aligned}`
 $$
@@ -208,7 +208,7 @@ The __coefficient of determination__ `\(R^2\)` is the fraction of the variation 
 .pull-left[
 
 .center[
-`\(R^2\)` .mono[=] 0.73
+`\(R^2\)` .mono[=] 0.74
 ]
 
 &lt;img src="08-Simple_Linear_Regression_Estimation_files/figure-html/unnamed-chunk-6-1.svg" style="display: block; margin: auto;" /&gt;
@@ -218,7 +218,7 @@ The __coefficient of determination__ `\(R^2\)` is the fraction of the variation 
 .pull-right[
 
 .center[
-`\(R^2\)` .mono[=] 0.05
+`\(R^2\)` .mono[=] 0.08
 ]
 
 &lt;img src="08-Simple_Linear_Regression_Estimation_files/figure-html/unnamed-chunk-7-1.svg" style="display: block; margin: auto;" /&gt;
@@ -331,9 +331,9 @@ class: white-slide
 **Step 5:** Shut down the last two terms. Notice that
 
 `\(\sum_{i=1}^n \hat{Y_i}\hat{u}_i\)`
-&lt;br&gt; `\(\quad = \sum_{i=1}^n (\hat{\beta}_1 + \hat{\beta}_2X_i)\hat{u}_i\)`
+&lt;br&gt; `\(\quad = \sum_{i=1}^n (\hat{\beta}_0 + \hat{\beta}_1X_i)\hat{u}_i\)`
 --
-&lt;br&gt; `\(\quad = \hat{\beta}_1 \sum_{i=1}^n \hat{u}_i  + \hat{\beta}_2 \sum_{i=1}^n X_i\hat{u}_i\)`
+&lt;br&gt; `\(\quad = \hat{\beta}_0 \sum_{i=1}^n \hat{u}_i  + \hat{\beta}_1 \sum_{i=1}^n X_i\hat{u}_i\)`
 --
 &lt;br&gt; `\(\quad = 0\)`
 
@@ -379,7 +379,7 @@ class: inverse, middle
 ---
 # Last Time
 
-We ran a regression of crimes per 1000 students on police per 1000 students. We found that `\(\hat{\beta_1}\)` .mono[=] 18.41 and `\(\hat{\beta_2}\)` .mono[=] 1.76. 
+We ran a regression of crimes per 1000 students on police per 1000 students. We found that `\(\hat{\beta_0}\)` .mono[=] 18.41 and `\(\hat{\beta_1}\)` .mono[=] 1.76. 
 
 &lt;img src="08-Simple_Linear_Regression_Estimation_files/figure-html/unnamed-chunk-11-1.svg" style="display: block; margin: auto;" /&gt;
 
@@ -392,7 +392,7 @@ What if we had run a regression of crimes per student on police per 1000 student
 
 &lt;img src="08-Simple_Linear_Regression_Estimation_files/figure-html/unnamed-chunk-12-1.svg" style="display: block; margin: auto;" /&gt;
 
-`\(\hat{\beta_2}\)` .mono[=] 0.001756.
+`\(\hat{\beta_1}\)` .mono[=] 0.001756.
 
 ---
 # Demeaning
@@ -404,10 +404,10 @@ Suppose that, before running a regression of `\(Y_i\)` on `\(X_i\)`, you decided
 Then you decide to estimate
 
 $$
-\tilde{Y}_i = \beta_1 + \beta_2 \tilde{X}_i + u_i.
+\tilde{Y}_i = \beta_0 + \beta_1 \tilde{X}_i + u_i.
 $$
 
-What will you get for your intercept estimate `\(\hat{\beta}_1\)`?
+What will you get for your intercept estimate `\(\hat{\beta}_0\)`?
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

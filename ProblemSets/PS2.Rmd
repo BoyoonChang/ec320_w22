@@ -122,7 +122,7 @@ $$
 # 3. Proof (8 points)
 \begin{enumerate}[label=(\alph*)]
   \item Prove that residuals sum to zero, i.e., $\sum_{i=1}^{n}\hat{u_i} = 0$.
-  \item Prove that the sample covariance between the independent variable and the residuals is zero, \newline i.e., $\sum_{i=1}^n X_i\hat{u_i}$.
+  \item Prove that the sample covariance between the independent variable and the residuals is zero, \newline i.e., $\sum_{i=1}^n X_i\hat{u_i}=0$.
 \end{enumerate}
 
 

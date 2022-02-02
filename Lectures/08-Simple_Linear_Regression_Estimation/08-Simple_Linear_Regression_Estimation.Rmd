@@ -96,12 +96,12 @@ lm1 <- lm(crime ~ police, data = data2)
 We considered a simple linear regression of $Y_i$ on $X_i$:
 
 $$
- Y_i = \beta_1 + \beta_2X_i + u_i.
+ Y_i = \beta_0 + \beta_1X_i + u_i.
 $$
 
 --
 
-- $\beta_1$ and $\beta_2$ are __population parameters__ that describe the *"true"* relationship between $X_i$ and $Y_i$.
+- $\beta_0$ and $\beta_1$ are __population parameters__ that describe the *"true"* relationship between $X_i$ and $Y_i$.
 
 - __Problem:__ We don't know the population parameters. The best we can do is to estimate them.
 
@@ -112,17 +112,17 @@ We derived the OLS estimator by picking estimates that minimize $\sum_{i=1}^n \h
 
 - __Intercept:__
 
-$$ \hat{\beta}_1 = \bar{Y} - \hat{\beta}_2 \bar{X}. $$
+$$ \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}. $$
 
 - __Slope:__
 
 $$
 \begin{aligned}
-\hat{\beta}_2 &= \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}.
+\hat{\beta}_1 &= \dfrac{\sum_{i=1}^n (Y_i - \bar{Y})(X_i - \bar{X})}{\sum_{i=1}^n  (X_i - \bar{X})^2}.
 \end{aligned}
 $$
 
-We used these formulas to obtain estimates of the parameters $\beta_1$ and $\beta_2$ in a regression of $Y_i$ on $X_i$.
+We used these formulas to obtain estimates of the parameters $\beta_0$ and $\beta_1$ in a regression of $Y_i$ on $X_i$.
 
 ---
 # Last Time
@@ -130,7 +130,7 @@ We used these formulas to obtain estimates of the parameters $\beta_1$ and $\bet
 With the OLS estimates of the population parameters, we constructed a regression line: 
 
 $$
- \hat{Y_i} = \hat{\beta}_1 + \hat{\beta}_2X_i.
+ \hat{Y_i} = \hat{\beta}_0 + \hat{\beta}_1X_i.
 $$
 
 - $\hat{Y_i}$ are predicted or __fitted__ values of $Y_i$. 
@@ -204,7 +204,7 @@ class: inverse, middle
 ---
 # OLS Properties
 
-The way we selected OLS estimates $\hat{\beta}_1$ and $\hat{\beta}_2$ gives us three important properties:
+The way we selected OLS estimates $\hat{\beta}_0$ and $\hat{\beta}_1$ gives us three important properties:
 
 1. Residuals sum to zero: $\sum_{i=1}^n \hat{u}_i = 0$.
 
@@ -233,11 +233,11 @@ The sample covariance between the independent variable and the residuals is zero
 
 The point $(\bar{X}, \bar{Y})$ is always on the regression line.
 
-- Start with the regression line: $\hat{Y_i} = \hat{\beta}_1 + \hat{\beta}_2X_i$.
+- Start with the regression line: $\hat{Y_i} = \hat{\beta}_0 + \hat{\beta}_1X_i$.
 
 --
 
-- $\hat{Y_i} = \bar{Y} - \hat{\beta}_2 \bar{X} + \hat{\beta}_2X_i$.
+- $\hat{Y_i} = \bar{Y} - \hat{\beta}_1 \bar{X} + \hat{\beta}_1X_i$.
 
 --
 
@@ -245,7 +245,7 @@ The point $(\bar{X}, \bar{Y})$ is always on the regression line.
 
 $$
 \begin{aligned}
-\hat{Y_i} &= \bar{Y} - \hat{\beta}_2 \bar{X} + \hat{\beta}_2\bar{X} \\
+\hat{Y_i} &= \bar{Y} - \hat{\beta}_1 \bar{X} + \hat{\beta}_1\bar{X} \\
 &= \bar{Y}.
 \end{aligned}
 $$
@@ -511,9 +511,9 @@ $\text{TSS}$
 **Step 5:** Shut down the last two terms. Notice that
 
 $\sum_{i=1}^n \hat{Y_i}\hat{u}_i$
-<br> $\quad = \sum_{i=1}^n (\hat{\beta}_1 + \hat{\beta}_2X_i)\hat{u}_i$
+<br> $\quad = \sum_{i=1}^n (\hat{\beta}_0 + \hat{\beta}_1X_i)\hat{u}_i$
 --
-<br> $\quad = \hat{\beta}_1 \sum_{i=1}^n \hat{u}_i  + \hat{\beta}_2 \sum_{i=1}^n X_i\hat{u}_i$
+<br> $\quad = \hat{\beta}_0 \sum_{i=1}^n \hat{u}_i  + \hat{\beta}_1 \sum_{i=1}^n X_i\hat{u}_i$
 --
 <br> $\quad = 0$
 
@@ -559,7 +559,7 @@ class: inverse, middle
 ---
 # Last Time
 
-We ran a regression of crimes per 1000 students on police per 1000 students. We found that $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[1], 2)` and $\hat{\beta_2}$ .mono[=] `r round(lm0$coefficients[2], 2)`. 
+We ran a regression of crimes per 1000 students on police per 1000 students. We found that $\hat{\beta_0}$ .mono[=] `r round(lm0$coefficients[1], 2)` and $\hat{\beta_1}$ .mono[=] `r round(lm0$coefficients[2], 2)`. 
 
 ```{r, echo=FALSE, dev = "svg", fig.height = 5}
 # Define a function
@@ -594,7 +594,7 @@ data2 %>%
   theme_simple + xlab("Police per 1000 students") + ylab("Crimes per student")
 ```
 
-$\hat{\beta_2}$ .mono[=] `r lm1$coefficients[2]`.
+$\hat{\beta_1}$ .mono[=] `r lm1$coefficients[2]`.
 
 ---
 # Demeaning
@@ -606,7 +606,7 @@ Suppose that, before running a regression of $Y_i$ on $X_i$, you decided to _dem
 Then you decide to estimate
 
 $$
-\tilde{Y}_i = \beta_1 + \beta_2 \tilde{X}_i + u_i.
+\tilde{Y}_i = \beta_0 + \beta_1 \tilde{X}_i + u_i.
 $$
 
-What will you get for your intercept estimate $\hat{\beta}_1$?
+What will you get for your intercept estimate $\hat{\beta}_0$?
