@@ -88,7 +88,14 @@ lm0 <- lm(crime ~ police, data = data)
 lm1 <- lm(crime ~ police, data = data2)
 ```
 
-# Prologue
+
+# HouseKeeping
+
+- Lab 04 today, Exercise 04 due today.
+- Problem Set 2 out, due next Monday. 
+
+
+
 
 ---
 # Last Time
