@@ -216,16 +216,23 @@ The most important assumptions concern the error term $u_i$.
 
 --
 
-- .hi-green[Error:] Difference between the wage of a worker with 16 years of education and the .hi-green[expected wage] with 16 years of education.
-
+.pull-left[
+  .hi-green[Population]
+  - $Y_i = \beta_0 + \beta_1 X_i + u_i$
+  - .hi-green[Error:] Difference between the wage of a worker with 16 years of education and the .hi-green[expected wage] with 16 years of education.
+]
 
 --
 
+.pull-right[
+.hi-purple[Sample]
+- $Y_i = \hat{\beta_0} + \hat{\beta_1} X_i + \hat{u_i}$
 - .hi-purple[Residual:] Difference between the wage of a worker with 16 years of education and the .hi-purple[average wage] of workers with 16 years of education.
+]
 
---
 
-- .hi-green[Population] ***vs.*** .hi-purple[sample]**.**
+
+
 
 ---
 # Residuals *vs.* Errors
