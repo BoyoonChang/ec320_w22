@@ -146,7 +146,7 @@ gapminder %>%
 
 #'## Hypothesis Testing
 
-#'We wish to test whether GDP per capita has **any impact** on life expectancy my testing the null hypothesis
+#'We wish to test whether GDP per capita has **any impact** on life expectancy. Then our null hypothesis would look as the following:
 #'$$ H_0:\; \beta_1 = \beta_1^0$$
 #' For this t-test, we set $\beta_1^0$ equal to 0, because we are interested in testing whether GDP per capita has **any effect** on life expectancy. 
 
@@ -177,14 +177,14 @@ beta1hat = reg2 %>% tidy() %>% filter(term=="log(gdpPercap)") %>% select(estimat
 n = nrow(gapminder)
 #'We can obtain a vector of our residuals from `reg2` using the `resid()` function; we can then square those residuals using `^2` and sum them up using `sum()`. 
 sigmahat = sum(resid(reg2)^2)/(n-2)
-se_beta1hat=sqrt(sigmahat/sum((log(gapminder$gdpPercap)-mean(log(gapminder$gdpPercap)))^2)) 
-#'Now we have all the pieces for the standard error of $\hat{\beta}_1$. The #'following code chunk should assemble them:
 
-#'Now that we have all the pieces of `t`, we can calculate the $t$-stat.
+#'Now we have all the pieces for the standard error of $\hat{\beta}_1$. 
+se_beta1hat=sqrt(sigmahat/sum((log(gapminder$gdpPercap)-mean(log(gapminder$gdpPercap)))^2)) 
+#' We can then calculate the $t$-stat.
 t_stat=(beta1hat-0)/se_beta1hat
 t_stat
 
-#' Notice that t_stat that you calculated manually is equivalent to the regression results.
+#' Notice that t_stat that you calculated manually is equivalent to the t_statistics returned from regression results.
 #'Use the `qt()` function to find the 95% critical value for the test. `qt()` takes two arguments, the first is the fraction of distribution you want to be less than your $t$-stat, and the second is the degrees of freedom.
 t_stat > qt(p=0.975, df = n-2)
 
