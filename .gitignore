@@ -39,7 +39,6 @@ vignettes/*.pdf
 .Renviron
 
 # Folder
-Labs/05*
 Labs/06*
 Labs/07*
 Labs/08*
