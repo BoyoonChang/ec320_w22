@@ -62,7 +62,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/04-Introduction_lm/04-Introduction_lm.html) | [Exercise 4](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329)
 
 5. ✅**Simple linear regression revisited**
-<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/05-Introduction_lm_revisited/05-Introduction_lm_revisited) | [Exercise 5](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
+<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/05-Introduction_lm_revisited/05-Introduction_lm_revisited.html) | [Exercise 5](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 
 6. **Multiple regression and categorical variable**
 <br> [.html]() | [Exercise 6]()
@@ -85,7 +85,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 5. ~~**Exercise 4**: Due 02/02(Wed)~~
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329)
 6.  ✅**Problem Set 2**: Due ~~02/04(Fri)~~ **02/07(Mon)**
-   <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961)
+   <br> [.pdf](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961)
 7.  ✅**Exercise 5**: Due 02/09(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 8.  **Exercise 6**: Due 02/16(Wed)
