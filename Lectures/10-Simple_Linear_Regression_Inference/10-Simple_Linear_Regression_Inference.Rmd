@@ -127,7 +127,7 @@ We will use the sampling distribution of $\hat{\beta_1}$ to conduct hypothesis t
 
 - Can use all 6 classical assumptions to show that OLS is normally distributed:
 
-$$\hat{\beta} \sim \mathop{N}\left( \beta_1, \frac{\sigma^2}{\sum_{i=1}^n (X_i - \bar{X})^2} \right)$$
+$$\hat{\beta}_1 \sim \mathop{N}\left( \beta_1, \frac{\sigma^2}{\sum_{i=1}^n (X_i - \bar{X})^2} \right)$$
 
 - We'll "prove" this using .mono[R].
 
