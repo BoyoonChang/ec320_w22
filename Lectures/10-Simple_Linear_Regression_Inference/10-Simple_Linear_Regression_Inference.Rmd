@@ -72,6 +72,10 @@ campus <- get(data(campus)) %>%
 ---
 # Housekeeping
 
+- Lab today & Ex05 due today
+- Midterm 1 solution posted
+- Extra OH 7pm-8pm on Zoom
+
 
 ---
 # Last Time
@@ -119,11 +123,11 @@ We restricted our attention to the first 5 assumptions.
 
 ## Today
 
-We will use the sampling distribution of $\hat{\beta}$ to conduct hypothesis tests.
+We will use the sampling distribution of $\hat{\beta_1}$ to conduct hypothesis tests.
 
 - Can use all 6 classical assumptions to show that OLS is normally distributed:
 
-$$\hat{\beta} \sim \mathop{N}\left( \beta, \frac{\sigma^2}{\sum_{i=1}^n (X_i - \bar{X})^2} \right)$$
+$$\hat{\beta} \sim \mathop{N}\left( \beta_1, \frac{\sigma^2}{\sum_{i=1}^n (X_i - \bar{X})^2} \right)$$
 
 - We'll "prove" this using .mono[R].
 

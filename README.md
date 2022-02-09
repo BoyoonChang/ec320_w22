@@ -31,9 +31,9 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 8. **Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.pdf)
 
-9. ✅**Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.html) | [.pdf]()
+9. ✅**Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.pdf)
 
-10. **Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf]()
+10.✅**Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.pdf)
 
 11. **Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/11-Multiple_Linear_Regression_Estimation/11-Multiple_Linear_Regression_Estimation.html) | [.pdf]()
 
