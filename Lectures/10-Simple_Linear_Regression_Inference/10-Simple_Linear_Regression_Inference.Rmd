@@ -451,7 +451,7 @@ sim_ols <- function(x, size = n_s) {
     mutate(iteration = x)
 }
 # Run simulation
-sim_df <- map_df(1:10000, ~sim_ols(.x, size = n_s))
+sim_df <- map_df(1:100, ~sim_ols(.x, size = n_s))
 ```
 
 ---

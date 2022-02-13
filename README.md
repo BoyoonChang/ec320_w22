@@ -31,13 +31,13 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 8. **Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.pdf)
 
-9. ✅**Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.pdf)
+9. **Classical Assumptions** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/09-Classical_Assumptions/09-Classical_Assumptions.pdf)
 
-10. ✅**Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.pdf)
+10. **Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.pdf)
 
-11. **Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/11-Multiple_Linear_Regression_Estimation/11-Multiple_Linear_Regression_Estimation.html) | [.pdf]()
+11. ✅**Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/11-Multiple_Linear_Regression_Estimation/11-Multiple_Linear_Regression_Estimation.html) | [.pdf]()
 
-12. **Multiple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/12-Multiple_Linear_Regression_Inference/12-Multiple_Linear_Regression_Inference.html) | [.pdf]()
+12. ✅**Multiple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/12-Multiple_Linear_Regression_Inference/12-Multiple_Linear_Regression_Inference.html) | [.pdf]()
 
 13. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
@@ -61,10 +61,10 @@ The HTML versions of the lecture slides allow you to view animations and interac
 4. **Data manipulation, visualization, and regression**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/04-Introduction_lm/04-Introduction_lm.html) | [Exercise 4](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329)
 
-5. ✅**Simple linear regression revisited**
+5. **Simple linear regression revisited**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/05-Introduction_lm_revisited/05-Introduction_lm_revisited.html) | [Exercise 5](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 
-6. **Multiple regression and categorical variable**
+6. ✅**Multiple regression and categorical variable**
 <br> [.html]() | [Exercise 6]()
 
 7. **Omitted variable bias, interaction term**
@@ -86,9 +86,9 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205878?module_item_id=3459329)
 6. ~~**Problem Set 2**: Due ~~02/04(Fri)~~ **02/07(Mon)**~~
    <br> [.pdf](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961)
-7.  ✅**Exercise 5**: Due 02/09(Wed)
+7.  **Exercise 5**: Due 02/09(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
-8.  **Exercise 6**: Due 02/16(Wed)
+8.  ✅**Exercise 6**: Due 02/16(Wed)
    <br> [.R]() | [submit it here]()
 9.  **Problem Set 3**: Due ~~02/18(Fri)~~ **02/21(Mon)**
    <br> [.R]() | [submit it here]()
