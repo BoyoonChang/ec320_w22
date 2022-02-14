@@ -65,7 +65,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/05-Introduction_lm_revisited/05-Introduction_lm_revisited.html) | [Exercise 5](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 
 6. ✅**Multiple regression and categorical variable**
-<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/06-Introduction_multireg/05-Introduction_multireg.html) | [Exercise 6](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
+<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/06-Introduction_multireg/06-Introduction_multireg.html) | [Exercise 6](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 
 7. **Omitted variable bias, interaction term**
 <br> [.html]() | [Exercise 7]()
