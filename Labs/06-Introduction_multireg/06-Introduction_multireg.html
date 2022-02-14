@@ -1857,7 +1857,7 @@ div.tocify {
 <p>First we set the null hypothesis, i.e. set up some guess about the unknown population parameters,</p>
 <p>in this case <span class="math inline">\(\beta_3 = \beta_4 = 0\)</span>.</p>
 <p>We now know what our restricted and unrestricted models are: the restricted model is (2) while the unrestricted model is (5). Notice that we are restricting the model such that <span class="math inline">\(\beta_3\)</span> and <span class="math inline">\(\beta_4\)</span> are both equal 0. If you plug in 0 for <span class="math inline">\(\beta_3\)</span> and <span class="math inline">\(\beta_4\)</span> in model (5), it becomes model (2) and thus, the restricted model is model (2) while the unrestricted one is model (5). Use following formula to calculate F-statistic: <span class="math display">\[\begin{align}
-F_{q,\,n-k} = \dfrac{\left(\text{RSS}_u - \text{RSS}_r\right)/q}{\text{RSS}_u/(n-k)}
+F = \dfrac{\left(R^2_u - R^2_r\right)/q}{ (1 - R^2_u)/(n-k)}
 \end{align}\]</span></p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">## H0: beta3=beta4=0</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a><span class="co"># unrestricted model&#39;s R-squared</span></span>

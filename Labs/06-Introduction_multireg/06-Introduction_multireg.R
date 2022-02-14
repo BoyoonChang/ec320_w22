@@ -180,7 +180,7 @@ near(reg2$coef[2][[1]]+reg2$coef[3][[1]]*cov(CASchools$STR, CASchools$english)/v
 #' We now know what our restricted and unrestricted models are: the restricted model is (2) while the unrestricted model is (5). Notice that we are restricting the model such that $\beta_3$ and $\beta_4$ are both equal 0. If you plug in 0 for $\beta_3$ and $\beta_4$ in model (5), it becomes model (2) and thus, the restricted model is model (2) while the unrestricted one is model (5).
 #' Use following formula to calculate F-statistic:
 #' \begin{align}
-#' F_{q,\,n-k} = \dfrac{\left(\text{RSS}_u - \text{RSS}_r\right)/q}{\text{RSS}_u/(n-k)}
+#' F = \dfrac{\left(R^2_u - R^2_r\right)/q}{ (1 - R^2_u)/(n-k)}
 #' \end{align}
 ## H0: beta3=beta4=0
 # unrestricted model's R-squared

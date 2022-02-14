@@ -439,15 +439,16 @@ Pseudo-code outline of the simulation:
 ```{R, r2 data code, eval = F, cache = T}
 set.seed(1234)
 #plan(multiprocess)
-y <- rnorm(1e4)
-x <- matrix(data = rnorm(1e7), nrow = 1e4)
-x %<>% cbind(matrix(data = 1, nrow = 1e4, ncol = 1), x)
+y <- rnorm(1e4) # 10000 obs
+x <- matrix(data = rnorm(1e7), nrow = 1e4) # 10000 by 1000 matrix
+x %<>% cbind(matrix(data = 1, nrow = 1e4, ncol = 1) # 10000 by 1 vector
+             , x) 
 r_fun <- function(i) {
- tmp_reg <- lm(y ~ x[,1:(i + 1)]) %>% summary()
-                    data.frame(
-                    k = i + 1,
-                    r2 = tmp_reg$r.squared,
-                    r2_adj = tmp_reg$adj.r.squared)
+  tmp_reg <- lm(y ~ x[,1:(i + 1)]) %>% summary()
+  data.frame(
+  k = i + 1,
+  r2 = tmp_reg$r.squared,
+  r2_adj = tmp_reg$adj.r.squared)
 }
 r_df <- future_map(1:(1e2-1), r_fun) %>% bind_rows()
 r_df
