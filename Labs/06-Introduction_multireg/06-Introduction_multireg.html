@@ -1674,14 +1674,14 @@ div.tocify {
 <div id="create-two-new-variables" class="section level3">
 <h3>Create two new variables</h3>
 <p>Next, we will create two new variables, 1) student to teacher ratio and 2) the average reading and math score for each school district.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>CASchools<span class="op">$</span>STR &lt;-<span class="st"> </span>CASchools<span class="op">$</span>students<span class="op">/</span>CASchools<span class="op">$</span>teachers</span>
+<span id="cb7-2"><a href="#cb7-2"></a>CASchools<span class="op">$</span>score &lt;-<span class="st"> </span>(CASchools<span class="op">$</span>read <span class="op">+</span><span class="st"> </span>CASchools<span class="op">$</span>math)<span class="op">/</span><span class="dv">2</span></span></code></pre></div>
 </div>
 <div id="do-a-simple-regression" class="section level3">
 <h3>Do a simple regression</h3>
 <p>For the simple linear regression, we will have score as the dependent variable and student-to-teacher ratio as the explanatory variable and store its result as <code>reg1</code>. Notice that we defined STR as student to teacher ratio where we divided the number of students by the number of teacher.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>CASchools<span class="op">$</span>STR &lt;-<span class="st"> </span>CASchools<span class="op">$</span>students<span class="op">/</span>CASchools<span class="op">$</span>teachers</span>
-<span id="cb7-2"><a href="#cb7-2"></a>CASchools<span class="op">$</span>score &lt;-<span class="st"> </span>(CASchools<span class="op">$</span>read <span class="op">+</span><span class="st"> </span>CASchools<span class="op">$</span>math)<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>reg1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR, <span class="dt">data =</span> CASchools)</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">summary</span>(reg1)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>reg1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR, <span class="dt">data =</span> CASchools)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">summary</span>(reg1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = score ~ STR, data = CASchools)
@@ -1709,23 +1709,23 @@ div.tocify {
 <li>Calculating confidence interval manually:</li>
 </ol>
 <p>Step 1: Find t-critical value for the two-sided test with 5% significance level In a simple regression, <span class="math inline">\(k\)</span> equals to 2, as there are two parameters being estimated, <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>n=<span class="kw">nrow</span>(CASchools)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>k=<span class="dv">2</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">qt</span>(.<span class="dv">05</span><span class="op">/</span><span class="dv">2</span>, n<span class="op">-</span>k)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>n=<span class="kw">nrow</span>(CASchools)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>k=<span class="dv">2</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">qt</span>(.<span class="dv">05</span><span class="op">/</span><span class="dv">2</span>, n<span class="op">-</span>k)</span></code></pre></div>
 <pre><code>## [1] -1.965655</code></pre>
 <p>Step 2: Store the coefficient estimate and its std.error</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">tidy</span>(reg1) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;STR&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(std.error) <span class="op">%&gt;%</span><span class="st"> </span>.[[<span class="dv">1</span>]] -&gt;<span class="st"> </span>se_STR</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">tidy</span>(reg1) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;STR&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(estimate) <span class="op">%&gt;%</span><span class="st"> </span>.[[<span class="dv">1</span>]] -&gt;<span class="st"> </span>est_STR</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">tidy</span>(reg1) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;STR&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(std.error) <span class="op">%&gt;%</span><span class="st"> </span>.[[<span class="dv">1</span>]] -&gt;<span class="st"> </span>se_STR</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">tidy</span>(reg1) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(term<span class="op">==</span><span class="st">&quot;STR&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(estimate) <span class="op">%&gt;%</span><span class="st"> </span>.[[<span class="dv">1</span>]] -&gt;<span class="st"> </span>est_STR</span></code></pre></div>
 <p>Step 3: Use information from Step 1 and 2 to calculate the lower/upper bound of the confidence interval</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>est_STR <span class="op">+</span><span class="st"> </span>se_STR<span class="op">*</span><span class="kw">qt</span>(.<span class="dv">05</span><span class="op">/</span><span class="dv">2</span>, n<span class="op">-</span>k)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>est_STR <span class="op">+</span><span class="st"> </span>se_STR<span class="op">*</span><span class="kw">qt</span>(.<span class="dv">05</span><span class="op">/</span><span class="dv">2</span>, n<span class="op">-</span>k)</span></code></pre></div>
 <pre><code>## [1] -3.22298</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>est_STR <span class="op">-</span><span class="st"> </span>se_STR<span class="op">*</span><span class="kw">qt</span>(.<span class="dv">05</span><span class="op">/</span><span class="dv">2</span>, n<span class="op">-</span>k)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>est_STR <span class="op">-</span><span class="st"> </span>se_STR<span class="op">*</span><span class="kw">qt</span>(.<span class="dv">05</span><span class="op">/</span><span class="dv">2</span>, n<span class="op">-</span>k)</span></code></pre></div>
 <pre><code>## [1] -1.336636</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Use <code>tidy()</code> to report confidence interval</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">tidy</span>(reg1, <span class="dt">conf.int =</span> T)</span></code></pre></div>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-8">
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">tidy</span>(reg1, <span class="dt">conf.int =</span> T)</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-9">
 <col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">term</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">estimate</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">std.error</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">statistic</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p.value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">conf.low</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">conf.high</th></tr>
 <tr>
@@ -1735,9 +1735,9 @@ div.tocify {
 </table>
 
 <p>Manual calculation should coincide with what is returned from using <code>tidy()</code> function.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># You can also specify the confidence level using conf.level argument</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">tidy</span>(reg1, <span class="dt">conf.int =</span> T, <span class="dt">conf.level =</span> <span class="fl">.9</span>)</span></code></pre></div>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-9">
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># You can also specify the confidence level using conf.level argument</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">tidy</span>(reg1, <span class="dt">conf.int =</span> T, <span class="dt">conf.level =</span> <span class="fl">.9</span>)</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-10">
 <col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">term</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">estimate</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">std.error</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">statistic</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p.value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">conf.low</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">conf.high</th></tr>
 <tr>
@@ -1749,19 +1749,19 @@ div.tocify {
 </div>
 <div id="goodness-of-fit" class="section level3">
 <h3>Goodness of Fit</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># mean of avg. test-scores</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>y_mean &lt;-<span class="st"> </span><span class="kw">mean</span>(CASchools<span class="op">$</span>score)</span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># sum of squared residuals</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>SSR &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">residuals</span>(reg1)<span class="op">^</span><span class="dv">2</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="co"># total sum of squares</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a>TSS &lt;-<span class="st"> </span><span class="kw">sum</span>((CASchools<span class="op">$</span>score <span class="op">-</span><span class="st"> </span>y_mean )<span class="op">^</span><span class="dv">2</span>)</span>
-<span id="cb18-7"><a href="#cb18-7"></a><span class="co"># explained sum of squares</span></span>
-<span id="cb18-8"><a href="#cb18-8"></a>ESS &lt;-<span class="st"> </span><span class="kw">sum</span>((<span class="kw">fitted</span>(reg1) <span class="op">-</span><span class="st"> </span>y_mean)<span class="op">^</span><span class="dv">2</span>)</span>
-<span id="cb18-9"><a href="#cb18-9"></a><span class="co"># R^2</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>Rsq &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(SSR <span class="op">/</span><span class="st"> </span>TSS)</span>
-<span id="cb18-11"><a href="#cb18-11"></a>Rsq</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># mean of avg. test-scores</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>y_mean &lt;-<span class="st"> </span><span class="kw">mean</span>(CASchools<span class="op">$</span>score)</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># sum of squared residuals</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>SSR &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">residuals</span>(reg1)<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="co"># total sum of squares</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>TSS &lt;-<span class="st"> </span><span class="kw">sum</span>((CASchools<span class="op">$</span>score <span class="op">-</span><span class="st"> </span>y_mean )<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># explained sum of squares</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>ESS &lt;-<span class="st"> </span><span class="kw">sum</span>((<span class="kw">fitted</span>(reg1) <span class="op">-</span><span class="st"> </span>y_mean)<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="co"># R^2</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>Rsq &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(SSR <span class="op">/</span><span class="st"> </span>TSS)</span>
+<span id="cb19-11"><a href="#cb19-11"></a>Rsq</span></code></pre></div>
 <pre><code>## [1] 0.05124009</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">summary</span>(reg1)<span class="op">$</span>r.squared</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">summary</span>(reg1)<span class="op">$</span>r.squared</span></code></pre></div>
 <pre><code>## [1] 0.05124009</code></pre>
 </div>
 </div>
@@ -1774,23 +1774,23 @@ div.tocify {
 <h3>Model specification</h3>
 <p>The first regression model is as follows:</p>
 <p><span class="math inline">\(\textrm{Score}_i = \beta_0+\beta_1\textrm{STR}_i + u_i\)</span></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>reg1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score<span class="op">~</span>STR, <span class="dt">data =</span> CASchools)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>reg1 &lt;-<span class="st"> </span><span class="kw">lm</span>(score<span class="op">~</span>STR, <span class="dt">data =</span> CASchools)</span></code></pre></div>
 <p>The second regression model is as follows:</p>
 <p><span class="math inline">\(\textrm{Score}_i = \beta_0+\beta_1\textrm{STR}_i+\beta_2\textrm{English}_i + u_i\)</span></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>reg2 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english, <span class="dt">data =</span> CASchools)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>reg2 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english, <span class="dt">data =</span> CASchools)</span></code></pre></div>
 <p>The third regression model is as follows:</p>
 <p><span class="math inline">\(\textrm{Score}_i = \beta_0+\beta_1\textrm{STR}_i+\beta_2\textrm{English}_i +\beta_3\textrm{Lunch}_i+ u_i\)</span></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>reg3 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english <span class="op">+</span><span class="st"> </span>lunch, <span class="dt">data =</span> CASchools)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>reg3 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english <span class="op">+</span><span class="st"> </span>lunch, <span class="dt">data =</span> CASchools)</span></code></pre></div>
 <p>The fourth regression model is as follows:</p>
 <p><span class="math inline">\(\textrm{Score}_i = \beta_0+\beta_1\textrm{STR}_i+\beta_2\textrm{English}_i +\beta_3\textrm{Calworks}_i+ u_i\)</span></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>reg4 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english <span class="op">+</span><span class="st"> </span>calworks, <span class="dt">data =</span> CASchools)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>reg4 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english <span class="op">+</span><span class="st"> </span>calworks, <span class="dt">data =</span> CASchools)</span></code></pre></div>
 <p>The fifth regression model is as follows:</p>
 <p><span class="math inline">\(\textrm{Score}_i = \beta_0+\beta_1\textrm{STR}_i+\beta_2\textrm{English}_i +\beta_3\textrm{Lunch}_i+ \beta_4\textrm{Calworks}_i+ u_i\)</span></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>reg5 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english <span class="op">+</span><span class="st"> </span>lunch <span class="op">+</span><span class="st"> </span>calworks, <span class="dt">data =</span> CASchools)</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="co"># We use `huxreg()` function in `huxtable` package to show five regression results</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="co"># side-by-side in one table.</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="kw">huxreg</span>(reg1,reg2,reg3,reg4,reg5)</span></code></pre></div>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-15">
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>reg5 &lt;-<span class="st"> </span><span class="kw">lm</span>(score <span class="op">~</span><span class="st"> </span>STR <span class="op">+</span><span class="st"> </span>english <span class="op">+</span><span class="st"> </span>lunch <span class="op">+</span><span class="st"> </span>calworks, <span class="dt">data =</span> CASchools)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co"># We use `huxreg()` function in `huxtable` package to show five regression results</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># side-by-side in one table.</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="kw">huxreg</span>(reg1,reg2,reg3,reg4,reg5)</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-16">
 <col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(1)</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(2)</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(3)</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(4)</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">(5)</th></tr>
 <tr>
@@ -1840,12 +1840,12 @@ div.tocify {
 <p>Recall that under the following two models, Model 1: <span class="math inline">\(Y_i = \beta_0 + \beta_1 X_{1i} + u_i\)</span>. Model 2: <span class="math inline">\(Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + v_i\)</span>,</p>
 <p>the formula for calculating omitted variable bias is as follows: <span class="math display">\[{\text{Bias} = \beta_2 \frac{\mathop{\text{Cov}}(X_{1i}, X_{2i})}{\mathop{\text{Var}}(X_{1i})}}.\]</span></p>
 <p>Consider the specification (1) and (2) from the <code>CASchools</code> example above, and consider the specification (1) as model 1 and (2) as model 2. Then we can calculate the omitted variable bias for <span class="math inline">\(\beta_1\)</span> as follows:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">cov</span>(CASchools<span class="op">$</span>STR, CASchools<span class="op">$</span>english)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">cov</span>(CASchools<span class="op">$</span>STR, CASchools<span class="op">$</span>english)</span></code></pre></div>
 <pre><code>## [1] 6.491212</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>reg2<span class="op">$</span>coef[<span class="dv">3</span>][[<span class="dv">1</span>]]<span class="op">*</span><span class="kw">cov</span>(CASchools<span class="op">$</span>STR, CASchools<span class="op">$</span>english)<span class="op">/</span><span class="kw">var</span>(CASchools<span class="op">$</span>STR)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>reg2<span class="op">$</span>coef[<span class="dv">3</span>][[<span class="dv">1</span>]]<span class="op">*</span><span class="kw">cov</span>(CASchools<span class="op">$</span>STR, CASchools<span class="op">$</span>english)<span class="op">/</span><span class="kw">var</span>(CASchools<span class="op">$</span>STR)</span></code></pre></div>
 <pre><code>## [1] -1.178512</code></pre>
-<p>There’s a negative omitted variable bias, meaning that omitting <code>english</code> has amplified the effect of <code>STR</code> on the test core. Comparing (reg1 STR coef) with (reg2 STR coef + omv bias)</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">near</span>(reg2<span class="op">$</span>coef[<span class="dv">2</span>][[<span class="dv">1</span>]]<span class="op">+</span>reg2<span class="op">$</span>coef[<span class="dv">3</span>][[<span class="dv">1</span>]]<span class="op">*</span><span class="kw">cov</span>(CASchools<span class="op">$</span>STR, CASchools<span class="op">$</span>english)<span class="op">/</span><span class="kw">var</span>(CASchools<span class="op">$</span>STR), reg1<span class="op">$</span>coef[<span class="dv">2</span>][[<span class="dv">1</span>]])</span></code></pre></div>
+<p>There’s a negative omitted variable bias, meaning that omitting <code>english</code> has amplified the effect of <code>STR</code> negatively on the test core. Comparing (reg1 STR coef) with (reg2 STR coef + omv bias)</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">near</span>(reg2<span class="op">$</span>coef[<span class="dv">2</span>][[<span class="dv">1</span>]]<span class="op">+</span>reg2<span class="op">$</span>coef[<span class="dv">3</span>][[<span class="dv">1</span>]]<span class="op">*</span><span class="kw">cov</span>(CASchools<span class="op">$</span>STR, CASchools<span class="op">$</span>english)<span class="op">/</span><span class="kw">var</span>(CASchools<span class="op">$</span>STR), reg1<span class="op">$</span>coef[<span class="dv">2</span>][[<span class="dv">1</span>]])</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="f-tests" class="section level2">
@@ -1857,35 +1857,35 @@ div.tocify {
 <p>First we set the null hypothesis, i.e. set up some guess about the unknown population parameters,</p>
 <p>in this case <span class="math inline">\(\beta_3 = \beta_4 = 0\)</span>.</p>
 <p>We now know what our restricted and unrestricted models are: the restricted model is (2) while the unrestricted model is (5). Notice that we are restricting the model such that <span class="math inline">\(\beta_3\)</span> and <span class="math inline">\(\beta_4\)</span> are both equal 0. If you plug in 0 for <span class="math inline">\(\beta_3\)</span> and <span class="math inline">\(\beta_4\)</span> in model (5), it becomes model (2) and thus, the restricted model is model (2) while the unrestricted one is model (5). Use following formula to calculate F-statistic: <span class="math display">\[\begin{align}
-F_{q,\,n-k} = \dfrac{\left(\text{RSS}_r - \text{RSS}_u\right)/q}{\text{RSS}_u/(n-k)}
+F_{q,\,n-k} = \dfrac{\left(\text{RSS}_u - \text{RSS}_r\right)/q}{\text{RSS}_u/(n-k)}
 \end{align}\]</span></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">## H0: beta3=beta4=0</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="co"># unrestricted model&#39;s R-squared</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">## H0: beta3=beta4=0</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="co"># unrestricted model&#39;s R-squared</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared</span></code></pre></div>
 <pre><code>## [1] 0.77485</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># restricted model&#39;s R-squared</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="kw">summary</span>(reg2)<span class="op">$</span>r.squared</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># restricted model&#39;s R-squared</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="kw">summary</span>(reg2)<span class="op">$</span>r.squared</span></code></pre></div>
 <pre><code>## [1] 0.4264315</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># degrees of freedom for denominator</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># degrees of freedom for denominator</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef)</span></code></pre></div>
 <pre><code>## [1] 415</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># degrees of freedom for numerator (number of restrictions)</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>q =<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a><span class="co"># F statistic</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a>((<span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared<span class="op">-</span><span class="kw">summary</span>(reg2)<span class="op">$</span>r.squared)<span class="op">/</span>q)<span class="op">/</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a><span class="st">  </span>((<span class="dv">1</span><span class="op">-</span><span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared)<span class="op">/</span>(<span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef)))</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># degrees of freedom for numerator (number of restrictions)</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>q =<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="co"># F statistic</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>((<span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared<span class="op">-</span><span class="kw">summary</span>(reg2)<span class="op">$</span>r.squared)<span class="op">/</span>q)<span class="op">/</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="st">  </span>((<span class="dv">1</span><span class="op">-</span><span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared)<span class="op">/</span>(<span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef)))</span></code></pre></div>
 <pre><code>## [1] 321.1054</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># F critical value</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="kw">qf</span>(<span class="fl">0.95</span>, q, <span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef))</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># F critical value</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="kw">qf</span>(<span class="fl">0.95</span>, q, <span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef))</span></code></pre></div>
 <pre><code>## [1] 3.017462</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Is F-stat greater than F-critical value?</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a>((<span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared<span class="op">-</span><span class="kw">summary</span>(reg2)<span class="op">$</span>r.squared)<span class="op">/</span>q)<span class="op">/</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="st">  </span>((<span class="dv">1</span><span class="op">-</span><span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared)<span class="op">/</span>(<span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef)))<span class="op">&gt;</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a><span class="st">  </span><span class="kw">qf</span>(<span class="fl">0.95</span>, q, <span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef))</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Is F-stat greater than F-critical value?</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>((<span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared<span class="op">-</span><span class="kw">summary</span>(reg2)<span class="op">$</span>r.squared)<span class="op">/</span>q)<span class="op">/</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="st">  </span>((<span class="dv">1</span><span class="op">-</span><span class="kw">summary</span>(reg5)<span class="op">$</span>r.squared)<span class="op">/</span>(<span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef)))<span class="op">&gt;</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="st">  </span><span class="kw">qf</span>(<span class="fl">0.95</span>, q, <span class="kw">nrow</span>(CASchools)<span class="op">-</span><span class="kw">nrow</span>(<span class="kw">summary</span>(reg5)<span class="op">$</span>coef))</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Conclusion: Reject the null that <span class="math inline">\(\beta_3\)</span> and <span class="math inline">\(\beta_4\)</span> are all equal to 0 Also we could use packaged function <code>linearHypothesis()</code> for hypothesis testing.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">linearHypothesis</span>(reg5, <span class="kw">c</span>(<span class="st">&quot;lunch=0&quot;</span>, <span class="st">&quot;calworks=0&quot;</span>))</span></code></pre></div>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-19">
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">linearHypothesis</span>(reg5, <span class="kw">c</span>(<span class="st">&quot;lunch=0&quot;</span>, <span class="st">&quot;calworks=0&quot;</span>))</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-20">
 <col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Res.Df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">RSS</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Sum of Sq</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">F</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Pr(&gt;F)</th></tr>
 <tr>
@@ -1894,7 +1894,7 @@ F_{q,\,n-k} = \dfrac{\left(\text{RSS}_r - \text{RSS}_u\right)/q}{\text{RSS}_u/(n
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">415</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.42e+04</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5.3e+04</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">321</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5.39e-85</td></tr>
 </table>
 
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co">## Now your turn</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co">## Now your turn</span></span></code></pre></div>
 <p>Please open up the <code>06-Exercise.R</code> and fill out your answer for each question.</p>
 </div>
 

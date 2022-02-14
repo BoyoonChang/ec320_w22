@@ -43,12 +43,13 @@ glimpse(CASchools)
 #'
 #' ### Create two new variables
 #' Next, we will create two new variables, 1) student to teacher ratio and 2) the average reading and math score for each school district.
-#'
+CASchools$STR <- CASchools$students/CASchools$teachers
+CASchools$score <- (CASchools$read + CASchools$math)/2
+
 #' ### Do a simple regression
 #' For the simple linear regression, we will have score as the dependent variable and student-to-teacher ratio as the explanatory variable and store its result as `reg1`. Notice that we defined STR as student to teacher ratio where we divided the number of students by the number of teacher.
 
-CASchools$STR <- CASchools$students/CASchools$teachers
-CASchools$score <- (CASchools$read + CASchools$math)/2
+
 reg1 <- lm(score ~ STR, data = CASchools)
 summary(reg1)
 
@@ -155,7 +156,7 @@ huxreg(reg1,reg2,reg3,reg4,reg5)
 #' Consider the specification (1) and (2) from the `CASchools` example above, and consider the specification (1) as model 1 and (2) as model 2. Then we can calculate the omitted variable bias for $\beta_1$ as follows:
 cov(CASchools$STR, CASchools$english)
 reg2$coef[3][[1]]*cov(CASchools$STR, CASchools$english)/var(CASchools$STR)
-#' There's a negative omitted variable bias, meaning that omitting `english` has amplified the effect of `STR` on the test core.
+#' There's a negative omitted variable bias, meaning that omitting `english` has amplified the effect of `STR` negatively on the test core.
 #' Comparing (reg1 STR coef) with (reg2 STR coef + omv bias)
 near(reg2$coef[2][[1]]+reg2$coef[3][[1]]*cov(CASchools$STR, CASchools$english)/var(CASchools$STR), reg1$coef[2][[1]])
 
@@ -179,7 +180,7 @@ near(reg2$coef[2][[1]]+reg2$coef[3][[1]]*cov(CASchools$STR, CASchools$english)/v
 #' We now know what our restricted and unrestricted models are: the restricted model is (2) while the unrestricted model is (5). Notice that we are restricting the model such that $\beta_3$ and $\beta_4$ are both equal 0. If you plug in 0 for $\beta_3$ and $\beta_4$ in model (5), it becomes model (2) and thus, the restricted model is model (2) while the unrestricted one is model (5).
 #' Use following formula to calculate F-statistic:
 #' \begin{align}
-#' F_{q,\,n-k} = \dfrac{\left(\text{RSS}_r - \text{RSS}_u\right)/q}{\text{RSS}_u/(n-k)}
+#' F_{q,\,n-k} = \dfrac{\left(\text{RSS}_u - \text{RSS}_r\right)/q}{\text{RSS}_u/(n-k)}
 #' \end{align}
 ## H0: beta3=beta4=0
 # unrestricted model's R-squared
