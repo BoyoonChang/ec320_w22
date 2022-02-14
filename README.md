@@ -65,7 +65,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/05-Introduction_lm_revisited/05-Introduction_lm_revisited.html) | [Exercise 5](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 
 6. ✅**Multiple regression and categorical variable**
-<br> [.html]() | [Exercise 6]()
+<br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/06-Introduction_multireg/05-Introduction_multireg.html) | [Exercise 6](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 
 7. **Omitted variable bias, interaction term**
 <br> [.html]() | [Exercise 7]()
@@ -89,7 +89,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 7.  **Exercise 5**: Due 02/09(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 8.  ✅**Exercise 6**: Due 02/16(Wed)
-   <br> [.R]() | [submit it here]()
+   <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 9.  **Problem Set 3**: Due ~~02/18(Fri)~~ **02/21(Mon)**
    <br> [.R]() | [submit it here]()
 10. **Exercise 7**: Due 03/02(Wed)

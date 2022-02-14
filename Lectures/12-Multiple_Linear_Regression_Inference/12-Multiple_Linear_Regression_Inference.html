@@ -268,7 +268,7 @@ Common violations: .hi-green[autocorrelation] and .hi-orange[spatially correlate
 
 In practice, we can only estimate `\(\sigma^2\)`, so we use the `\(t\)` distribution:
 
-- `\(\frac{\hat{\beta_j} - \beta_j}{\mathop{\text{SE}} \left( \hat{\beta_j} \right)} \sim t_{n-k-1} = t_{\text{df}}\)`.
+- `\(\frac{\hat{\beta_j} - \beta_j}{\mathop{\text{SE}} \left( \hat{\beta_j} \right)} \sim t_{n-k} = t_{\text{df}}\)`.
 
 - Use this to construct `\(t\)`-statistics and conduct hypothesis testing.
 
@@ -466,10 +466,10 @@ To test the null hypothesis `\(H_o :\: \beta_1 = \beta_2\)` against `\(H_a :\: \
 &lt;br&gt;we use the `\(F\)` statistic
 $$
 `\begin{align}
-  F_{q,\,n-k-1} = \dfrac{\left(\text{RSS}_r - \text{RSS}_u\right)/q}{\text{RSS}_u/(n-k-1)}
+  F_{q,\,n-k} = \dfrac{\left(\text{RSS}_r - \text{RSS}_u\right)/q}{\text{RSS}_u/(n-k)}
 \end{align}`
 $$
-which (as its name suggests) follows the `\(F\)` distribution with `\(q\)` numerator degrees of freedom and `\(n-k-1\)` denominator degrees of freedom.
+which (as its name suggests) follows the `\(F\)` distribution with `\(q\)` numerator degrees of freedom and `\(n-k\)` denominator degrees of freedom.
 
 Here, `\(q\)` is the number of restrictions we impose via `\(H_0\)`.
 
@@ -507,7 +507,7 @@ RSS is usually a large cumbersome number.
 
 $$
 `\begin{align}
-  F = \dfrac{\left(R^2_u - R^2_r\right)/q}{ (1 - R^2_u)/(n-k-1)}
+  F = \dfrac{\left(R^2_u - R^2_r\right)/q}{ (1 - R^2_u)/(n-k)}
 \end{align}`
 $$
 
