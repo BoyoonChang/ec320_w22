@@ -1,0 +1,121 @@
+---
+title: "EC 320 Problem Set 3"
+date: "Winter 2022"
+name: "PUT YOUR NAME HERE"
+header-includes:
+   - \usepackage{enumitem}
+output: pdf_document
+---
+
+
+
+```{r include=FALSE}
+library(pacman)
+p_load(kableExtra, knitr)
+# Knitr options
+knitr::opts_chunk$set(
+  echo=F,
+  warning = F,
+  message = F
+)  
+```
+
+
+**INSTRUCTIONS:**
+
+**There are three questions in total. Please answer them all and show the steps of how you derived your answer to receive the full credit**
+
+# 1. Simple linear regression (15 points)
+Suppose that the underlying population model is
+$$
+Y_i = \beta_0 + \beta_1 X_i + u_i.
+$$
+Let's suppose we use ordinary least squares (OLS) to estimate $\beta_0$ and $\beta_1$ with 20 observations, and find the estimates $\hat{\beta_1}=2$ and $\text{s.e.}({\beta_1})=1$. You are considering two different hypothesis tests. 
+
+The first is a two-sided test where
+$$
+\begin{aligned}
+  \text{H}_0 : \beta_1&=0 \\
+  \text{H}_a: \beta_1 &\neq 0.
+\end{aligned}
+$$
+
+The second is a one-sided test where
+$$
+\begin{aligned}
+  \text{H}_0 : \beta_1&=0 \\
+  \text{H}_a : \beta_1 &> 0.
+\end{aligned}
+$$
+Suppose we set the significance level at 5\%, i.e. $\alpha=0.05.$
+
+Below is some information about critical values from the t-distribution, where $t_x(df)$ gives t-score below which $x\%$ of the data falls when the degrees of freedom is equal to $df$. For example $t_0.975(100)$ is t-score below which 97.5% of the data falls when the degrees of freedom is 100. 
+$$
+\begin{aligned}
+  t_{0.975}(20)&=`r round(qt(0.975,20),3)` \\
+  t_{0.95}(20)&=`r round(qt(0.95,20),3)`\\
+  t_{0.975}(18)&=`r round(qt(0.975,18),3)`\\
+  t_{0.975}(18)&=`r round(qt(0.95,18),3)`\\
+\end{aligned}
+$$
+
+\begin{enumerate}[label=(\alph*)]
+  \item Calculate t-statistics of the first hypothesis test.
+  \item Run the first hypothesis test at 5\% significance level and state your conclusion. 
+  \item Calculate t-statistics of the second hypothesis test.
+  \item Run the second hypothesis test at 5\% significance level and state your conclusion.
+  \item Construct a 95\% confidence interval of $\beta_1$.
+\end{enumerate}
+
+
+\newpage
+
+# 2. Classical assumptions (10 points)
+
+\begin{enumerate}[label=(\alph*)]
+  \item Provide me a quick scatter plot that violates sample variation assumption.
+  \item Provide me a quick scatter plot that violates homoskedasticity assumption.
+  \item Explain in your own words what Gauss-Markov Theorem is. Make sure that you reference the classical assumptions.
+\end{enumerate}
+
+# 3. Multiple linear regression (15 points)
+
+Suppose that the underlying population model as well as the regression model is
+$$
+Y_i = \beta_0 + \beta_1X_{1i} + \beta_2 X_{2i}+u_i
+$$
+Using OLS, it is reported that 
+$$
+\begin{aligned}
+  \hat{\beta_0}&=-2.62 \ , \  \text{s.e.}(\hat{\beta_0})= 3.39\\
+  \hat{\beta_1}&=0.98 \ , \  \text{s.e.}(\hat{\beta_1})= 3.20\\
+  \hat{\beta_2}&=-1.26 \ , \  \text{s.e.}(\hat{\beta_2})= 0.62\\
+\end{aligned}
+$$
+
+Information about critical values from the t-distribution is given below:
+$$
+\begin{aligned}
+  t_{0.995}(997)&=`r round(qt(0.995,997),3)` \\
+  t_{0.99}(998)&=`r round(qt(0.99,998),3)`\\
+  t_{0.975}(997)&=`r round(qt(0.975,997),3)`\\
+  t_{0.95}(998)&=`r round(qt(0.95,998),3)`\\
+\end{aligned}
+$$
+Suppose we conduct two-sided hypothesis test. 
+
+\begin{enumerate}[label=(\alph*)]
+  \item Is $\hat{\beta_2}$ statistically significant at 5\% significance level?
+  \item Is $\hat{\beta_2}$ statistically significant at 1\% significance level?
+  \item Interpret $\hat{\beta_1}$ as in terms of units of $Y$ and $X_1$.
+  \item Suppose instead that we estimate the following regression model using OLS
+  $$
+    Y_i = \beta_0 + \beta_1 X_{1i}+u_i,
+  $$ and find $\hat{\beta_0}=-5.09$ and $\hat{\beta_1}=-5.32$. Find the omitted variable bias. 
+  \item Continuing on (d), what can you infer about the sign of the covariance between $X_1$ and $X_2$? 
+\end{enumerate}
+
+
+
+
+
