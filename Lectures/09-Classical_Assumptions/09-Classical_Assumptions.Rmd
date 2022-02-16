@@ -305,19 +305,23 @@ class: inverse, middle
 
 --
 
-3. **Random Sampling:** We have a random sample from the population of interest.
+3. **Exogeneity:** The $X$ variable is .hi[exogenous] (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).<sup>.pink[†]</sup> 
+--
+
+4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
 
 --
 
-4. **Exogeneity:** The $X$ variable is .hi[exogenous] (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
-
---
-
-5. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+5. **Non-autocorrelation:** The values of error terms have independent distributions (*i.e.,* $E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j$)
 
 --
 
 6. **Normality:** The population error term is normally distributed with mean zero and variance $\sigma^2$ (*i.e.,* $u \sim N(0,\sigma^2)$)
+
+
+.footnote[
+.pink[†] **Random Sampling:** We have a random sample from the population of interest.
+]
 
 ---
 class: inverse, middle
@@ -669,7 +673,11 @@ To calculate the variance of OLS, we need:
 
 1. The same four assumptions we made for unbiasedness.
 
-2. __Homoskedasticity.__
+2. __Homoskedasticity__
+
+3. __Non-autocorrelation__
+
+
 
 ---
 # Homoskedasticity
@@ -739,6 +747,23 @@ labs(x = "Independent Variable", y = "Error Term") +
 theme_simple
 ```
 
+
+---
+
+# Non-Autocorrelation 
+
+## Assumption
+
+The population covariance between $u_i$ and $u_j$ is zero, meaning that any individual's error term is drawn independently of other error terms. 
+
+$$\mathop{\text{Cov}}(u_i, u_j) = E[(u_i - \mu_u)(u_j - \mu_u)]\\
+                                = E[u_i u_j] = E[u_i] E[u_j]  = 0, \text{where } i \neq j$$
+
+- .small[This implies no systematic association between error term values for any pair of individuals. The values of the error term should be independent of one another. If this assumption is not satisfied, OLS gives inefficient estimates.]
+- .small[**Example:** The magnitude and the sign of disturbance term in one observation should not lead to a tendency of determining magnitude and the sign of the disturbance term of the other. ]
+- .small[**Violation:** Errors that are correlated with time (autocorrelation)]
+
+
 ---
 # OLS Variance 
 
@@ -766,13 +791,14 @@ OLS is the __Best Linear Unbiased Estimator (BLUE)__ when:
 
 2. **Sample Variation:** There is variation in $X$.
 
-3. **Random Sampling:** We have a random sample from the population of interest.
+3. **Exogeneity:** The $X$ variable is .hi[exogenous] (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
 
-4. **Exogeneity:** The $X$ variable is .hi[exogenous] (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
+4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
 
-5. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+5. **Non-Autocorrelation:** Any pair of error terms are drawn independently of each other (*i.e.,* $\mathop{\text{E}}(u_i u_j) = 0 \ \forall \ i \text{ s.t. } i \neq j$)
 
 ---
+
 class: middle
 
 # Gauss-Markov Theorem

@@ -26,18 +26,23 @@ class: inverse, middle
 
 ---
 # Housekeeping
+- Problem Set 03 out - Due next Monday 11:59 p.m.
+- Lab today &amp; Ex 06 due today
+- Midterm next Wednesday
+
+
 
 
 ---
 # Review
 
-Suppose that an epidemiologist studies the effect of coffee consumption on cardiovascular health by estimating
+Suppose that an economist studies the effect of years of schooling on hourly earnings by estimating
 
-`$$\text{Health}_i = \beta_1 + \beta_2 \text{Coffee}_i + u_i.$$`
+`$$\text{Earnings}_i = \beta_0 + \beta_1 \text{Schooling}_i + u_i,$$`
 
-1. What do we have to assume to interpret `\(\beta_2\)` as the true effect of coffee consumption on health?
+1. What do we have to assume to interpret `\(\beta_1\)` as the true effect of coffee consumption on health?
 
-2. What omitted variables would bias the estimator of `\(\beta_2\)`?
+2. What omitted variables would bias the estimator of `\(\beta_1\)`?
 
 3. For each omitted variable, how would you sign the bias?
 
@@ -213,9 +218,9 @@ We cannot observe `\(\sigma^2\)`, so we must estimate it using the residuals fro
 
 `$$s_u^2 = \dfrac{\sum_{i=1}^n \hat{u}_i^2}{n - k - 1}$$`
 
-- `\(k+1\)` is the number of parameters (one "slope" for each `\(X\)` variable and an intercept).
+- `\(k\)` is the number of parameters (one "slope" for each `\(X\)` variable and an intercept).
 
-- `\(n - k - 1\)` .mono[=] degrees of freedom.
+- `\(n - k\)` .mono[=] degrees of freedom.
 
 - Using the first 5 OLS assumptions, one can prove that `\(s_u^2\)` is an unbiased estimator of `\(\sigma^2\)`.
 
