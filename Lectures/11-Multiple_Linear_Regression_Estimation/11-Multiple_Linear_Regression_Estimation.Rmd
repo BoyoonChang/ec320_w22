@@ -440,7 +440,7 @@ Pseudo-code outline of the simulation:
 set.seed(1234)
 #plan(multiprocess)
 y <- rnorm(1e4) # 10000 obs
-x <- matrix(data = rnorm(1e7), nrow = 1e4) # 10000 by 1000 matrix
+x <- matrix(data = rnorm(1e6), nrow = 1e4) # 10000 by 100 matrix
 x %<>% cbind(matrix(data = 1, nrow = 1e4, ncol = 1) # 10000 by 1 vector
              , x) 
 r_fun <- function(i) {
@@ -536,9 +536,10 @@ Same as before, except for .pink[assumption 2]:
 
 1. **Linearity:** The population relationship is linear in parameters with an additive error term.
 2. .hi[No perfect collinearity:] .pink[No] $\color{#e64173}{X}$ .pink[variable is a perfect linear combination of the others.]
-3. **Random Sampling:** We have a random sample from the population of interest.
-4. **Exogeneity:** The $X$ variable is exogenous (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
-5. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+<!-- 3. **Random Sampling:** We have a random sample from the population of interest. -->
+3. **Exogeneity:** The $X$ variable is exogenous (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
+4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+5. **Non-autocorrelation:** The values of error terms are independent from one another (*i.e.,* $E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j$)
 6. **Normality:** The population error term is normally distributed with mean zero and variance $\sigma^2$ (*i.e.,* $u \sim N(0,\sigma^2)$)
 
 ---

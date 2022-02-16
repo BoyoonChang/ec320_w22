@@ -248,15 +248,16 @@ Pseudo-code outline of the simulation:
 ```r
 set.seed(1234)
 #plan(multiprocess)
-y &lt;- rnorm(1e4)
-x &lt;- matrix(data = rnorm(1e7), nrow = 1e4)
-x %&lt;&gt;% cbind(matrix(data = 1, nrow = 1e4, ncol = 1), x)
+y &lt;- rnorm(1e4) # 10000 obs
+x &lt;- matrix(data = rnorm(1e6), nrow = 1e4) # 10000 by 100 matrix
+x %&lt;&gt;% cbind(matrix(data = 1, nrow = 1e4, ncol = 1) # 10000 by 1 vector
+             , x) 
 r_fun &lt;- function(i) {
- tmp_reg &lt;- lm(y ~ x[,1:(i + 1)]) %&gt;% summary()
-                    data.frame(
-                    k = i + 1,
-                    r2 = tmp_reg$r.squared,
-                    r2_adj = tmp_reg$adj.r.squared)
+  tmp_reg &lt;- lm(y ~ x[,1:(i + 1)]) %&gt;% summary()
+  data.frame(
+  k = i + 1,
+  r2 = tmp_reg$r.squared,
+  r2_adj = tmp_reg$adj.r.squared)
 }
 r_df &lt;- future_map(1:(1e2-1), r_fun) %&gt;% bind_rows()
 r_df
@@ -328,9 +329,10 @@ Same as before, except for .pink[assumption 2]:
 
 1. **Linearity:** The population relationship is linear in parameters with an additive error term.
 2. .hi[No perfect collinearity:] .pink[No] `\(\color{#e64173}{X}\)` .pink[variable is a perfect linear combination of the others.]
-3. **Random Sampling:** We have a random sample from the population of interest.
-4. **Exogeneity:** The `\(X\)` variable is exogenous (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`).
-5. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* `\(\mathop{\text{Var}}(u|X) = \sigma^2\)`).
+&lt;!-- 3. **Random Sampling:** We have a random sample from the population of interest. --&gt;
+3. **Exogeneity:** The `\(X\)` variable is exogenous (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`).
+4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* `\(\mathop{\text{Var}}(u|X) = \sigma^2\)`).
+5. **Non-autocorrelation:** The values of error terms are independent from one another (*i.e.,* `\(E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j\)`)
 6. **Normality:** The population error term is normally distributed with mean zero and variance `\(\sigma^2\)` (*i.e.,* `\(u \sim N(0,\sigma^2)\)`)
 
 ---
