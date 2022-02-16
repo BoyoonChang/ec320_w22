@@ -102,7 +102,7 @@ $$
   t_{0.95}(998)&=`r round(qt(0.95,998),3)`\\
 \end{aligned}
 $$
-Suppose we conduct two-sided hypothesis test. 
+Suppose we conduct two-sided hypothesis test with null hypothesis set as $\beta_2 = 0$.  The number of observations is 1000.
 
 \begin{enumerate}[label=(\alph*)]
   \item Is $\hat{\beta_2}$ statistically significant at 5\% significance level?
