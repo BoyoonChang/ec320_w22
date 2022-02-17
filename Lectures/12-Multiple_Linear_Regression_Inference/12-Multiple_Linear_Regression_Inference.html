@@ -54,7 +54,7 @@ class: inverse, middle
 ---
 # OLS Variances
 
-Multiple regression model: `\(Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_{k} X_{ki} + u_i\)`.
+Multiple regression model: `\(Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_{m} X_{mi} + u_i\)`.
 
 --
 
@@ -218,7 +218,7 @@ We cannot observe `\(\sigma^2\)`, so we must estimate it using the residuals fro
 
 `$$s_u^2 = \dfrac{\sum_{i=1}^n \hat{u}_i^2}{n - k}$$`
 
-- `\(k\)` is the number of parameters (one "slope" for each `\(X\)` variable and an intercept).
+- `\(k\)` is the number of parameters (one "slope" for each `\(X\)` variable and an intercept). When we have `\(m\)` number of explanatory variables, then `\(k=m+1\)`, as we also have an intercept parameter.
 
 - `\(n - k\)` .mono[=] degrees of freedom.
 
