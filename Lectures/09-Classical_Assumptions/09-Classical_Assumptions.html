@@ -189,30 +189,16 @@ class: inverse, middle
 ---
 # Classical Assumptions of OLS
 
-1. **Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
-
---
-
-2. **Sample Variation:** There is variation in `\(X\)`.
-
---
-
-3. **Exogeneity:** The `\(X\)` variable is .hi[exogenous] (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`).&lt;sup&gt;.pink[†]&lt;/sup&gt; 
---
-
-4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* `\(\mathop{\text{Var}}(u|X) = \sigma^2\)`).
-
---
-
-5. **Non-autocorrelation:** The values of error terms are independent from one another (*i.e.,* `\(E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j\)`)
-
---
-
-6. **Normality:** The population error term is normally distributed with mean zero and variance `\(\sigma^2\)` (*i.e.,* `\(u \sim N(0,\sigma^2)\)`)
+- **A1. Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
+- **A2. Sample Variation:** There is variation in `\(X\)`.
+- **A3. Exogeneity:** The `\(X\)` variable is .hi[exogenous] (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`)&lt;sup&gt;.pink[†]&lt;/sup&gt; 
+- **A4. Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* `\(\mathop{\text{Var}}(u|X) = \sigma^2\)`).
+- **A5. Non-autocorrelation:** The values of error terms are independent from one another (*i.e.,* `\(E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j\)`).&lt;sup&gt;.pink[†]&lt;/sup&gt; 
+- **A6. Normality:** The population error term is normally distributed with mean zero and variance `\(\sigma^2\)` (*i.e.,* `\(u \sim N(0,\sigma^2)\)`)
 
 
 .footnote[
-.pink[†] **Random Sampling:** We have a random sample from the population of interest.
+.pink[†] **Random Sampling:** Notice up until now, our underlying data type used for analysis was cross-sectional data. Under random sampling, this yields `\(u_i\)` and `\(u_j\)` independent for any two observations `\(i\)` and `\(j\)`, which is what non-autocorrelation assumption implies. However here I explicitly state **non-autocorrelation** to 1) generalize this case to account for a case we use time series data, 2) to be consistent with the notations from the textbook. Also it could be shown that the errors for different observations are independent conditional on the explanatory variables in the cross-sectional sample under random sampling. 
 ]
 
 ---
@@ -248,15 +234,17 @@ An estimator is __biased__ if its expected value is different from the true popu
 
 ## Assumptions
 
-1. **Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
+**A1. Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
 
-2. **Sample Variation:** There is variation in `\(X\)`.
+**A2. Sample Variation:** There is variation in `\(X\)`.
 
-3. **Random Sampling:** We have a random sample from the population of interest.
+**A3. Exogeneity:** The `\(X\)` variable is .hi[exogenous] (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`). &lt;sup&gt;.pink[†]&lt;/sup&gt;
 
-4. **Exogeneity:** The `\(X\)` variable is .hi[exogenous] (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`).
+.footnote[
+.pink[†] Should A3 be true, random sampling should be performed in cross sectional data, meaning that A3 implies random sampling in a sense.
+]
 
---
+
 
 ## Result
 
@@ -332,33 +320,7 @@ There is variation in `\(X\)`.
 
 &lt;img src="09-Classical_Assumptions_files/figure-html/unnamed-chunk-10-1.svg" style="display: block; margin: auto;" /&gt;
 
----
-# Random Sampling
 
-## Assumption
-
-We have a random sample from the population of interest.
-
-## Examples
-
-Random sampling generates many cross-sectional datasets (especially surveys). 
-
-- Government surveys (*e.g.,* Current Population Survey, American Community Survey).
-- Scientific surveys (*e.g.,* General Social Survey, American National Election Study).
-- High-quality political polls (*e.g.,* YouGov, Quinnipiac University, Gallup).
-
----
-# Random Sampling
-
-## Assumption
-
-We have a random sample from the population of interest.
-
-## Violations
-
-- Data collected from non-probability sampling (*e.g.* snowball sampling).
-- Most (all?) time-series data.
-- Self-selected samples.
 
 ---
 # Exogeneity
@@ -537,17 +499,18 @@ class: inverse, middle
 ---
 # Gauss-Markov Theorem
 
-OLS is the __Best Linear Unbiased Estimator (BLUE)__ when:
+OLS is the __Best Linear Unbiased Estimator__ under assumptions A1-A5:
 
-1. **Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
+- **A1. Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
 
-2. **Sample Variation:** There is variation in `\(X\)`.
+- **A2. Sample Variation:** There is variation in `\(X\)`.
 
-3. **Exogeneity:** The `\(X\)` variable is .hi[exogenous] (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`).
+- **A3. Exogeneity:** The `\(X\)` variable is .hi[exogenous] (*i.e.,* `\(\mathop{\mathbb{E}}\left( u|X \right) = 0\)`).
 
-4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* `\(\mathop{\text{Var}}(u|X) = \sigma^2\)`).
+- **A4. Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* `\(\mathop{\text{Var}}(u|X) = \sigma^2\)`).
 
-5. **Non-Autocorrelation:** Any pair of error terms are drawn independently of each other (*i.e.,* `\(\mathop{\text{E}}(u_i u_j) = 0 \ \forall \ i \text{ s.t. } i \neq j\)`)
+- **A5. Non-Autocorrelation:** Any pair of error terms are drawn independently of each other (*i.e.,* `\(\mathop{\text{E}}(u_i u_j) = 0 \ \forall \ i \text{ s.t. } i \neq j\)`)
+
 
 ---
 

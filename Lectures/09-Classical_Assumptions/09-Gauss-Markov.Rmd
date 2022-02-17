@@ -1,0 +1,126 @@
+---
+title: "Gaus Markov Theorem"
+subtitle: "EC 320: Introduction to Econometrics"
+date: "Winter 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, extrafont, tidyverse, magrittr, wooldridge, stargazer, latex2exp, parallel, broom, ggforce)
+# Define colors
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+met_slate <- "#23373b" # metropolis font color
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  #dpi = 300,
+  #cache = T,
+  warning = F,
+  message = F
+)  
+theme_simple <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 14),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  legend.position = "none"
+)
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+# Neumark data
+data <- get(data(wage2))
+lm_e <- lm(lwage ~ educ, data = data)
+b0 <- lm_e$coefficients[1]
+b1 <- lm_e$coefficients[2]
+r_2 <- summary(lm(lwage ~ educ, data = data))$r.squared
+```
+
+
+class: inverse, middle
+
+# Classical Assumptions
+
+---
+# Classical Assumptions of OLS
+
+- **A1. Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
+- **A2. Sample Variation:** There is variation in $X$.
+- **A3. Exogeneity:** The $X$ variable is .hi[exogenous] (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$)<sup>.pink[†]</sup> 
+- **A4. Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+- **A5. Non-autocorrelation:** The values of error terms are independent from one another (*i.e.,* $E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j$).<sup>.pink[†]</sup> 
+- **A6. Normality:** The population error term is normally distributed with mean zero and variance $\sigma^2$ (*i.e.,* $u \sim N(0,\sigma^2)$)
+
+
+.footnote[
+.pink[†] **Random Sampling:** Notice up until now, our underlying data type used for analysis was cross-sectional data. Under random sampling, this yields $u_i$ and $u_j$ independent for any two observations $i$ and $j$, which is what non-autocorrelation assumption implies. However here I explicitly state **non-autocorrelation** to 1) generalize this case to account for a case we use time series data, 2) to be consistent with the notations from the textbook. Also it could be shown that the errors for different observations are independent conditional on the explanatory variables in the cross-sectional sample under random sampling. 
+]
+
+
+---
+class: inverse, middle
+
+# Gauss-Markov Theorem
+
+---
+# Gauss-Markov Theorem
+
+OLS is the __Best Linear Unbiased Estimator__ under assumptions A1-A5:
+
+- **A1. Linearity:** The population relationship is .hi[linear in parameters] with an additive error term.
+
+- **A2. Sample Variation:** There is variation in $X$.
+
+- **A3. Exogeneity:** The $X$ variable is .hi[exogenous] (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
+
+- **A4. Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+
+- **A5. Non-Autocorrelation:** Any pair of error terms are drawn independently of each other (*i.e.,* $\mathop{\text{E}}(u_i u_j) = 0 \ \forall \ i \text{ s.t. } i \neq j$)
+
+---
+
+# Gauss-Markov Theorem
+
+.middle[OLS is the __Best Linear Unbiased Estimator (BLUE)__
+
+- **Best:** most efficient (all other estimators will have a greater variance)
+
+- **Linear:** as apposed to non-linear population model
+
+- **Unbiased:** the expected value of the estimators are the population parameters
+
+]

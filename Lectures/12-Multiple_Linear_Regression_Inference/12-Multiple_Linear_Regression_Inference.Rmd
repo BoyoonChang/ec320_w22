@@ -108,7 +108,7 @@ The variance of a slope estimator $\hat{\beta_j}$ on an independent variable $X_
 
 $$\mathop{\text{Var}} \left( \hat{\beta_j} \right) = \dfrac{\sigma^2}{\left( 1 - R^2_j \right)\sum_{i=1}^n \left( X_{ji} - \bar{X}_j \right)^2},$$
 
-where $R^2_j$ is the $R^2$ from a regression of $X_{j}$ on the other independent variables and an intercept.
+where $j \in \{1,2,\dots,m\}$, $R^2_j$ is the $R^2$ from a regression of $X_{j}$ on the other independent variables and an intercept, and $X_{ji}$ denotes $i^\text{th}$ observation of explanatory variable $X_{j}$.
 
 ---
 # OLS Variances
@@ -362,14 +362,14 @@ class: inverse, middle
 ---
 # OLS Classical Assumptions
 
-> 
-1. **Linearity:** The population relationship is linear in parameters with an additive error term.
-2. **No perfect collinearity:** No $X$ variable is a perfect linear combination of the others.
+
+- **A1. Linearity:** The population relationship is linear in parameters with an additive error term.
+- **A2. No perfect collinearity:** No $X$ variable is a perfect linear combination of the others.
 <!-- 3. **Random Sampling:** We have a random sample from the population of interest. -->
-3. **Exogeneity:** The $X$ variable is exogenous (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
-4. **Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
-5. **Non-Autocorrelation:** The values of error terms are independent from one another (*i.e.,* $E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j$) 
-6. **Normality:** The population error term is normally distributed with mean zero and variance $\sigma^2$ (*i.e.,* $u \sim N(0,\sigma^2)$)
+- **A3. Exogeneity:** The $X$ variable is exogenous (*i.e.,* $\mathop{\mathbb{E}}\left( u|X \right) = 0$).
+- **A4. Homoskedasticity:** The error term has the same variance for each value of the independent variable (*i.e.,* $\mathop{\text{Var}}(u|X) = \sigma^2$).
+- **A5. Non-Autocorrelation:** The values of error terms are independent from one another (*i.e.,* $E[u_i u_j]=0, \forall i \text{ s.t. } i \neq j$) 
+- **A6. Normality:** The population error term is normally distributed with mean zero and variance $\sigma^2$ (*i.e.,* $u \sim N(0,\sigma^2)$)
 
 --
 
