@@ -35,11 +35,11 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 10. **Simple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/10-Simple_Linear_Regression_Inference/10-Simple_Linear_Regression_Inference.pdf)
 
-11. ✅**Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/11-Multiple_Linear_Regression_Estimation/11-Multiple_Linear_Regression_Estimation.html) | [.pdf]()
+11. **Multiple Linear Regression: Estimation** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/11-Multiple_Linear_Regression_Estimation/11-Multiple_Linear_Regression_Estimation.html) | [.pdf]()
 
-12. ✅**Multiple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/12-Multiple_Linear_Regression_Inference/12-Multiple_Linear_Regression_Inference.html) | [.pdf]()
+12. **Multiple Linear Regression: Inference** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/12-Multiple_Linear_Regression_Inference/12-Multiple_Linear_Regression_Inference.html) | [.pdf]()
 
-13. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+13. ✅**Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
 14. **Categorical Variables** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
@@ -64,7 +64,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 5. **Simple linear regression revisited**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/05-Introduction_lm_revisited/05-Introduction_lm_revisited.html) | [Exercise 5](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
 
-6. ✅**Multiple regression and categorical variable**
+6. **Multiple regression and categorical variable**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/06-Introduction_multireg/06-Introduction_multireg.html) | [Exercise 6](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 
 7. **Omitted variable bias, interaction term**
@@ -88,7 +88,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS2.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205884?module_item_id=3517961)
 7.  ~~**Exercise 5**: Due 02/09(Wed)~~
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205887?module_item_id=3459333)
-8.  ✅**Exercise 6**: Due 02/16(Wed)
+8.  ~~**Exercise 6**: Due 02/16(Wed)~~
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 9.  ✅**Problem Set 3**: Due ~~02/18(Fri)~~ **02/21(Mon)**
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS3.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205885)
