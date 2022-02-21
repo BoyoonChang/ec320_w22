@@ -123,7 +123,7 @@ class: inverse, middle
 
 **Multiple linear regression** features one .pink[outcome variable] and multiple .purple[explanatory variables]:
 
-`$$\color{#e64173}{Y_i} = \beta_0 + \beta_1 \color{#9370DB}{X_{1i}} + \beta_2 \color{#9370DB}{X_{2i}} + \cdots + \beta_{k} \color{#9370DB}{X_{ki}} + u_i.$$`
+`$$\color{#e64173}{Y_i} = \beta_0 + \beta_1 \color{#9370DB}{X_{1i}} + \beta_2 \color{#9370DB}{X_{2i}} + \cdots + \beta_{m} \color{#9370DB}{X_{mi}} + u_i.$$`
 
 --
 
@@ -147,11 +147,11 @@ As was the case with simple linear regressions, OLS minimizes the sum of squared
 
 However, residuals are now defined as
 
-`$$\hat{u}_i = Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_{1i} - \hat{\beta}_2 X_{2i} - \cdots - \hat{\beta}_{k} X_{ki}.$$`
+`$$\hat{u}_i = Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_{1i} - \hat{\beta}_2 X_{2i} - \cdots - \hat{\beta}_{m} X_{mi}.$$`
 
 --
 
-To obtain estimates, take partial derivatives of RSS with respect to each `\(\hat{\beta}\)`, set each derivative equal to zero, and solve the system of `\(k+1\)` equations.
+To obtain estimates, take partial derivatives of RSS with respect to each `\(\hat{\beta}\)`, set each derivative equal to zero, and solve the system of `\(m+1\)` equations.
 
 - Without matrices, the algebra is difficult. For the remainder of this course, we will let .mono[R] do the work for us.
 

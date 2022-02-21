@@ -32,7 +32,7 @@ Y_i = \beta_0 + \beta_1 X_i + u_i.
 $$
 Let's suppose we use ordinary least squares (OLS) to estimate $\beta_0$ and $\beta_1$ with 20 observations, and find the estimates $\hat{\beta_1}=2$ and $\text{s.e.}({\beta_1})=1$. You are considering two different hypothesis tests. 
 
-The first is a two-sided test where
+The first is a two-tailed test where
 $$
 \begin{aligned}
   \text{H}_0 : \beta_1&=0 \\
@@ -40,7 +40,7 @@ $$
 \end{aligned}
 $$
 
-The second is a one-sided test where
+The second is a one-tailed test where
 $$
 \begin{aligned}
   \text{H}_0 : \beta_1&=0 \\
