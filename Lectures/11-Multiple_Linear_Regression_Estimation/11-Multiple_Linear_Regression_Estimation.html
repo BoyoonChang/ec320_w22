@@ -176,7 +176,7 @@ The OLS first-order conditions yield the same properties as before.
 
 2. The sample covariance between the independent variables and the residuals is zero.
 
-3. The point `\((\bar{X_1}, \bar{X_2}, \dots, \bar{X_k}, \bar{Y})\)` is always on the fitted regression "line."
+3. The point `\((\bar{X_1}, \bar{X_2}, \dots, \bar{X_m}, \bar{Y})\)` is always on the fitted regression "line."
 
 ---
 # Goodness of Fit
@@ -221,7 +221,7 @@ Model 2 will yield a lower `\(R^2\)` than Model 1.
 
 --
 
-To see this problem, we can simulate a dataset of 10,000 observations on `\(y\)` and 1,000 random `\(x_k\)` variables. **No relations between `\(y\)` and the `\(x_k\)`!**
+To see this problem, we can simulate a dataset of 10,000 observations on `\(y\)` and 1,000 random `\(x_m\)` variables. **No relations between `\(y\)` and the `\(x_m\)`!**
 
 Pseudo-code outline of the simulation:
 --
@@ -286,7 +286,7 @@ r_df
 
 **One solution:** Penalize for the number of variables, _e.g._, adjusted `\(R^2\)`:
 
-$$ \bar{R}^2 = 1 - \dfrac{\sum_i \left( Y_i - \hat{Y}_i \right)^2/(n-k-1)}{\sum_i \left( Y_i - \bar{Y} \right)^2/(n-1)} $$
+$$ \bar{R}^2 = 1 - \dfrac{\sum_i \left( Y_i - \hat{Y}_i \right)^2/(n-m-1)}{\sum_i \left( Y_i - \bar{Y} \right)^2/(n-1)} $$
 
 *Note:* Adjusted `\(R^2\)` need not be between 0 and 1.
 
