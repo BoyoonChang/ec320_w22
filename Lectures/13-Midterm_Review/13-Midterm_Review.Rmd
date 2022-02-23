@@ -1,0 +1,323 @@
+---
+title: "Midterm Review"
+subtitle: "EC 320: Introduction to Econometrics"
+date: "Winter 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+# devtools::install_github("dill/emoGG")
+library(pacman)
+p_load(
+  broom, here, tidyverse,
+  emoGG, latex2exp, ggplot2, ggthemes, viridis, extrafont, gridExtra,
+  kableExtra,
+  data.table, dagitty, ggdag,
+  dplyr, gganimate,
+  lubridate,
+  magrittr, knitr, parallel
+)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#23373b" # metropolis font color
+# Notes directory
+dir_slides <- "~/GitHub/EC320_Econometrics/Lectures/13-Midterm_Review/"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  #dpi = 300,
+  #cache = T,
+  warning = F,
+  message = F
+)  
+theme_simple <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 14),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  legend.position = "none"
+)
+theme_gif <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 14),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+```
+
+# Prologue
+
+---
+# Housekeeping
+
+Problem Set 3
+
+- Due tonight by 23:59 on Canvas
+
+Midterm 2 on Wednesday
+
+- .hi[No lab this week]
+
+
+
+---
+class: inverse, middle
+
+# Midterm II: The Weeds
+
+---
+# Midterm Topics
+
+.green[Anything from the lectures, labs, or problem sets] .hi-green[is fair game!]
+
+1. Simple Linear Regression: Estimation I & II
+
+2. Classical Assumptions
+
+3. Simple Linear Regression: Inference
+
+4. Multiple Linear Regression: Estimation
+
+5. Multiple Linear Regression: Inference
+
+6. Regressions in .mono[R]
+
+---
+# Midterm Topics
+
+## 1. Simple Linear Regression: Estimation
+
+OLS mechanics
+
+- How does OLS pick parameter estimates?
+- What properties are a direct consequence of OLS?
+- Residuals *v.s.* errors
+
+Coefficient interpretation 
+
+---
+# Midterm Topics
+
+## 1. Simple Linear Regression: Estimation (cont.)
+
+Goodness of fit
+
+- $R^2$ interpretation 
+- Understand $R^2$ derivation
+- Use and misuse of $R^2$
+
+OLS by hand
+
+- Estimate coefficients and calculate $R^2$.
+
+---
+# Midterm Topics
+
+## 2. Classical Assumptions
+
+Six assumptions
+
+1. Linearity
+2. Sample variation/no perfect collinearity
+<!-- 3. Random sampling -->
+3. Exogeneity
+4. Homoskedasticity
+5. Non-autocorrelation
+6. Normality
+
+What do they buy?
+
+When are they satisfied? When are they violated? 
+
+---
+# Midterm Topics
+
+## 2. Classical Assumptions (cont.)
+
+**So what?**
+
+- Coefficient interpretation
+- Hypothesis test validity
+
+---
+# Midterm Topics
+
+## 3. Simple Linear Regression: Inference
+
+Making inferences about population parameters
+
+- Population *v.s.* sample
+
+Hypothesis testing (*e.g.,* *t* tests)
+
+- Null hypotheses *v.s.* alternative hypotheses
+- Left-tailed, right-tailed, and two-tailed
+- Type I *v.s.* Type II error
+
+Confidence intervals
+
+---
+# Midterm Topics
+
+## 4. Multiple Linear Regression: Estimation
+
+OLS mechanics and properties
+
+Goodness of fit
+
+- $R^2$ interpretation 
+- Know the behavior of $R^2$ as the number of explanatory variables increases.
+
+Make predictions for certain values of the explanatory values (*e.g.,* hedonic modeling)
+
+---
+# Midterm Topics
+
+## 4. Multiple Linear Regression: Estimation (cont.)
+
+Coefficient interpretation 
+
+Omitted-variable bias
+
+- Know when omitting a variable causes bias.
+- Sign the bias.
+- Back out correlations between explanatory variables.
+
+---
+# Midterm Topics
+
+## 5. Multiple Linear Regression: Inference
+
+Confidence intervals and *t* tests 
+
+- Other than degrees of freedom, same as before.
+
+Multicollinearity
+
+- Standard errors depend on the overlapping variation between the explanatory variable.
+- More overlap $\implies$ bigger standard errors $\implies$ less likely to reject null hypothesis.
+
+Irrelevant variables
+
+--
+
+**No *F* tests on the midterm!** Stay tuned for the final. 
+
+---
+# Midterm Topics
+
+## 6. Regressions in .mono[R]
+
+Write the code that generates regression output
+
+- I provide the console or R Markdown output and the name of the data file.
+- You provide the code that loads the necessary packages, imports the data, runs regressions, and generates a table.
+- Write the code as if it's in a .mono[.R] script.
+
+---
+# Midterm Structure
+
+## Fill in the Blank
+
+- 10 blanks
+- 3 points per blank (30 points total)
+
+## True or False
+
+- 5 questions
+- 6 points per question (30 points total)
+
+## Free Response
+
+- 5 multi-part questions with varying numbers of points (50 points total)
+- Explanations required for full credit
+
+---
+# Midterm Protocol
+
+## Materials
+
+- Writing utensil
+- 3-inch-by-5-inch note card
+- Basic or scientific calculator (no graphing or programming capabilities)
+- .hi[Nothing else]
+
+## Procedure
+
+- 80 minutes from *"you may begin"* to *"pencils down"*
+- First 30 minutes: .hi[quiet period] (no questions, no getting up)
+- Last 50 minutes: ask lots of questions
+
+---
+class: inverse, middle
+
+# Practice
+
+---
+# Regression Table
+
+## Example
+
+Suppose we have the following fitted model for wage equation (standard errors in parenthesis, n=500):
+$$
+\begin{aligned}
+\hat{\text{Earnings}} = -11.65 + &1.77 \text{ S} + 0.65 \text{ EXP} \\
+&(0.211) \ \ \   (0.206)   
+\end{aligned}
+$$
+$t_{0.975}(497)=1.96$ and $t_{0.95}(497)=1.65$
+.smallest[
+1. Interpret the regression results
+2. Perform two-tailed 5-percent test of the null hypothesis that schooling has no effect on hourly earnings.
+3. Perform one-tailed 5-percent test of the null hypothesis that experience has no effect on earnings against the alternative hypothesis that experience has a positive effect on earnings.
+4. Confidence interval
+]
+
+
+  
+```{R, echo = F, escape = F, eval=F}
+library(huxtable)
+# tibble(
+#   X=rnorm(100,0,1),
+#   Z=0.58*X+rnorm(100,0,1),
+#   W=rnorm(100,0,1),
+#   Y=5+X-Z+2*W+rnorm(100,0,1)
+# ) ->data
+tibble(
+  X2=rnorm(100,0,1),
+  X3=2*X2-1,
+  Y=2+3*X2+X3+rnorm(100,0,1)
+) ->data
+data %>% lm(Y~X,data=.) ->reg0
+data %>% lm(Y~X+W, data =.) ->reg1
+data %>% lm(Y~X+Z+W, data =.) ->reg2
+data %>% lm(X~W, data =.) ->reg3
+data %>% lm(X~Z, data =.) ->reg4
+data %>% lm(X~Z+W, data =.) ->reg4
+huxreg(reg0,reg1,reg2)
+```
+
+
+
