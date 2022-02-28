@@ -41,7 +41,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 13. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/13-Midterm_Review/13-Midterm_Review.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/12-Multiple_Linear_Regression_Inference/12-Multiple_Linear_Regression_Inference.pdf)
 
-14. ✅**Categorical Variables** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+14. ✅**Categorical Variables** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/14-Categorical_Variables/14-Categorical_Variables.html) | [.pdf]()
 
 15. **Interactive Relationships** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
 
