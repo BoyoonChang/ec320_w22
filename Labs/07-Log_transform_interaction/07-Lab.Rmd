@@ -1,0 +1,170 @@
+---
+title: "Other Topics"
+author: | 
+        | EC 320: Introduction to Econometrics
+        | University of Oregon
+date: "Winter 2022"
+output: 
+  html_document:
+    theme: flatly  
+    highlight: tango
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+      
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F, cache = F)
+```
+
+## Prep
+
+### Load the necessary packages
+```{r}
+library(pacman)
+p_load(tidyverse, readr, huxtable, broom)
+```
+
+### Read in the data 
+Go to the Canvas and download the following file called `EAWE01.csv`. The file will automatically be downloaded and stored in your Downloads folder. If you are a Mac user, right-click the file in the Downloads folder then press alt. You'll see `Copy "EAWE01.csv"as Pathname`. Click that and then paste it inside the `read_csv()`. If you are a Windows user, you could simply copy and paste the file path by right-clicking the file then hit `Copy as path`.
+```{r}
+wages <- read_csv('/Users/boyoonc/Downloads/EAWE01.csv')
+```
+
+## Inspection
+```{r}
+dim(wages)
+```
+As can be seen, the dataset has 500 observations and 96 columns or variables. In today's lab, we'll use a set of variables that is, `EARNINGS`, `S`, `EXP`, `FEMALE`. 
+
+
+```{r}
+summary(wages$EARNINGS) # yearly earnings in 1000 dollars
+summary(wages$S) # years
+summary(wages$EXP) # years
+```
+
+## Logrithmic variable
+
+$$
+\text{EARNINGS}_i=\beta_0 + \beta_1 \text{S}_i+ u_i
+$$
+
+```{r}
+reg1 = lm(EARNINGS~S, wages)
+huxreg(reg1)
+```
+`reg1` assumes a linear relationship between years of schooling and earnings, which is probably unrealistic. The effect of schooling going from 12 to 13 years wouldn't necessarily be equal to the effect of schooling going from 15 to 16. This is more consistent with a constant elasticity as compared to a constant marginal effect.
+
+In this case, typically we take the log of the outcome variable to interpret the estimate of $\beta_1$ as the expected $\%$ change in earnings given a one year increase in schooling. 
+$$
+\text{log(EARNINGS)}_i=\beta_0 + \beta_1 \text{S}_i+ u_i
+$$
+
+```{r}
+reg2=lm(log(EARNINGS)~S, wages)
+huxreg(reg2)
+```
+According to the regression result, we see that $\hat{\beta_1}$=`r round(reg2$coefficient[2],3)`, which means that one year additional schooling is associated with 6.5$\%$ increase in earnings on average. 
+
+
+## Binary variable
+
+Binary variable is a variable that takes either 0 or 1 as its value. In `wages` data, some binary variables are already defined. Take a look at `FEMALE` and `MALE` variable. Also notice what happens if we add these two columns. 
+
+```{r}
+summary(wages$FEMALE)
+summary(wages$MALE)
+summary(wages$FEMALE+wages$MALE)
+```
+
+That is, `FEMALE` could be represented as linear combination of a column vector of ones and `MALE` whereas `MALE` could be represented as a linear combination of a column vector of ones and `FEMALE`.  
+
+## Regressions
+
+```{r}
+lm(EARNINGS ~ FEMALE, data = wages, subset= FEMALE==1) # singular
+lm(EARNINGS ~ FEMALE, data = wages) # OK
+lm(EARNINGS ~ FEMALE+MALE, data = wages) # singular
+lm(EARNINGS ~ FEMALE+MALE-1, data = wages) # OK
+```
+
+For the first regression, we subset the data to only include observations whose gender is female then regress `EARNINGS` on `FEMALE`. Since all the observations in the subset has the value of 1 for `FEMALE` column, this equation collapses such that the regression model drops `FEMALE` variable and just estimates the intercept. For the second regression, we do not subset the data and regress `EARNINGS` on `FEMALE`. Now we have the estimate for the coefficient of `FEMALE` variable. This is because now the observations whose gender is denoted as `MALE` serve as the reference group. 
+
+Interpreting the regression result, on average the yearly earnings of male is estimated to be 19,173 dollars in the sample. On the other hand, the average yearly earnings of female is about 1,655 dollars less of the average earnings of male. In other words, the average yearly earnings of female is estimated to be 19173-1655=17,518. 
+
+The third regression will also collapse to the second regression, since `MALE` can exactly be represented as the linear combination of the intercept and `FEMALE`. The fourth regression will run since we are now dropping the intercept. If we drop the intercept, the interpretation of the coefficient estimate for `FEMALE` and `MALE` would literally be the average yearly earnings for each group. 
+
+Notice that the regression model would look as follows with the intercept, where `FEMALE=0` serves as the reference group,
+$$
+\text{EARNINGS}_i=\beta_0 + \beta_1 \text{FEMALE}_i+ u_i,
+$$
+and without the intercept, 
+$$
+\text{EARNINGS}_i=\beta_1 \text{FEMALE}_i+\beta_2\text{MALE} + u_i.
+$$
+
+Consider following regression model:
+$$
+\text{log(EARNINGS)}_i=\beta_0 + \beta_1 \text{S}_i+\beta_2\text{EXP}_i+ u_i.
+$$
+
+If we suspect a difference in earnings between female and male with the same level of experience and schooling, then the regression model would look as follows:
+$$
+\text{log(EARNINGS)}_i=\beta_0 + \delta_0\text{FEMALE}_i+ \beta_1 \text{S}_i+\beta_2\text{EXP}_i+ u_i.
+$$
+
+If it's male, `FEMALE` would equal zero and thus the regression model for male becomes
+$$
+\text{log(EARNINGS)}_i=\beta_0 + \beta_1 \text{S}_i+\beta_2\text{EXP}_i+ u_i.
+$$
+However, for female, `FEMALE` would equal 1 and thus the regression model for female becomes
+$$
+\text{log(EARNINGS)}_i=(\beta_0 + \delta_0)+\beta_1 \text{S}_i+\beta_2\text{EXP}_i+ u_i.
+$$
+
+```{r}
+reg3 <- lm(log(EARNINGS) ~ S + EXP + FEMALE, wages)
+reg3 %>% huxreg()
+```
+
+All else equal, the above regression results show that from switching from `FEMALE=0` to `FEMALE=1`, we expect to see about 17% decrease in average earnings. 
+
+
+## Interaction term
+
+Here we assume that the effect of schooling differ by gender. In other words, the regression model would now be  
+$$
+\text{log(EARNINGS)}_i=\beta_0 + \delta_0\text{FEMALE}_i+ \beta_1 \text{S}_i+\delta_1\text{FEMALE}_i \times \text{S}_i + \beta_2\text{EXP}_i+ u_i.
+$$
+
+Now what is the regression model for male, i.e. `FEMALE=0` group?
+$$
+\text{log(EARNINGS)}_i=\beta_0 + \beta_1 \text{S}_i+ \beta_2\text{EXP}_i+ u_i.
+$$
+The reference group now becomes `FEMALE=0` group, meaning that the estimates for $\beta_1$ and $\beta_0$ are those related with `FEMALE=0` group.
+
+Now what is the regression model for female, i.e. `FEMALE=1` group?
+$$
+\text{log(EARNINGS)}_i=(\beta_0 + \delta_0) + (\beta_1 +\delta_1) \text{S}_i + \beta_2\text{EXP}_i+ u_i.
+$$
+This means that the interpretation of the estimates for $\delta_0$ and $\delta_1$ is a relative changes compared to the reference group. 
+
+```{r}
+reg4 <- lm(log(EARNINGS) ~ S + EXP + FEMALE + S*FEMALE, wages)
+reg4 %>% huxreg()
+```
+
+
+In other words, the above regression results suggest that the effect of schooling differ by gender, meaning that there seems to be an extra increase in earnings associated with one year additional schooling when it's female. That is there seems to be 5% increase in average earnings associated with one year additional schooling when it's female compared to male. In other words, it seems to be the case that getting schooling is even more important for females to overcome the sexist barrier of being female. 
+
+## Now your turn
+
+Please open up the `07-Exercise.R` and fill out your answer for each question.
+
+
+
+
+
