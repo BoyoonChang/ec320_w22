@@ -94,8 +94,8 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS3.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205885)
 10. ✅**Exercise 7**: Due 03/02(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205889) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205889)
-11. **Problem Set 4**: Due ~~03/04(Fri)~~ **03/07(Mon)**
-   <br> [.pdf]() | [submit it here]()
+11. ✅**Problem Set 4**: Due ~~03/04(Fri)~~ **03/07(Mon)**
+   <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS4.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205886)
 
 
 
