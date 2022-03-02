@@ -8,26 +8,27 @@ output: pdf_document
 
 # 1. (Textbook Question 6.6) 10 points
 
-In a Monte Carlo experiment, a variable $Y$ is generated as a linear function of two variables $X_1$ and $X_2$; 
+In a Monte Carlo experiment, a variable $Y$ is generated as a linear function of two variables $X_2$ and $X_3$; 
 $$
-Y = 10.0 + 10.0 X_1 + 0.5X_2 + u
+Y = 10.0 + 10.0 X_2 + 0.5X_3 + u
 $$
-\noindent where $X_1$ is the sequence of integers $1,2, \cdots, 30$, $X_2$ is generated from $X_1$ by adding random numbers, and $u$ is a disturbance term with a normal distribution with mean zero and variance $10,000$. The correlation between $X_1$ and $X_2$ is 0.95. The table shows the result of fitting the following regressions for 10 samples:
+\noindent where $X_2$ is the sequence of integers $1,2, \cdots, 30$, $X_3$ is generated from $X_2$ by adding random numbers, and $u$ is a disturbance term with a normal distribution with mean zero and variance $10,000$. The correlation between $X_2$ and $X_3$ is 0.95. The table shows the result of fitting the following regressions for 10 samples:
 
 $$
 \begin{aligned}
-  \text{Model A}: \hat{Y} &= \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 \\
-  \text{Model B}: \hat{Y} &= \hat{\beta}_0 + \hat{\beta}_1X_1 
+  \text{Model A}: \hat{Y} &= \hat{\beta}_1 + \hat{\beta}_2X_2 + \hat{\beta}_3X_3 \\
+  \text{Model B}: \hat{Y} &= \hat{\beta}_1 + \hat{\beta}_2X_2 
 \end{aligned}
 $$
 
 
-The figure shows the distributions of $\hat{\beta}_1$ for the two models for 10 million samples. In the case of Model A, the distribution of $\hat{\beta}_1$ has mean 10.001 and standard deviation 6.910. For Model B, the mean is 10.500 and the standard deviation is 2.109. Comment on all aspects of the regression results, giving full explanations of what you observe.
+The figure shows the distributions of $\hat{\beta}_2$ for the two models for 10 million samples. In the case of Model A, the distribution of $\hat{\beta}_2$ has mean 10.001 and standard deviation 6.910. For Model B, the mean is 10.500 and the standard deviation is 2.109. Comment on all aspects of the regression results, giving full explanations of what you observe.
 
 ```{r pressure, echo=FALSE, out.width = '100%'}
 knitr::include_graphics("fig2.png")
 knitr::include_graphics("fig1.png")
 ```
+
 
 
 
