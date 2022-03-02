@@ -59,6 +59,13 @@ Compare the results of the two regressions.
 \newpage
 # 3. (Textbook Question 5.10) 10 points
 
+The regression model looks as follows:
+$$
+\text{log(EARNINGS)}_i = \beta_0 + \beta_1 S_i +\beta_2EXP_i + \beta_3MALE + \beta_4COLLBARG + u_i.
+$$
+Following is the results of regressing logged hourly earnings, denoted by $\text{log(EARNINGS)}$, on $S$, $EXP$, $MALE$, and $COLLBARG$. 
+($LGEARN$ denotes the logged hourly earnings, $S$ represents years of schoolings, $EXP$ represents the total out-of-school work experience (years), $MALE$ is a binary variable denoting male.)
+
 Does belonging to a union have an impact on earnings? In the output below, $COLLBARG$ is a dummy variable defined to be 1 for workers whose wages are determined by collective bargaining and 0 for the others. Provide an interpretation of the regression coefficients and perform appropriate statistical tests. 
 ```{r include=F}
 wages=read_csv("/Users/boyoonc/Downloads/EAWE21.csv")
