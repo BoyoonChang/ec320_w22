@@ -27,6 +27,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 6. **Midterm Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review1.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/06-Midterm_Review/06-Midterm_Review1.pdf)
 
+---
 7. **Simple Linear Regression: Estimation I** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/07-Simple_Linear_Regression_Estimation/07-Simple_Linear_Regression_Estimation.pdf)
 
 8. **Simple Linear Regression: Estimation II** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.html) | [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/08-Simple_Linear_Regression_Estimation/08-Simple_Linear_Regression_Estimation.pdf)
