@@ -296,14 +296,8 @@ lm(log(productivity) ~ trained, data = df2) %&gt;% tidy()
 ```
 
 **Q:** How do we interpret the coefficient on `trained`?
-
---
-
-**A.sub[1]:** Trained workers 74.52 percent more productive than untrained workers.
-
---
-
-**A.sub[2]:** Untrained workers -42.7 percent less productive than trained workers.
+**A.sub[1]:** Trained workers `\((e^{0.557}-1)\times 100\)` (74.52) percent more productive than untrained workers.
+**A.sub[2]:** Untrained workers `\((e^{-0.557}-1)\times 100\)` (42.7) percent less productive than trained workers.
 
 
 ---
