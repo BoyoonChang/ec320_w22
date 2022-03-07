@@ -72,7 +72,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 7. **Log transformation and interaction term**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/07-Log_transform_interaction/07-Lab.html) | [Exercise 7](https://canvas.uoregon.edu/courses/192225/files/13389142?wrap=1)
 
-8. **Final Review** <br> [.pdf]((https://raw.githack.com/bchang2/ec320_w22/main/Labs/08-Final_review/final_review.pdf) 
+8. **Final Review** <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Labs/08-Final_review/final_review.pdf) 
 
 ## Due Dates
 
