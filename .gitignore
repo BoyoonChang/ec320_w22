@@ -39,7 +39,6 @@ vignettes/*.pdf
 .Renviron
 
 # Folder
-Labs/08*
 
 Lectures/04*/04-outline*
 

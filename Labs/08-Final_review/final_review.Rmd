@@ -1,0 +1,110 @@
+---
+title: "EC 320 \n Intro to Econometrics Fianl Review"
+date: "Winter 2022"
+output: 
+  pdf_document: default
+header-includes: 
+  - \usepackage{enumitem}
+  - \usepackage[utf8]{inputenc}
+---
+
+
+
+
+
+# F-test
+Consider the following linear regression model:
+$$
+Y_i = \beta_0+\beta_1X_{1i} + \beta_2 X_{2i} + \beta_3 X_{3i} + \beta_4 X_{4i} + u_i.
+$$
+Recall that the formula for calculating $F$ statistic is given as follows:
+$$
+F_{q,n-k} = \dfrac{(RSS_r-RSS_u)/q}{RSS_u/(n-k)}
+$$
+\noindent where $q$ denotes the number of restrictions, $n$ denotes the number of observations in the given sample, $k$ denotes the number of parameters in the regression model. 
+
+
+\begin{enumerate}
+  \item What restricted model would allow you to test the null hypothesis that $\beta_2 = \beta_3 = \beta_4=0$? What is unrestricted model?
+  
+
+  \item What is the number of restrictions? 
+  
+
+  \item Suppose that RSS = 1000 for the unrestricted model and RSS = 1030 for the restricted model. The number of observation is 300. Find the $F$ statistic for this test. 
+  
+
+```{r include=FALSE}
+RSS_u=1000
+RSS_r=1030
+df_num=3
+n=300
+k=5
+df_denom=n-k
+F_stat=((RSS_r-RSS_u)/df_num)/((RSS_u)/df_denom)
+F_stat
+qf(0.95,df_num,df_denom)
+```
+
+  
+  \item Find the critical value from the $F$ distribution for this test. Can we reject the null hypothesis that $\beta_2 = \beta_3 = \beta_4=0$ at 5$\%$ significance level?
+  $$
+  \begin{aligned}
+    F_{0.95}(2,296)&=`r round(qf(0.95,2,296),5)`\\
+    F_{0.975}(3,296)&=`r round(qf(0.975,3,296),5)`\\
+    F_{0.95}(3,295)&=`r round(qf(0.95,3,295),5)`\\
+    F_{0.975}(3,295)&=`r round(qf(0.975,3,295),5)`\\
+  \end{aligned}
+  $$
+
+  \item What restricted model would allow you to test the null hypothesis that $\beta_2=\beta_3=\beta_4$? What is the number of restrictions? Sketch out how you would conduct the hypothesis test. 
+  
+
+\end{enumerate}
+
+
+
+# Interaction and binary variables
+
+
+\begin{enumerate}
+  \item Consider the following linear regression model:
+$$
+Y_i = \beta_0+\beta_1D_{1i} + \beta_2 D_{2i} +  u_i,
+$$
+\noindent where $D_{1i}$ is a binary variable that denotes 1 for students studying at night (night owls) while 0 for students studying early in the morning (early birds), $Y_i$ denotes grades for EC320, $D_{2i}$ is a binary variable that denotes 0 for students living on campus while 1 for students living off-campus. In this setting who is the reference group? What is the expected grade of the reference group?
+  
+
+ \item What is the expected grade for students living on campus studying late at night?
+ 
+
+ \item What is the expected grade for students living off campus studying late at night?
+ 
+
+  \item Consider the following linear regression model:
+$$
+Y_i = \beta_0+\beta_1X_{i} + \beta_2 D_{i} + \beta_3 D_{i}X_i + u_i.
+$$
+Find the marginal effect of $X$ on $Y$ for group $D_i=0$. Find the marginal effect of $X$ on $Y$ for group $D_i=1$. 
+
+
+\end{enumerate}
+
+\newpage
+# Non linear regression
+
+Interpret the coefficient $\beta_1=0.3$ as in terms of units or $\%$ of $X$ and $Y$.  
+
+\begin{enumerate}
+  \item $Y_i = \beta_0 + \beta_1 X_i+u_i$
+
+
+  \item $Y_i = \beta_0 + \beta_1 \text{log}(X_i)+u_i$
+
+
+  \item $\text{log}(Y_i) =\beta_0 + \beta_1 (X_i)+u_i$
+
+
+  \item $\text{log}(Y_i) =\beta_0 + \beta_1 \text{log}(X_i)+u_i$
+
+\end{enumerate}

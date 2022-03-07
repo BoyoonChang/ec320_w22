@@ -69,10 +69,10 @@ The HTML versions of the lecture slides allow you to view animations and interac
 6. **Multiple regression and categorical variable**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/06-Introduction_multireg/06-Introduction_multireg.html) | [Exercise 6](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 
-7. ✅**Log transformation and interaction term**
+7. **Log transformation and interaction term**
 <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Labs/07-Log_transform_interaction/07-Lab.html) | [Exercise 7](https://canvas.uoregon.edu/courses/192225/files/13389142?wrap=1)
 
-8. **Final Review** <br> [.html]() 
+8. **Final Review** <br> [.pdf]((https://raw.githack.com/bchang2/ec320_w22/main/Labs/08-Final_review/final_review.pdf) 
 
 ## Due Dates
 
@@ -94,7 +94,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205888?module_item_id=3459332)
 9.  ~~**Problem Set 3**: Due ~~02/18(Fri)~~ **02/21(Mon)**~~
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS3.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205885)
-10. ✅**Exercise 7**: Due 03/02(Wed)
+10. **Exercise 7**: Due 03/02(Wed)
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205889) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205889)
 11. ✅**Problem Set 4**: Due ~~03/04(Fri)~~ **03/07(Mon)**
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS4.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205886)
