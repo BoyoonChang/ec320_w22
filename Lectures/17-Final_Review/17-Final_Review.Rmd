@@ -1,0 +1,321 @@
+---
+title: "Final Review"
+subtitle: "EC 320: Introduction to Econometrics"
+date: "Winter 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+# devtools::install_github("dill/emoGG")
+library(pacman)
+p_load(
+  broom, here, tidyverse,
+  emoGG, latex2exp, ggplot2, ggthemes, viridis, extrafont, gridExtra,
+  kableExtra,
+  data.table, dagitty, ggdag,
+  dplyr, gganimate,
+  lubridate,
+  magrittr, knitr, parallel
+)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#23373b" # metropolis font color
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  #dpi = 300,
+  #cache = T,
+  warning = F,
+  message = F
+)  
+theme_simple <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 14),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  legend.position = "none"
+)
+theme_gif <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 14),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+```
+
+# Prologue
+
+---
+# Housekeeping
+
+## Final Exam
+
+Friday, March 18 at 10:15am in Tykeson 140.
+
+## Lab
+
+Additional review session.
+
+
+## Office hours
+
+
+Next week: Tuesday and Thursday over Zoom
+
+
+---
+class: inverse, middle
+
+# Final Exam
+
+---
+# Final Exam Topics
+
+.green[Anything from the lectures, labs, or problem sets] .hi-green[is fair game!]
+
+1. Midterm Topics
+
+2. Multiple Linear Regression: Inference
+
+3. Categorical Variables
+
+4. Interactive Relationships
+
+5. Nonlinear Relationships
+
+---
+# Final Exam Topics
+
+## 1. Midterm Topics
+
+Making predictions using fitted regression model
+
+- *e.g.,* using a Hedonic model
+
+Goodness of fit
+
+Hypothesis testing
+
+--
+
+.pink[Omitted-variable bias]
+
+- Know when omitting a variable causes bias
+- Sign the bias
+- Back out correlations between explanatory variables
+- Provide examples of problematic omitted variables
+
+---
+# Final Exam Topics
+
+## 2. Multiple Linear Regression: Inference
+
+*F* tests (multiple parameters)
+
+- State null hypothesis
+- Identify restricted and unrestricted models
+- Calculate *F* statistic
+- Use table to find *F*.sub[*crit*]
+- *F* .mono[>] *F*.sub[*crit*]?
+- State conclusion of the test
+
+*t* tests (single parameter)
+
+--
+
+**Q:** Which test should you choose? 
+
+--
+
+**A:** Depends on the null hypothesis!
+
+---
+# Final Exam Topics
+
+## 2. Multiple Linear Regression: Inference
+
+Confidence intervals
+
+- Formula, interpretation, and comparison of different intervals for the same coefficient
+
+--
+
+.pink[Proof:] Show that the *F* statistic formula containing *RSS* implies the *F* statistic formula containing *R*.super[*2*]
+
+- For practice, you can also prove that the second formula implies the first
+
+---
+# Final Exam Topics
+
+## 3. Categorical Variables
+
+How do you interpret coefficients on binary variables?
+
+- **Note:** Depends on the presence of interaction terms and whether the outcome variable is transformed
+
+Dummy variable trap
+
+What is the reference category?
+
+- How do you back out group-specific averages from a dummy variable regression?
+- How do coefficient estimates change when you change the reference category?
+
+---
+# Final Exam Topics
+
+## 4. Interactive Relationships
+
+How do you interpret interaction coefficients?
+
+- Binary $\times$ binary
+- Binary $\times$ continuous
+- Continuous $\times$ continuous
+
+How does an interaction term change how you interpret the effect of the variable of interest on the outcome variable?
+
+- Marginal effects (partial derivative)
+
+---
+# Final Exam Topics
+
+## 5. Nonlinear Relationships
+
+Identify nonlinear models
+
+- OLS can handle nonlinear variables, but not nonlinear parameters
+
+Transform nonlinear models
+
+- Give OLS a chance
+
+---
+# Final Exam Topics
+
+## 5. Nonlinear Relationships
+
+How do you interpret coefficients in the presence of logarithmic transformations?
+
+- Level $Y$, level $X$
+- Level $Y$, log $X$
+- Log $Y$, level $X$
+- Log $Y$, log $X$
+
+--
+
+**Quadratic models:** interacting $X$ with itself
+
+- Calculate marginal effects to understand how $X$ affects $Y$
+
+---
+# Final Exam Structure
+
+### Mix of fill-in-the blanks, multiple choice questions, T/F questions (60 points)
+- Total of 20 questions (3 points each)
+
+### Long answer questions (40 points)
+- Four questions
+
+
+
+---
+# Final Exam Protocol
+
+## Materials
+
+- Writing utensil
+- 3-inch-by-5-inch note card
+- Basic or scientific calculator (no graphing or programming capabilities)
+- .hi[Nothing else]
+
+## Procedure
+
+- 120 minutes from *"you may begin"* to *"pencils down"*
+- First 30 minutes: .hi[quiet period] (no questions, no getting up)
+- Last 90 minutes: ask lots of questions
+
+---
+class: inverse, middle
+
+# Practice
+
+---
+# .mono[gapminder] Package
+
+Data on population, GDP per capita, and life expectancy 
+
+Unit of observation: country-year 
+
+- All countries, every 5.super[th] year between 1957 and 2007
+
+```{r}
+p_load(gapminder)
+data <- get('gapminder')
+head(data)
+```
+
+
+---
+class: white-slide
+.center[**Association of GDP per Capita with Life Expectancy**]
+```{R, echo = F, escape = F}
+tab <- data.frame(
+  v1 = c("log(GDP/Capita)", "", "log(GDP/Capita) ? Americas", "", "log(GDP/Capita) ? Asia", "", "log(GDP/Capita) ? Europe", "", "log(GDP/Capita) ? Oceania", "", "Continent Dummies?", "Observations", "R-Squared"),
+  v2 = c(6.42, "(0.183)", "", "", "", "", "", "", "", "", "Yes", 1704, 0.704),
+  v3 = c(5.69, "(0.325)", 4.03, "(0.674)", 0.561, "(0.421)", 0.614, "(0.597)", 5.20, "(4.36)", "Yes", 1704, 0.710),
+  v4 = c(0.112, "(0.004)", "", "", "", "", "", "", "", "", "Yes", 1704, 0.665),
+  v5 = c(0.111, "(0.006)", 0.047, "(0.013)", -0.002, "(0.008)", -0.019, "(0.012)", 0.035, "(0.084)", "Yes", 1704, 0.669)
+) %>% kable(
+  escape = F,
+  col.names = c("", "Life Expectancy", "Life Expectancy", "log(Life Expectancy)", "log(Life Expectancy)"),
+  align = c("l", rep("c", 5))
+) %>%
+row_spec(1:13, color = met_slate) %>%
+row_spec(seq(2,10,2), color = "#c2bebe") %>%
+row_spec(1:13, extra_css = "line-height: 110%;") %>% 
+column_spec(1, color = "black", italic = T) %>% 
+kable_styling(font_size = 18.2)
+tab %>% column_spec(2, bold = T)
+```
+
+---
+class: white-slide
+.center[**Association of GDP per Capita with Life Expectancy**]
+```{R, echo = F, escape = F}
+tab %>% column_spec(3, bold = T)
+```
+
+---
+class: white-slide
+.center[**Association of GDP per Capita with Life Expectancy**]
+```{R, echo = F, escape = F}
+tab %>% column_spec(4, bold = T)
+```
+
+---
+class: white-slide
+.center[**Association of GDP per Capita with Life Expectancy**]
+```{R, echo = F, escape = F}
+tab %>% column_spec(5, bold = T)
+```

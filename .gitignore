@@ -43,7 +43,6 @@ vignettes/*.pdf
 Lectures/04*/04-outline*
 
 
-Lectures/17*
 Syllabus/syllabus.html
 Syllabus/syllabus.Rmd
 *sol.R
