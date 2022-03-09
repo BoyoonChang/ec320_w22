@@ -49,7 +49,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
 16. **Nonlinear Relationships** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/16-Nonlinear_Relationships/16-Nonlinear_Relationships.html) |
 [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/16-Nonlinear_Relationships/16-Nonlinear_Relationships.pdf)
 
-17. **Final Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/02-Statistics_Review/02-Statistics_Review.html) | [.pdf]()
+17. **Final Review** <br> [.html](https://raw.githack.com/bchang2/ec320_w22/main/Lectures/17-Final_Review/17-Final_Review.html) 
 
 ## Labs
 
@@ -96,7 +96,7 @@ The HTML versions of the lecture slides allow you to view animations and interac
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS3.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205885)
 10. ~~**Exercise 7**: Due 03/02(Wed)~~
    <br> [.R](https://canvas.uoregon.edu/courses/192225/assignments/1205889) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205889)
-11. ✅**Problem Set 4**: Due ~~03/04(Fri)~~ **03/07(Mon)**
+11. ~~**Problem Set 4**: Due ~~03/04(Fri)~~ **03/07(Mon)**~~
    <br> [.pdf](https://raw.githack.com/bchang2/ec320_w22/main/ProblemSets/PS4.pdf) | [submit it here](https://canvas.uoregon.edu/courses/192225/assignments/1205886)
 
 
