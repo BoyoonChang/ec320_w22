@@ -46,7 +46,7 @@ Following is the results of regressing $LGEARN$ on $S$, $EXP$, $ASVABC$, $MALE$,
 ```{r echo=F}
 summary(wages$EARNINGS)
 lm(LGEARNINGS~S+EXP+ASVABC+MALE+ETHBLACK+ETHHISP, wages) %>% tidy()
-lm(LGEARNINGS~S+EXP+ASVABC+MALE+ETHBLACK+ETHHISP+AGE, wages) %>% tidy()
+lm(LGEARNINGS~S+EXP+ASVABC+MALE+ETHBLACK+ETHHISP + I(AGE^2), wages) %>% tidy()
 ```
 Correlations between $AGE$ and other explanatory variables are given as follows: 
 ```{r echo=F}
