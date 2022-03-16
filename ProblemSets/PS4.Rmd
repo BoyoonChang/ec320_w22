@@ -44,9 +44,9 @@ wages$LGEARNINGS=log(wages$EARNINGS)
 Following is the results of regressing $LGEARN$ on $S$, $EXP$, $ASVABC$, $MALE$, $ETHBLACK$, $ETHHISP$. Now we repeat the regression adding $AGE$. 
 ($LGEARN$ denotes the logged hourly earnings, $S$ represents years of schoolings, $EXP$ represents the total out-of-school work experience (years), $ASVABC$ represents scaled score on a component of the $ASVAB$ test, $MALE$ is a binary variable denoting male, $ETHBLACK$,$ETHHISP$ are binary variables denoting certain ethnicity.)
 ```{r echo=F}
-summary(wages$EARNINGS)
+#summary(wages$EARNINGS)
 lm(LGEARNINGS~S+EXP+ASVABC+MALE+ETHBLACK+ETHHISP, wages) %>% tidy()
-lm(LGEARNINGS~S+EXP+ASVABC+MALE+ETHBLACK+ETHHISP + I(AGE^2), wages) %>% tidy()
+lm(LGEARNINGS~S+EXP+ASVABC+MALE+ETHBLACK+ETHHISP + AGE, wages) %>% tidy()
 ```
 Correlations between $AGE$ and other explanatory variables are given as follows: 
 ```{r echo=F}
